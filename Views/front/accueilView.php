@@ -29,6 +29,6 @@ ob_start();
 $content = ob_get_clean();
 $Javascript = 'sliders.js';
 
-require('base.php');
+require('template/base.php');
 
 ?>

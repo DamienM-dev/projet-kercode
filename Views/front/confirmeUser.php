@@ -17,5 +17,5 @@ $content = ob_get_clean();
 
 <?php
 
-require('base.php');
+require('template/base.php');
 ?>

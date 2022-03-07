@@ -1,6 +1,9 @@
 <?php
 
-require('Controller/controllerFront.php');
+require_once __DIR__ . '/vendor/autoload.php';
+require_once('Controllers/controllerFront.php');
+
+
 
 try {
     if(isset($_GET['page'])) {
@@ -17,5 +20,5 @@ try {
 }
 catch(Exception $e) {
     $error = $e->getMessage();
-    require('view/errorView.php');
+    require('Views/front/errorView.php');
 }

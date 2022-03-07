@@ -1,4 +1,5 @@
 <?php
+namespace Projet\Controllers;
 
 class UserController {
     function connexionUser() {

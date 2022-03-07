@@ -1,5 +1,7 @@
 <?php
 
+namespace Projet\Models;
+
 require_once('Models/front/Manager.php');
 
 

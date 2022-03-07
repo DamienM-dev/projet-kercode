@@ -1,8 +1,11 @@
 <?php
+namespace Projet\Controllers;
 
-require_once('Models/front/accueilModel.php');
+class controllerFront {
+    
+    function home() {
+    
+        require('Views/front/accueilView.php');
+    }
 
-function home() {
-
-    require('Views/front/accueilView.php');
 }

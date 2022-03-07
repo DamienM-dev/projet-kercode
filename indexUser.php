@@ -3,8 +3,10 @@
 
 session_start();
 
+require_once __DIR__ . '/vendor/autoload.php';
+
 try {
-    $backController = new \Projet\Controller\UserController();
+    $backController = new \Projet\Controllers\UserController();
 
     if(isset($_GET['action'])) {
         if ($_GET['action'] == 'createUser') {
@@ -25,5 +27,5 @@ try {
         $backController->userConnected();
     }
 } catch (Exception $e) {
-    require 'app/Views/front/errorView.php';
+    require 'Views/front/errorView.php';
 }
