@@ -21,7 +21,18 @@ try {
 
             $mdp = password_hash($mdp, PASSWORD_DEFAULT);
 
-            $backController->createUser($lastname, $firstname, $address, $CP, $mail, $phone, $mdp);
+
+            $data = [
+                'lastname'  => $lastname,
+                'firstname' => $firstname,
+                'address'   => $address,
+                'CP'        => $CP,
+                'mail'      => $mail,
+                'phone'     => $phone,
+                'mdp'       => $mdp
+            ];
+
+            $backController->createUser($data);
         }
     } else {
         $backController->connexionUser();

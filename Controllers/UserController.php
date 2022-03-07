@@ -6,11 +6,11 @@ class UserController {
         require 'Views/formulaireUser.php';
     }
 
-    function createUser($lastname, $firstname, $address, $CP, $mail, $phone, $mdp) {
+    function createUser($data) {
 
         $userPostMail = new \Projet\Models\UserModel();
 
-        $user = $userPostMail->createUser($lastname, $firstname, $address, $CP, $mail, $phone, $mdp);
+        $user = $userPostMail->createUser($data);
         require 'views/front/confirmeUser.php';
     }
 }
