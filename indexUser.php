@@ -13,7 +13,7 @@ try {
 
             $lastname = $_POST['lastname'];
             $firstname = $_POST['firstname'];
-            $adress = $_POST['adress'];
+            $address = $_POST['address'];
             $CP = $_POST['CP'];
             $mail = $_POST['mail'];
             $phone = $_POST['phone'];

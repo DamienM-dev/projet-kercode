@@ -2,6 +2,9 @@
 
 namespace Projet\Models;
 
+use Exception;
+use PDO;
+
 class Manager {
     protected function dbConnect(){
         try {
