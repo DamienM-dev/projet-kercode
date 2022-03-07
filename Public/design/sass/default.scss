@@ -1,0 +1,152 @@
+@import 'variable';
+
+// =============initialisation HTML=============
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+
+// =============MOBILE FIRST=============
+
+    // =============HEADER=============
+.navbar {
+    padding: 10px;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     position: relative;
+     background-color: $couleurPrincipal;
+
+     .icon {
+        fill: black;
+        cursor: pointer;
+    }
+
+    ul.nav-menu {
+        position: absolute;
+        background-color:$couleurPrincipal;
+        top: 59px;
+        left: 0;
+        right: 0;
+        padding-left: 20px;
+        width: 100%;
+        text-align: center;
+        z-index: 4;
+        
+    }
+}
+
+.navbar input, .nav-menu{
+    display: none;
+}
+
+[id^=btn]:checked + ul {
+    display: block;
+}
+
+/* quand id commencant par btn est coché, alors je cache mon menu ul*/
+
+#connexion {
+    width: 100%;
+    background-color: $couleurSecondaire;
+    a {
+        margin: 15px;
+        color: black;
+    }
+}
+
+ // =============SLIDER=============
+
+.slider {
+    height: 50vh;
+    position: relative;
+
+    img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        position:absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: opacity .5s ;
+
+        &.active {
+            opacity: 1;
+        }
+    }
+
+    .suivant, .precedent {
+        color: white;
+        font-size: 3rem;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .suivant {
+        right: 1rem;
+    }
+    .precedent {
+        left: 1rem;
+    }
+}
+
+ // =============CONTACT=============
+ 
+#inscription {
+
+    h1 {
+        text-align: center;
+}
+
+}
+
+form {
+    text-align: center;
+
+    div.center {
+        width: 100%;
+        label {
+            display: block;
+        }
+        input {
+            display: block;
+            margin: 0 auto;
+        }
+    }
+}
+
+
+
+  // =============GRAND ECRAN=============
+
+//  @media screen and (min-width:1200px) {
+//     ul.nav-menu {
+//         display: initial;
+//         position: static;
+//         border-top: none;
+//         background-color: white;
+
+//         li.nav-item {
+//             position: relative;
+//             display: inline-block;
+//             margin-left: 20px;
+//             background-color: white;
+
+
+//             a{
+//                 color: #303030;
+//                 font-weight: bold;
+//                 background-color: white;
+//             }
+//         }
+//     }
+//   }
