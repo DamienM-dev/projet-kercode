@@ -24,7 +24,7 @@ try {
             $backController->createUser($lastname, $firstname, $address, $CP, $mail, $phone, $mdp);
         }
     } else {
-        $backController->userConnected();
+        $backController->connexionUser();
     }
 } catch (Exception $e) {
     require 'Views/front/errorView.php';
