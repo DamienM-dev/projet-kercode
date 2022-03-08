@@ -2,11 +2,11 @@
 namespace Projet\Controllers;
 
 class UserController {
-    function connexionUser() {
+    function connexionUser():void {
         require 'Views/formulaireUser.php';
     }
 
-    function createUser($data) {
+    function createUser($data):void {
 
         $userPostMail = new \Projet\Models\UserModel();
 

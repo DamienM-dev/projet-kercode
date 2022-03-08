@@ -6,7 +6,7 @@ use Exception;
 use PDO;
 
 class Manager {
-    protected function dbConnect(){
+    protected function dbConnect():PDO{
         try {
             $bdd = new PDO('mysql:host=localhost;dbname=producteur;charset=utf8', 'root', '');
         }

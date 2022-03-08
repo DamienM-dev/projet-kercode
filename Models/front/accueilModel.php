@@ -7,7 +7,7 @@ require_once('Models/front/Manager.php');
 
 class AccueilModel extends Manager {
 
-    public function imageSlider() {
+    public function imageSlider():string {
 
 
         $bdd = $this->dbConnect();
