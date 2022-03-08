@@ -1,13 +1,18 @@
 <?php
 namespace Projet\Controllers;
+require('Models/front/accueilModel.php');
 
 class controllerFront {
     
     function home():void {
     
-        $slider = new \Projet\Models\accueilModel();
-      $slider->imageSlider();
-        require('Views/front/accueilView.php');
+      require('Views/front/accueilView.php');
     }
 
+    function sliderOn(){
+
+      $slider = new \Projet\Models\accueilModel();
+      $slider->imageSlider();
+    }
+    
 }

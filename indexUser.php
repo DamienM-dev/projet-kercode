@@ -34,6 +34,10 @@ try {
 
             $backController->createUser($data);
         }
+        if ($_GET['action'] == 'imageSlider') {
+            $frontController->imageSlider();
+            require('Models/front/accueilModel.php');
+        }
     } else {
         $backController->connexionUser();
     }

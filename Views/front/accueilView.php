@@ -26,8 +26,9 @@ ob_start();
 </section>
 <?php
 
-$content = ob_get_clean();
 $Javascript = 'sliders.js';
+$content = ob_get_clean();
+
 
 require('template/base.php');
 
