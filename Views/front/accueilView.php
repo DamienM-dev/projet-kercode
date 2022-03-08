@@ -1,6 +1,6 @@
 <?php
 
-require('Models/front/accueilModel.php');
+require_once('Models/front/accueilModel.php');
 
 $title = "Accueil";
 
@@ -9,7 +9,7 @@ ob_start();
 ?>
 <section id="slider-block">
     <div class="slider">
-        <?php while($slider_images = $response->fetch()) {
+        <?php while($slider_images = $response->fetchAll()) {
         ?><img src="<?= $slider_images['url'] ?>" alt="Vigne" class="images_slider active">
         <img src="<?= $slider_images['url'] ?>" alt="champ" class="images_slider">
         <img src="<?= $slider_images['url'] ?>" alt="herbe" class="images_slider">
