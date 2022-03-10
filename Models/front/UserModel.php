@@ -13,13 +13,13 @@ require_once 'Models/front/Manager.php';
         $bdd = $this->dbConnect();
         $user = $bdd->prepare('INSERT INTO coordonnees(lastname, firstname, address, codePostal, mail, phone, mdp) VALUE (:lastname, :firstname, :address, :codePostal, :mail, :phone, :mdp)');
         $user->execute(array([
-            'lastname'  => $data['lastname'],
-            'firstname' => $data['firstname'],
-            'address'   => $data['address'],
-            'codePostal'        => $data['codePostal'],
-            'mail'      => $data['mail'],
-            'phone'     => $data['phone'],
-            'mdp'       => $data['mdp']
+            'lastname'   => $data['lastname'],
+            'firstname'  => $data['firstname'],
+            'address'    => $data['address'],
+            'codePostal' => $data['codePostal'],
+            'mail'       => $data['mail'],
+            'phone'      => $data['phone'],
+            'mdp'        => $data['mdp']
         ]));
         
         return $user;
