@@ -1,6 +1,5 @@
 <?php
 
-
 session_start();
 
 require_once __DIR__ . '/vendor/autoload.php';
@@ -9,7 +8,10 @@ try {
     $backController = new \Projet\Controllers\UserController();
 
     if(isset($_GET['action'])) {
-        if ($_GET['action'] == 'createUser') {
+
+        //========CREATION de l'utilisateur========
+        
+        if ($_GET['action'] == 'creatUser') {
 
             $lastname = $_POST['lastname'];
             $firstname = $_POST['firstname'];
@@ -34,12 +36,21 @@ try {
 
             $backController->createUser($data);
         }
-        if ($_GET['action'] == 'imageSlider') {
-            $frontController->imageSlider();
-            require('Models/front/accueilModel.php');
-        }
-    } else {
-        $backController->connexionUser();
+
+        //========CONNEXION de l'utilisateur========
+
+    //     if ($_GET['action'] == 'connexionUser') {
+    //        $mail = htmlspecialchars($_POST['mail']);
+    //        $mdp = $_POST['mdp'];
+    //     } if (!empty($mail) && !empty($mdp)) {
+    //         $backController->connexionUser($mail, $mdp);
+    //     } else {
+    //         throw new Exception('Veuillez renseigner vos identifiants');
+    //     }
+
+
+    // } else {
+    //     $backController->connexionUser($mail, $mdp);
     }
 } catch (Exception $e) {
     require 'Views/front/errorView.php';

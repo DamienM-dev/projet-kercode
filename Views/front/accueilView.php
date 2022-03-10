@@ -9,11 +9,10 @@ ob_start();
 ?>
 <section id="slider-block">
     <div class="slider">
-        <?php while($slider_images = $response->fetchAll()) {
-        ?><img src="<?= $slider_images['url'] ?>" alt="Vigne" class="images_slider active">
-        <img src="<?= $slider_images['url'] ?>" alt="champ" class="images_slider">
-        <img src="<?= $slider_images['url'] ?>" alt="herbe" class="images_slider">
-        <?php }; ?>
+    
+        <img src="<?= $url_images ?>" alt="Vigne" class="images_slider active">
+        <img src="<?= $url_images ?>" alt="champ" class="images_slider">
+        <img src="<?= $url_images ?>" alt="herbe" class="images_slider">
 
         <div class="suivant">
         <i class="fa-solid fa-circle-right"></i>
@@ -26,10 +25,10 @@ ob_start();
 </section>
 <?php
 
-$Javascript = 'sliders.js';
 $content = ob_get_clean();
+$Javascript = 'sliders.js';
 
 
-require('template/base.php');
+require('Views/template/base.php');
 
 ?>

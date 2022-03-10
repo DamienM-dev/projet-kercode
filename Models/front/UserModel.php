@@ -4,7 +4,7 @@ namespace Projet\Models;
 
     class UserModel extends Manager {
 
-        public function createUser($data) {
+        public function creatUser($data) {
 
         $bdd = $this->dbConnect();
         $user = $bdd->prepare('INSERT INTO coordonnees(lastname,firstname, address,CP,mail,phone,mdp) VALUE (:lastname, :firstname, :address, :CP, :mail, :phone, :mdp)');

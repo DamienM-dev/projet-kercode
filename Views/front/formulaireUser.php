@@ -7,7 +7,7 @@ ob_start();
 <section id="inscription">
 
 <h1>Inscrivez-vous pour acceder à nos produits !</h1>
-<form action = "indexAdmin.php?action=recupMdp" method="post"> 
+<form action = "indexUser.php?action=creatUser" method="post"> 
 
     <div>
         <label for="civility" > Civilité<span>*</span></label>

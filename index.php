@@ -10,9 +10,15 @@ try {
 
     $controllerFront = new \Projet\Controllers\controllerFront();
     if(isset($_GET['page'])) {
+        
         if($_GET['page'] == 'accueil') {
             $controllerFront->home();
         }
+
+        if ($_GET['page'] == 'contact') {
+            $controllerFront->contact();
+        }
+
         else {
             throw new Exception("Cette page n'existe pas ou a été supprimée.");
         }

@@ -5,10 +5,10 @@ ob_start();
 
 ?>
 
-<section id="contact">
+<section id="container_contact">
 
 <h1>Fomulaire de contact</h1>
-    <form action = "#" method="post"> 
+    <form id="contact" action = "#" method="post"> 
 
         <p>
             <label for="civility" > Civilité <span>*</span></label>
@@ -48,6 +48,6 @@ ob_start();
 </section>
 <?php
     $content = ob_get_clean();
-    require('template/base.php');
+    require('Views/template/base.php');
 
 ?>
