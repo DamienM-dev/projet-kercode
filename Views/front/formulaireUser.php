@@ -4,7 +4,7 @@ $title = "formulaire d'inscrption'";
 ob_start();
 
 ?>
-<section id="inscription">
+<section id="container_inscription">
 
 <h1>Inscrivez-vous pour acceder à nos produits !</h1>
 <form action = "indexUser.php?action=creatUser" method="post"> 
@@ -78,7 +78,7 @@ ob_start();
 <?php
 
 $content = ob_get_clean();
-require('template/base.php');
+require('Views/template/base.php');
 
 ?>
 

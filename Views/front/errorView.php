@@ -9,5 +9,5 @@
 <?php
     $content = ob_get_clean();
 
-    require('template/base.php');
+    require('Views/template/base.php');
 ?>

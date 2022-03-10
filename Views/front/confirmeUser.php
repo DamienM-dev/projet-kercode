@@ -4,7 +4,7 @@ $title = "Envoi message";
 ob_start();
 
 ?>
-<section id="confirmation">
+<section id="container_confirmation">
 <h2>Message envoyé !</h2>
 </section>
 <?php
@@ -17,5 +17,5 @@ $content = ob_get_clean();
 
 <?php
 
-require('template/base.php');
+require('Views/template/base.php');
 ?>

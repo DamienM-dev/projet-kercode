@@ -5,7 +5,7 @@ $title = "Connexion utilisateur";
 ob_start();
 
 ?>
-<section id="connexion-client">
+<section id="container_connexion-client">
     <h1>Entrer vos information</h1>
         <form action="indexAdmin.php?action=connexionUser" method="post"> 
 
