@@ -11,7 +11,10 @@ class ControllerFront {
     $images = $slider->imageSlider();
     require('Views/front/accueilView.php');
   }
-  
+  function login():void {
+   
+    require('Views/front/formulaireUser.php');
+  }
   function sliderOn(){
     
     $slider = new \Projet\Models\accueilModel();

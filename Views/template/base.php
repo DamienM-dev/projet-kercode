@@ -12,7 +12,7 @@
 
 <header>
     <div id="connexion">
-        <a href="#">connexion</a>
+        <a href="index.php?page=login">connexion</a>
     </div>
 
     <nav class="navbar">
@@ -51,7 +51,7 @@
     <div class="divider"></div>
 </header>
 <body>
-    
+
     <?= $content ?>
     <script src="Public/design/js/<?=$Javascript?>"></script>
 </body>

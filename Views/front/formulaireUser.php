@@ -32,8 +32,8 @@ ob_start();
                 <input type="text" name ="address" id="address" placeholder="Exemple : Le Palais de l'Elysée" required>
             </p>
             <p>
-                <label for="postal" > Code postal<span>*</span> :</label>
-                <input type="number" name ="postal" id="postal"  maxlength="5" placeholder="Exemple : 75000" required >
+                <label for="codePostal" > Code postal<span>*</span> :</label>
+                <input type="number" name ="codePostal" id="codePostal"  maxlength="5" placeholder="Exemple : 75000" required >
             </p>
         </div>
 
@@ -72,7 +72,7 @@ ob_start();
     <div>
         <p><span>*</span> champs obligatoire</p>
     </div>
-    <button type="submit"><a href="indexUser.php?action=connexionUser">Soumettre</a></button></button>
+    <button type="submit">Soumettre</button>
 </form>
 </section>
 <?php

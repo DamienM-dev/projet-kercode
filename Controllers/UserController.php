@@ -3,12 +3,12 @@ namespace Projet\Controllers;
 
 class UserController {
 
-    function displayPageUser():void {
+    function displayPageUser() {
     
         require 'Views/front/formulaireUser.php';
     }
 
-    function createUser($data):void {
+    function createUser($data) {
     
         $userCreation = new \Projet\Models\UserModel();
     
@@ -20,12 +20,13 @@ class UserController {
 
         require 'Views/front/contactView.php';
     }
+
     function connexionUser($mail, $mdp) {
 
         $userManager = new \Projet\Models\UserModel();
-        $userconnexion = $userManager->recupMdp($mail, $mdp);
+        $userConnexion = $userManager->recupMdp($mail, $mdp);
 
-        $result = $userconnexion->fetch();
+        $result = $userConnexion->fetch();
 
         $isPasswordCorrect = password_verify($mdp, $result['mdp']);
 
