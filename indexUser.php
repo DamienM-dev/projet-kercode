@@ -19,7 +19,7 @@ try {
             $lastname   = $_POST['lastname'];
             $firstname  = $_POST['firstname'];
             $address    = $_POST['address'];
-            $CP = $_POST['codePostal'];
+            $CP         = $_POST['codePostal'];
             $mail       = $_POST['mail'];
             $phone      = $_POST['phone'];
             $mdp        = $_POST['mdp'];
@@ -29,7 +29,7 @@ try {
                 'lastname'      => $lastname,
                 'firstname'     => $firstname,
                 'address'       => $address,
-                'CP'    => $CP,
+                'CP'            => $CP,
                 'mail'          => $mail,
                 'phone'         => $phone,
                 'mdp'           => $mdp

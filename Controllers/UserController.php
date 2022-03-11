@@ -16,10 +16,6 @@ class UserController {
         require 'Views/front/formulaireUser.php';
     }
 
-    function contact() {
-
-        require 'Views/front/contactView.php';
-    }
 
     function connexionUser($mail, $mdp) {
 

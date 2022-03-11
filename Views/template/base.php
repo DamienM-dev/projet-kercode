@@ -43,7 +43,7 @@
                 <a href="#">produit</a>
             </li>
             <li class="nav-item">
-                <a href="contact/contact.php">contact</a>
+                <a href="index.php?page=contact">contact</a>
             </li>
         </ul>
     </nav>

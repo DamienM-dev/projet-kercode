@@ -17,9 +17,9 @@ try {
             $controllerFront->home();
         }
 
-        // if ($_GET['page'] == 'contact') {
-        //     $controllerFront->contact();
-        // }
+        if ($_GET['page'] == 'contact') {
+            $controllerFront->contact();
+        }
         elseif($_GET['page'] == 'login') {
             $controllerFront->login();
         }

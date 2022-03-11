@@ -12,14 +12,8 @@ class AccueilModel extends Manager {
         $bdd = $this->dbConnect();
         $response = $bdd->query('SELECT url, alt FROM slider');
 
-        return $response;
 
-        while($slider_images = $response->fetchAll()) {
-
-           $url_images = $slider_images['url']['alt'];
-           
-           
-        }
+        return $response->fetchAll();
     }
 
 }

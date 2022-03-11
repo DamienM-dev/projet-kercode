@@ -1,4 +1,21 @@
 @import 'variable';
+@font-face {
+    font-family: 'argesta_displayregular';
+    src: url('Public/design/fonts/Argesta-Display-Regular-web/argestadisplay-regular-webfont.eot');
+    src: url('Public/design/fonts/Argesta-Display-Regular-web/argestadisplay-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('Public/design/fonts/Argesta-Display-Regular-web/argestadisplay-regular-webfont.woff2') format('woff2'),
+         url('Public/design/fonts/Argesta-Display-Regular-web/argestadisplay-regular-webfont.woff') format('woff'),
+         url('Public/design/fonts/Argesta-Display-Regular-web/argestadisplay-regular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+    font-family: 'medio';
+    src: url('Public/design/fonts/medio.otf');
+    font-weight: normal;
+    font-style: normal;
+
+
+}
 
 // =============initialisation HTML=============
 
@@ -7,11 +24,26 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+// =============STYLE GENERAL=============
+
+body {
+     font-family: 'medio','argesta_displayregular',Georgia, 'Times New Roman', Times, serif;
+}
 a {
     text-decoration: none;
 }
 li {
     list-style: none;
+}
+
+h1 {
+    color: $couleurSecondaire;
+}
+.button_style {
+    padding: 10px;
+    border-radius: 5px;
+    
 }
 
 // =============MOBILE FIRST=============
@@ -100,16 +132,13 @@ li {
 }
 //=====gestion de l'absolute
 
-h1 {
-    color: rgb(0, 17, 255);
-}
-
  // =============CONTACT=============
  
 #inscription {
 
     h1 {
         text-align: center;
+        
 }
 
 }
@@ -127,6 +156,37 @@ form {
             margin: 0 auto;
         }
     }
+}
+
+//=============PAGE404=============
+
+#block_image_404 {
+    position: relative;
+
+    img {
+        width: 100%;
+    }
+    #block_bouton_404 {
+        position: absolute;
+        top: 50%;
+        left: 100px;
+
+        button {
+
+            @extend .button_style;
+            background-color: $couleurSecondaire;
+
+            &:hover{
+                background-color: $couleurQuatre;
+            }
+            
+
+            a {
+                color: $couleurPrincipal;
+            }
+        }
+    }
+    
 }
 
 
