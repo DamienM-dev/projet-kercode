@@ -19,17 +19,18 @@ try {
             $lastname   = $_POST['lastname'];
             $firstname  = $_POST['firstname'];
             $address    = $_POST['address'];
-            $CP         = $_POST['codePostal'];
+            $codePostal = $_POST['codePostal'];
             $mail       = $_POST['mail'];
             $phone      = $_POST['phone'];
             $mdp        = $_POST['mdp'];
             
             $mdp        = password_hash($mdp, PASSWORD_DEFAULT);
+            
             $data = [
                 'lastname'      => $lastname,
                 'firstname'     => $firstname,
                 'address'       => $address,
-                'CP'            => $CP,
+                'codePostal'    => $codePostal,
                 'mail'          => $mail,
                 'phone'         => $phone,
                 'mdp'           => $mdp

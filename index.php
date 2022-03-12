@@ -50,3 +50,13 @@ try {
     $error = $e->getMessage();
     require('Views/front/errorView.php');
 }
+
+//pense bête pour plustard
+// Verifier doublons de mon email :
+// $req = 'SELECT COUNT (email) AS existe FROM client where email = ?'
+// $req->execute($email)
+
+// while($result = $req->fetch()
+// if( $result[existe] !=0)){
+    // header('location...email existe déjà)
+//}
