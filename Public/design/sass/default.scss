@@ -17,6 +17,7 @@
 
 }
 
+
 // =============initialisation HTML=============
 
 * {
@@ -38,12 +39,17 @@ li {
 }
 
 h1 {
-    color: $couleurSecondaire;
+    font-size: 1rem;
+}
+h3 {
+    text-align: center;
 }
 .button_style {
+    cursor: pointer;
     padding: 10px;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+
     
 }
 
@@ -73,7 +79,16 @@ h1 {
         width: 100%;
         text-align: center;
         z-index: 4;
+
         
+    }
+    h2 {
+        color: $couleurSecondaire;
+        font-size: 1.4rem;
+        text-align: center;
+    }
+    #logo {
+        width: 15vw;
     }
 }
 
@@ -92,7 +107,7 @@ h1 {
     background-color: $couleurSecondaire;
     a {
         margin: 15px;
-        color: black;
+        color: $couleurPrincipal;
     }
 }
 
@@ -119,7 +134,7 @@ h1 {
 
     .suivant, .precedent {
         color: white;
-        font-size: 3rem;
+        font-size: 1rem;
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
@@ -130,10 +145,53 @@ h1 {
     .precedent {
         left: 1rem;
     }
+    //=====gestion de l'absolute
+    #block_absolute_image {
+        position: absolute;
+        text-align: center;
+        top: 20%;
+
+        h1 {
+            color: $couleurSecondaire;
+            font: {
+                size: 1.4rem;
+                weight: bold;
+            }
+        }
+        button {
+            @extend .button_style;
+            background-color: $couleurSecondaire;
+            color: $couleurPrincipal;
+            margin-top: 20px;
+
+            &:hover{
+                background-image: linear-gradient(90deg, #548CA8 0%,  #334257 50%);
+                animation:button-effet 2s linear infinite;
+            }
+        } 
+    }
 }
-//=====gestion de l'absolute
+// =============BLOCK POURQUOI=============
+
+#block_pourquoi {
+    
+    .blocks_inside_pourquoi{
+        border: 1px solid $couleurQuatre;
+        margin: 10px;
+        text-align: center;
+        border-radius: 5px;
+        background-color: $couleurPrincipal;
+
+        img.image_pourquoi {
+            width: 15vw; 
+        }
+    }  
+}
+
 
  // =============CONTACT=============
+
+
  
 #inscription {
 
@@ -216,3 +274,15 @@ form {
 //         }
 //     }
 //   }
+
+// =============ANIMATION===========
+
+
+@keyframes button-effet {
+    to {
+      background-position:20vw;
+    }
+  }
+  
+  
+  

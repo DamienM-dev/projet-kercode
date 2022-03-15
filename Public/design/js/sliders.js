@@ -5,6 +5,7 @@ let etape = 0;
 //initilisations de l'étape à 0
 
 let nbr_img = images_slider.length;
+
 //je stock la quantité d'images 
 
 let precedent = document.querySelector('.precedent');
@@ -25,6 +26,7 @@ suivant.addEventListener('click', function() {
     }
     deleteActive();
     images_slider[etape].classList.add('active');
+    text_slider.classList.add('apparait');
 })
 //lors d'un clique sur suivant, alors mon etape =+1
 // On initialise etape à 0 pour faire un slider infini
@@ -53,3 +55,5 @@ setInterval(function() {
     images_slider[etape].classList.add('active');
 }, 8000);
 //function pour automatiser le slider
+
+

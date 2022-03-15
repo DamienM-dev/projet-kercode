@@ -18,10 +18,10 @@
     <nav class="navbar">
         <figure>
             <a href="index.php">
-                <img src="../Public/design/SVG/logo.svg" alt="Logo">
+                <img src="Public\design\images\logo.svg" alt="Logo" id="logo">
             </a>
         </figure>
-        <h1>Daily fresh</h1>
+        <h2>Daily fresh</h2>
 
         <label for="btn">
             <svg viewbox="0 0 100 80" width="40" height="40" class="icon">
@@ -53,7 +53,7 @@
 <body>
 
     <?= $content ?>
-    <script src="Public/design/js/<?=$Javascript?>"></script>
+    
 </body>
 
 <footer>

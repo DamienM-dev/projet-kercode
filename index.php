@@ -33,7 +33,7 @@ try {
             $contact    = htmlspecialchars($_POST['contact']);
 
             if (!empty($civility) && (!empty($lastname) && (!empty($firstname) && (!empty($phone) && (!empty($mail) && (!empty($raison) && (!empty($contact)))))))) {
-                $frontController->contactPost($civility, $lastname, $firstname, $phone, $mail,  $raison, $content);
+                $frontController->contactPost($contactData);
 
             }
              
