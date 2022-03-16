@@ -1,4 +1,6 @@
 @import 'variable';
+@import 'animation';
+
 @font-face {
     font-family: 'argesta_displayregular';
     src: url('Public/design/fonts/Argesta-Display-Regular-web/argestadisplay-regular-webfont.eot');
@@ -165,8 +167,8 @@ h3 {
             margin-top: 20px;
 
             &:hover{
-                background-image: linear-gradient(90deg, #548CA8 0%,  #334257 50%);
-                animation:button-effet 2s linear infinite;
+                
+                animation:button-effet 1s  infinite alternate;
             }
         } 
     }
@@ -238,7 +240,6 @@ form {
             &:hover{
                 background-color: $couleurQuatre;
             }
-            
 
             a {
                 color: $couleurPrincipal;
@@ -275,14 +276,5 @@ form {
 //     }
 //   }
 
-// =============ANIMATION===========
-
-
-@keyframes button-effet {
-    to {
-      background-position:20vw;
-    }
-  }
-  
   
   
