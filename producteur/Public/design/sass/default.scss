@@ -49,6 +49,7 @@ h2 {
     color: $couleurSecondaire;
     text-align: center;
     font-size: 1.4rem;
+    margin-top: 10px;
 }
 
 
@@ -108,7 +109,7 @@ h2 {
     }
 }
 
- // =============SLIDER=============
+ // =======debut block slider=======
 
 .slider {
     height: 50vh;
@@ -169,14 +170,10 @@ h2 {
         } 
     }
 }
-// =============BLOCK POURQUOI=============
+// =======debut block pourquoi=======
 
 #block_pourquoi {
     
-    h2{
-        margin-top: 10px;
-        
-    }
     .blocks_inside_pourquoi{
         position: relative;
         border: 1px solid $couleurQuatre;
@@ -203,6 +200,19 @@ h2 {
             
         }
     }  
+}
+
+// =======debut block produit=======
+
+#block_produit{
+
+    .blocks_inside_produit{
+        margin: 10px;
+
+        img.images_produit{
+            width: 100%;
+        }
+    }
 }
 
 

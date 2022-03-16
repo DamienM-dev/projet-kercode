@@ -5,10 +5,11 @@ $title = "Accueil";
 ob_start();
 
 ?>
-<section id="slider-block">
+<section id="block_accueil">
     <div class="slider">
 
    
+             <!-- =======debut block slider======= -->
 
         <div>
             <img src="<?= $images[0]['url'] ?>" alt="<?= $images[0]['alt'] ?>"class="images_slider active" >
@@ -35,6 +36,8 @@ ob_start();
             <button>A propos</button>
         </div>
     </div>
+
+     <!-- =======debut block pourquoi======= -->
 
     <div id="block_pourquoi">
         <h2>Pourquoi nous choisir ?</h2>
@@ -65,6 +68,42 @@ ob_start();
             </div>
         </div>
     </div>
+        <!-- =======debut block produit======= -->
+
+    <div id="block_produit">
+
+    <h2>Nos produits</h2>
+        <div class="blocks_inside_produit">
+
+            <figure>
+                <img src="Public\design\images\fromage.jpg" alt="Fromages produits dans nos fermes" class="images_produit">
+            </figure>
+            <h3>Produits laitiers</h3>
+            <p>Grace aux laits de notre ferme, une large gamme de produits vous sont proposés</p>
+        </div>
+
+        <div class="blocks_inside_produit">
+           
+            <figure>
+                <img src="Public\design\images\vegetaux.jpg" alt="fruits et légumes de saison" class="images_produit">
+            </figure>
+            <h3>Fruits et légumes</h3>
+            <p>Grace aux laits de notre ferme, une large gamme de produits vous sont proposés</p>
+        </div>
+
+        <div class="blocks_inside_produit">
+        
+            <figure>
+                <img src="Public\design\images\viande.jpg" alt="steack de grande fraicheur" class="images_produit">
+            </figure>
+            <h3>Nos viandes</h3>
+            <p>Grace aux laits de notre ferme, une large gamme de produits vous sont proposés</p>
+    
+        </div>
+
+    </div>
+
+
 
 </section>
 
