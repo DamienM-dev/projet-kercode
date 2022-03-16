@@ -1,0 +1,12 @@
+@keyframes button-effet {
+    to {
+      background-color: $couleurQuatre;
+      margin-left: 40px ;
+    }
+  }
+    
+  @-webkit-keyframes button-effet {
+        to {
+          transform:scaleX(2) ;
+        }
+  }

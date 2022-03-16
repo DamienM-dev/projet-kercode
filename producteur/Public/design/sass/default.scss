@@ -1,0 +1,297 @@
+@import 'variable';
+@import 'animation';
+@import 'extend';
+
+@font-face {
+    font-family: 'argesta_displayregular';
+    src: url('Public/design/fonts/Argesta-Display-Regular-web/argestadisplay-regular-webfont.eot');
+    src: url('Public/design/fonts/Argesta-Display-Regular-web/argestadisplay-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('Public/design/fonts/Argesta-Display-Regular-web/argestadisplay-regular-webfont.woff2') format('woff2'),
+         url('Public/design/fonts/Argesta-Display-Regular-web/argestadisplay-regular-webfont.woff') format('woff'),
+         url('Public/design/fonts/Argesta-Display-Regular-web/argestadisplay-regular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+    font-family: 'medio';
+    src: url('Public/design/fonts/medio.otf');
+    font-weight: normal;
+    font-style: normal;
+
+
+}
+
+
+// =============initialisation HTML=============
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+// =============STYLE GENERAL=============
+
+body {
+     font-family: 'medio','argesta_displayregular',Georgia, 'Times New Roman', Times, serif;
+     font-size: 16px;
+}
+a {
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+
+h1 {
+    font-size: 1rem;
+}
+h2 {
+    color: $couleurSecondaire;
+    text-align: center;
+    font-size: 1.4rem;
+}
+
+
+
+
+
+// =============MOBILE FIRST=============
+
+    // =============HEADER=============
+.navbar {
+    padding: 10px;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     position: relative;
+     background-color: $couleurPrincipal;
+
+     .icon {
+        fill: black;
+        cursor: pointer;
+    }
+
+    ul.nav-menu {
+        position: absolute;
+        background-color:$couleurPrincipal;
+        top: 59px;
+        left: 0;
+        right: 0;
+        padding-left: 20px;
+        width: 100%;
+        text-align: center;
+        z-index: 4;
+
+        
+    }
+    #logo {
+        width: 15vw;
+    }
+}
+
+.navbar input, .nav-menu{
+    display: none;
+}
+
+[id^=btn]:checked + ul {
+    display: block;
+}
+
+/* quand id commencant par btn est coché, alors je cache mon menu ul*/
+
+#connexion {
+    width: 100%;
+    background-color: $couleurSecondaire;
+    a {
+        margin: 15px;
+        color: $couleurPrincipal;
+    }
+}
+
+ // =============SLIDER=============
+
+.slider {
+    height: 50vh;
+    position: relative;
+
+    img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        position:absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: opacity .5s ;
+
+        &.active {
+            opacity: 1;
+        }
+    }
+
+    .suivant, .precedent {
+        color: white;
+        font-size: 1rem;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .suivant {
+        right: 1rem;
+    }
+    .precedent {
+        left: 1rem;
+    }
+    //=====gestion de l'absolute
+    #block_absolute_image {
+        position: absolute;
+        text-align: center;
+        top: 20%;
+
+        h1 {
+            color: $couleurSecondaire;
+            font: {
+                size: 1.4rem;
+                weight: bold;
+            }
+        }
+        button {
+            @extend .button_style;
+            background-color: $couleurSecondaire;
+            color: $couleurPrincipal;
+            margin-top: 20px;
+
+            &:hover{
+                
+                animation:button-effet 1s  infinite alternate;
+                -webkit-animation:button-effet 1s  infinite alternate;
+            }
+        } 
+    }
+}
+// =============BLOCK POURQUOI=============
+
+#block_pourquoi {
+    
+    h2{
+        margin-top: 10px;
+        
+    }
+    .blocks_inside_pourquoi{
+        position: relative;
+        border: 1px solid $couleurQuatre;
+        margin: 10px;
+        padding: 10px;
+        text-align: center;
+        border-radius: 5px;
+        background-color: $couleurPrincipal;
+        height: 170px;
+
+        .block_hover {
+            @extend .design_block_hover;
+            top: -11px;
+            left: -10px;
+    
+        }
+        img.image_pourquoi {
+            width: 15vw; 
+        }
+        
+        h3 {
+            margin:5px 0;
+            color: $couleurTertiaire;
+            
+        }
+    }  
+}
+
+
+ // =============CONTACT=============
+
+
+ 
+#inscription {
+
+    h1 {
+        text-align: center;
+        
+}
+
+}
+
+form {
+    text-align: center;
+
+    div.center {
+        width: 100%;
+        label {
+            display: block;
+        }
+        input {
+            display: block;
+            margin: 0 auto;
+        }
+    }
+}
+
+//=============PAGE404=============
+
+#block_image_404 {
+    position: relative;
+
+    img {
+        width: 100%;
+    }
+    #block_bouton_404 {
+        position: absolute;
+        top: 50%;
+        left: 100px;
+
+        button {
+
+            @extend .button_style;
+            background-color: $couleurSecondaire;
+
+            &:hover{
+
+                @extend .animation_button;
+                background-color: $couleurQuatre;
+            }
+
+            a {
+                color: $couleurPrincipal;
+            }
+        }
+    }
+    
+}
+
+
+
+  // =============GRAND ECRAN=============
+
+//  @media screen and (min-width:1200px) {
+//     ul.nav-menu {
+//         display: initial;
+//         position: static;
+//         border-top: none;
+//         background-color: white;
+
+//         li.nav-item {
+//             position: relative;
+//             display: inline-block;
+//             margin-left: 20px;
+//             background-color: white;
+
+
+//             a{
+//                 color: #303030;
+//                 font-weight: bold;
+//                 background-color: white;
+//             }
+//         }
+//     }
+//   }
+
+  
+  
