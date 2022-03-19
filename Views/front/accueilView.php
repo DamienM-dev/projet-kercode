@@ -42,18 +42,27 @@ ob_start();
             <img src="Public\design\images\agriculture.png" alt="" class="image_pourquoi">
             <h3>Des produits de saisons</h3>
             <p>Pour votre plus grand plaisir, nous ne vendons que des produits de saison  </p>
+            <div class="design_block_hover">
+                <button>En savoir plus</button>
+            </div>
         </div>
 
         <div class="blocks_inside_pourquoi">
             <img src="Public\design\images\agriculture.png" alt="" class="image_pourquoi">
             <h3>Des produits naturels</h3>
             <p>Ici nous n'utilisons aucun pesticide, aucun engrain, tout est naturel </p>
+            <div class="design_block_hover">
+                <button>En savoir plus</button>
+            </div>
         </div>
 
         <div class="blocks_inside_pourquoi">
             <img src="Public\design\images\agriculture.png" alt="" class="image_pourquoi">
             <h3>Des produits de saisons</h3>
             <p>Pour votre plus grand plaisir, nous ne vendons que des produits de saison  </p>
+            <div class="design_block_hover">
+                <button>En savoir plus</button>
+            </div>
         </div>
 
 
