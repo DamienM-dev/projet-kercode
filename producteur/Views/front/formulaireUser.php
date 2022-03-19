@@ -15,7 +15,7 @@ ob_start();
         <input type="radio" name ="civility" id="civility" value="Mme" required>Mme
     </div>
 
-    <div class="center">
+    <div class="center_formulaire">
         <p>
             <label for="lastname" > Nom de famille<span>*</span> :</label>
             <input type="text" name ="lastname" id="lastname" placeholder="Exemple : Chirac" required>
@@ -24,9 +24,9 @@ ob_start();
             <label for="firstname" > prénom<span>*</span> :</label>
             <input type="text" name ="firstname" id="firstname" placeholder="Exemple : Jacques" required>
         </p>
-    <div class="center">
+    <div class="center_formulaire">
 
-        <div class="center">
+        <div class="center_formulaire">
             <p>
                 <label for="address" > adresse<span>*</span> :</label>
                 <input type="text" name ="address" id="address" placeholder="Exemple : Le Palais de l'Elysée" required>
@@ -37,14 +37,14 @@ ob_start();
             </p>
         </div>
 
-        <div class="center">
+        <div class="center_formulaire">
             <p>
                 <label for="ville" > Ville<span>*</span> :</label>
                 <input type="text" name ="vile" id="ville" placeholder="Exemple : Paris" required >
             </p>
         </div>
 
-    <div class="center">
+    <div class="center_formulaire">
         <p>
             <label for="phone" > Téléphone<span>*</span> :</label>
             <input type="tel" name ="phone" id="phone" placeholder="Exemple : 0123456789" maxlength="10" required>
@@ -55,7 +55,7 @@ ob_start();
         </p>
     </div>
 
-    <div class="center">
+    <div class="center_formulaire">
         <p>
             <label for="mdp" > Mot de passe<span>*</span>: </label>
             <input type="password" name ="mdp" id="mdp" placeholder="Exemple : €19Bernadette33" required>

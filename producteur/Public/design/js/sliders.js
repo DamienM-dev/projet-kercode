@@ -26,6 +26,7 @@ suivant.addEventListener('click', function() {
     }
     deleteActive();
     images_slider[etape].classList.add('active');
+    text_slider.classList.add('apparait');
 })
 //lors d'un clique sur suivant, alors mon etape =+1
 // On initialise etape à 0 pour faire un slider infini
