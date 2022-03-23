@@ -4,12 +4,13 @@ namespace Projet\Controllers;
 require_once('./Models/front/AccueilModel.php');
 
 
-class ControllerFront {
+class ControllerFront 
+{
   
   function home():void {
     
     $slider = new \Projet\Models\AccueilModel();
-    $images = $slider->imageSlider();
+    $testimonial = $slider->imageSlider();
     require('Views/front/accueilView.php');
   }
 

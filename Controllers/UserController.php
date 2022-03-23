@@ -14,6 +14,8 @@ class UserController {
     
         $user = $userCreation->creatUser($data);
         require 'Views/front/formulaireUser.php';
+
+
     }
 
 
