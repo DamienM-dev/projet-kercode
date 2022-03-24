@@ -37,10 +37,10 @@
                 <a href="index.php">accueil</a>
             </li>
             <li class="nav-item">
-                <a href="activites/html/activites.php">a propos</a>
+                <a href="index.php?page=aProposView">a propos</a>
             </li>
             <li class="nav-item">
-                <a href="#">produit</a>
+                <a href="index.php?page=produitView">produit</a>
             </li>
             <li class="nav-item">
                 <a href="index.php?page=contact">contact</a>
@@ -58,6 +58,19 @@
 
 <footer>
 
+    <div id="logo_reseau_sociaux">
+        <a href="#"><i class="fa-brands fa-twitter logo_footer fa-xl"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook-f logo_footer fa-xl"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin-in logo_footer fa-xl"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram-square logo_footer fa-xl"></i></a>
+    </div>
+
+    <div id="block_copyright">
+        <p><a href="index.php?page=mentionsLegalesView">Mentions légales</a></p>
+        <p><a href="index.php?page=donneesPersoView">Données personelles</a></p>
+        <p>© Daily Fresh</p>
+    </div>
+    
 </footer>
 
 </html>

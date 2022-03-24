@@ -132,11 +132,16 @@ h1,h2,h3 {
 
 section#block_image_parallax {
 
-    #image_parallax
-    {
-        width: 100%;
-        
+    background: url("https://images.pexels.com/photos/207247/pexels-photo-207247.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+    background: {
+        size:   cover;
+        repeat: no-repeat;
+        attachment: fixed;
     }
+    width: 100%;
+    height: 250px;
+    
+
     //=====GESTION DE L'ABSOLUTE=====
 
    #block_absolute_image {
@@ -247,7 +252,7 @@ section#block_image_parallax {
 // =============FORMULAIRES=============
 
 
-#inscription, #container_contact {
+#container_inscription, #container_contact, #container_connexion_client {
     
     margin: 10px;
 
@@ -319,6 +324,9 @@ section#block_image_parallax {
         span {
             color:red;
         }
+    }
+    #condition_generale{
+        display: flex;
     }
 }
 

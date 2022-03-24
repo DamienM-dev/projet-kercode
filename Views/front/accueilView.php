@@ -7,13 +7,11 @@ ob_start();
 ?>
 <section id="block_image_parallax">
     
-        <figure>
-            <img src="Public/design/images/champ.jpg" id="image_parallax" alt="champ au couché de soleil">
-        </figure>
+        
         <div id="block_absolute_image">
             <h1>Dayly Fresh est une association de producteur locaux</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam faucibus ante et.</p>
-            <button>A propos</button>
+            <button><a href="index.php?page=aProposView">A propos</a></button>
         </div>
     </div>
 
@@ -26,7 +24,7 @@ ob_start();
             <h3>Des produits de saisons</h3>
             <p>Pour votre plus grand plaisir, nous ne vendons que des produits de saison  </p>
             <div class="design_block_hover">
-                <button>En savoir plus</button>
+                <button><a href="index.php?page=produitView">En savoir plus</a></button>
             </div>
         </div>
 
@@ -35,7 +33,7 @@ ob_start();
             <h3>Des produits naturels</h3>
             <p>Ici nous n'utilisons aucun pesticide, aucun engrain, tout est naturel </p>
             <div class="design_block_hover">
-                <button>En savoir plus</button>
+                <button><a href="index.php?page=produitView">En savoir plus</a></button>
             </div>
         </div>
 
@@ -44,7 +42,7 @@ ob_start();
             <h3>Des produits de saisons</h3>
             <p>Pour votre plus grand plaisir, nous ne vendons que des produits de saison  </p>
             <div class="design_block_hover">
-                <button>En savoir plus</button>
+                <button><a href="index.php?page=produitView">En savoir plus</a></button>
             </div>
         </div>
 </section>

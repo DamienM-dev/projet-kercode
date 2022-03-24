@@ -20,9 +20,27 @@ try {
         if ($_GET['page'] == 'contact') {
             $controllerFront->contact();
         }
+
         elseif($_GET['page'] == 'login') {
             $controllerFront->login();
         }
+
+        elseif($_GET['page'] == 'aProposView') {
+            $controllerFront->aProposView();
+        }
+
+        elseif($_GET['page'] == 'produitView') {
+            $controllerFront->produitView();
+        }
+
+        elseif($_GET['page'] == 'donneesPersoView') {
+            $controllerFront->donneesPerso();
+        }
+
+        elseif($_GET['page'] == 'mentionsLegalesView') {
+            $controllerFront->mentionsLegales();
+        }
+
         elseif ($_GET['action'] == 'contactPost') {
             $civility   = htmlspecialchars($_POST['civility']);
             $lastname   = htmlspecialchars($_POST['lastname']);

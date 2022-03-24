@@ -13,28 +13,25 @@ require_once 'Models/front/Manager.php';
         $bdd = $this->dbConnect();
         
       
-        $user = $bdd->prepare('INSERT INTO coordonnees(lastname, firstname, address, codePostal, mail, phone, mdp) VALUE (:lastname, :firstname, :address, :codePostal, :mail, :phone, :mdp)');
+        $user = $bdd->prepare('INSERT INTO coordonnees(civility, lastname, firstname, address, codePostal, ville, mail, phone, mdp, rgpd) VALUE (:civility, :lastname, :firstname, :address, :codePostal, :ville, :mail, :phone, :mdp, :rgpd)');
         $user->execute(array(
+
+            ':civility'   => $data['civility'],
             ':lastname'   => $data['lastname'],
             ':firstname'  => $data['firstname'],
             ':address'    => $data['address'],
             ':codePostal' => $data['codePostal'],
+            ':ville'      => $data['ville'],
             ':mail'       => $data['mail'],
             ':phone'      => $data['phone'],
-            ':mdp'        => $data['mdp']
+            ':mdp'        => $data['mdp'],
+            ':rgpd'       => $data['rgpd']
         ));
         
         return $user;
     }
 
-    public function recupMdp($mail, $mdp)
-    {
-        $bdd = $this->dbConnect();
-        $req = $bdd->prepare('SELECT mail, mdp FROM coordonnees  WHERE mail=?');
-        $req->execute(array($mail));
-
-        return $req;
-    }
+    
 
 }
 

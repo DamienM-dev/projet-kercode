@@ -7,23 +7,41 @@ require_once('./Models/front/AccueilModel.php');
 class ControllerFront 
 {
   
-  function home():void {
+  function home() {
     
     $slider = new \Projet\Models\AccueilModel();
     $testimonial = $slider->imageSlider();
     require('Views/front/accueilView.php');
   }
 
-  function login():void {
+  function login() {
    
     require('Views/front/formulaireUser.php');
   }
 
-  
+  function aProposView() {
 
-  function contact():void {
+    require('Views/front/aProposView.php');
+  }
+
+  function produitView() {
+
+    require('Views/front/produitView.php');
+  }
+
+  function contact() {
    
     require('Views/front/contactView.php');
+  }
+
+  function donneesPerso() {
+
+    require('Views/front/donneesPersoView.php');
+  }
+
+  function mentionsLegales() {
+
+    require('Views/front/mentionsLegalesView.php');
   }
   
 //=================gestion des mails contact===================

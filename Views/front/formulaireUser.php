@@ -41,7 +41,7 @@ ob_start();
         <div class="center_formulaire">
             <p>
                 <label for="ville" > Ville<span>*</span> :</label>
-                <input type="text" name ="vile" id="ville" placeholder="Exemple : Paris" required >
+                <input type="text" name ="ville" id="ville" placeholder="Exemple : Paris" required >
             </p>
         </div>
 
@@ -64,8 +64,8 @@ ob_start();
     </div>
 
     <div>
-        <p>
-            <label for="rgpd" > Accepter les conditions général<span>*</span> </label>
+        <p id="condition_generale">
+            <label for="rgpd" > Accepter les conditions générales<span>*</span> </label>
             <input type="checkbox" name ="rgpd" id="rgpd"  required>
         </p>
     </div>

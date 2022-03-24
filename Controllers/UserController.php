@@ -1,4 +1,5 @@
 <?php
+
 namespace Projet\Controllers;
 
 class UserController {
@@ -22,26 +23,23 @@ class UserController {
     function connexionUser($mail, $mdp) {
 
         $userManager = new \Projet\Models\UserModel();
-        $userConnexion = $userManager->recupMdp($mail, $mdp);
+        $userConnexion = $userManager->recupInfo($mail, $mdp);
 
         $result = $userConnexion->fetch();
 
         $isPasswordCorrect = password_verify($mdp, $result['mdp']);
 
-        $_SESSION['mail'] = $result['mail'];
+        $_SESSION['mail'] = $result['mail']; 
         $_SESSION['mdp'] = $result['mdp'];
         $_SESSION['id'] = $result['id'];
-        
 
 
         if ($isPasswordCorrect) {
 
-            require 'Views/front/Userdashboard.php';
+            require 'Views/front/userDashboard.php';
         } 
-        
-        else {
-            echo 'Vos identifiants ne sont pas corrects !';
-        }
+
+
 
     }
 
