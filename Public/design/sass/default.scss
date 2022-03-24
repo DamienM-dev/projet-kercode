@@ -2,7 +2,6 @@
 
 @keyframes button-effet {
     to {
-      transform:scaleX(2) ;
       background-color: $couleurQuatre;
       margin-left: 40px ;
     }
@@ -10,7 +9,6 @@
     
   @-webkit-keyframes button-effet {
         to {
-      transform:scaleX(2) ;
       background-color: $couleurQuatre;
       margin-left: 40px ;
         }
@@ -376,6 +374,35 @@ section#block_image_parallax {
    }
 }
 
+//=============FOOTER=============
+
+footer {
+    height: 200px;
+    background-color: $couleurPrincipal;
+    color: $couleurSecondaire;
+
+    #logo_reseau_sociaux {
+        width: 100%;
+        text-align: center;
+       
+        .logo_footer{
+            margin-top: 10px;
+            padding: 10px;
+            width: 60px;
+        }
+
+    }
+
+    div#block_copyright{
+        margin-top: 20px;
+        text-align: center;
+
+        p{
+            margin-bottom: 10px;
+        }
+    }
+}
+
 //=============PAGE404=============
 
 #block_image_404 {
@@ -434,14 +461,6 @@ section#block_image_parallax {
 //     }
 //   }
 
-// =============ANIMATION===========
-
-
-@keyframes button-effet {
-    to {
-      background-position:20vw;
-    }
-  }
   
   
   
