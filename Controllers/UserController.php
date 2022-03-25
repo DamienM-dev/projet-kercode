@@ -2,6 +2,8 @@
 
 namespace Projet\Controllers;
 
+require_once('./Models/admin/AdminModel.php');
+
 class UserController {
 
     function displayPageUser() {
@@ -22,9 +24,11 @@ class UserController {
 
     function connexionUser($mail, $mdp) {
 
-        $userManager = new \Projet\Models\UserModel();
-        $userConnexion = $userManager->recupInfo($mail, $mdp);
+        $userManager = new \Projet\Models\AdminModel();
+        $userConnexion = $userManager->recupInfo($mail);
 
+        var_dump($userConnexion);
+        die;
         $result = $userConnexion->fetch();
 
         $isPasswordCorrect = password_verify($mdp, $result['mdp']);

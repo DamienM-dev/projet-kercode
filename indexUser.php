@@ -16,16 +16,16 @@ try {
 
         if ($_GET['action'] == 'creatUser') {
 
-            $civility   = $_POST['civility'];
-            $lastname   = $_POST['lastname'];
-            $firstname  = $_POST['firstname'];
-            $address    = $_POST['address'];
-            $codePostal = $_POST['codePostal'];
-            $ville      = $_POST['ville'];
-            $mail       = $_POST['mail'];
-            $phone      = $_POST['phone'];
-            $mdp        = $_POST['mdp'];
-            $rgpd       = $_POST['rgpd'];
+            $civility   =                  $_POST['civility'];
+            $lastname   = htmlspecialchars($_POST['lastname']);
+            $firstname  = htmlspecialchars($_POST['firstname']);
+            $address    = htmlspecialchars($_POST['address']);
+            $codePostal = htmlspecialchars($_POST['codePostal']);
+            $ville      = htmlspecialchars($_POST['ville']);
+            $mail       = htmlspecialchars($_POST['mail']);
+            $phone      = htmlspecialchars($_POST['phone']);
+            $mdp        =                  $_POST['mdp'];
+            $rgpd       =                  $_POST['rgpd'];
             
             $mdp        = password_hash($mdp, PASSWORD_DEFAULT);
             
@@ -40,7 +40,7 @@ try {
                 'mail'          => $mail,
                 'phone'         => $phone,
                 'mdp'           => $mdp,
-                'rgpd'          =>$rgpd
+                'rgpd'          => $rgpd
             ];
 
 

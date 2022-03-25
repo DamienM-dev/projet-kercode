@@ -82,14 +82,12 @@ ob_start();
             <img src="<?= $testimonial[0]['url'] ?>" alt="<?= $testimonial[0]['alt'] ?>"class="images_slider active" >
             <i class="fa-solid fa-quote-left"></i>
             <img src="<?= $testimonial[0]['photo'] ?>">
-            <p><?= $testimonial[0]['testimonial'] ?></p>
         </div>
 
         <div>
             <img src="<?= $testimonial[1]['url'] ?>" alt="<?= $testimonial[1]['alt'] ?>"class="images_slider">
             <i class="fa-solid fa-quote-left"></i>
             <img src="<?= $testimonial[1]['photo'] ?>">
-            <p><?= $testimonial[1]['testimonial'] ?></p>
         </div>
 
         <div>
@@ -108,7 +106,7 @@ ob_start();
         </div>
         <div id="block_absolute_image">
             <h1>Dayly Fresh est une association de producteur locaux</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam faucibus ante et.</p>
+            <p><?= $testimonial[0]['testimonial'] ?></p>
 
         </div>
     </div>

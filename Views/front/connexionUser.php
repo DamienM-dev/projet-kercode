@@ -7,7 +7,7 @@ ob_start();
 ?>
 <section id="container_connexion_client">
     <h1>Entrer vos information</h1>
-        <form action="indexAdmin.php?action=connexionUser" method="post"> 
+        <form action="indexUser.php?action=connexionUser" method="post"> 
 
             
                 <label for="mail" > email:</label>

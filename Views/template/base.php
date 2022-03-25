@@ -12,7 +12,8 @@
 
 <header>
     <div id="connexion">
-        <a href="index.php?page=login">connexion</a>
+        <a href="index.php?page=login">inscription</a>
+        <a href="index.php?page=pageConnexionUser">Mon compte</a>
     </div>
 
     <nav class="navbar">

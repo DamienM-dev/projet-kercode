@@ -43,6 +43,10 @@ class ControllerFront
 
     require('Views/front/mentionsLegalesView.php');
   }
+
+  function pageConnexionUser() {
+    require('Views/front/connexionUser.php');
+  }
   
 //=================gestion des mails contact===================
 

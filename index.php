@@ -41,6 +41,10 @@ try {
             $controllerFront->mentionsLegales();
         }
 
+        elseif($_GET['page'] =='pageConnexionUser') {
+            $controllerFront->pageConnexionUser();
+        }
+
         elseif ($_GET['action'] == 'contactPost') {
             $civility   = htmlspecialchars($_POST['civility']);
             $lastname   = htmlspecialchars($_POST['lastname']);
