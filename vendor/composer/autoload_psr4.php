@@ -6,5 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Kercode\\Producteur\\' => array($baseDir . '/src'),
+    'Projet\\' => array($baseDir . '/app'),
 );

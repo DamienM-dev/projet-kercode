@@ -3,15 +3,13 @@
 session_start();
 
 require_once __DIR__ . '/vendor/autoload.php';
-require_once 'Controllers/UserController.php';
-require_once 'Models/front/UserModel.php';
-require_once 'Models/front/Manager.php';
+
 
 try {
     $backController = new \Projet\Controllers\UserController();
 
-    if(isset($_GET['action'])) {
-        
+    if (isset($_GET['action'])) {
+
         //========CREATION de l'utilisateur========
 
         if ($_GET['action'] == 'creatUser') {
@@ -26,9 +24,9 @@ try {
             $phone      = htmlspecialchars($_POST['phone']);
             $mdp        =                  $_POST['mdp'];
             $rgpd       =                  $_POST['rgpd'];
-            
+
             $mdp        = password_hash($mdp, PASSWORD_DEFAULT);
-            
+
             $data = [
 
                 'civility'      => $civility,
@@ -46,28 +44,23 @@ try {
 
             $backController->createUser($data);
         }
-        
-            
+
+
 
         //========CONNEXION de l'utilisateur========
 
-        if ($_GET['action'] == 'connexionUser') 
-        {
+        if ($_GET['action'] == 'connexionUser') {
             $mail = htmlspecialchars($_POST['mail']);
             $mdp  = $_POST['mdp'];
 
-            
-            if (!empty($mail) && !empty($mdp)) 
-            {
+
+            if (!empty($mail) && !empty($mdp)) {
                 $backController->connexionUser($mail, $mdp);
-                
-            } else 
-            {
+            } else {
                 throw new Exception('Veuillez renseigner vos identifiants');
             }
-            
-        } 
+        }
     }
 } catch (Exception $e) {
-    require 'Views/front/errorView.php';
+    require 'app/Views/front/errorView.php';
 }

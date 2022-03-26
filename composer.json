@@ -2,7 +2,7 @@
     "name": "kercode/producteur",
     "autoload": {
         "psr-4": {
-            "Projet\\": "src/"
+            "Projet\\": "./app/"
         }
     },
     "authors": [

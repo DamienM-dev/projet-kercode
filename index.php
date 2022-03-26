@@ -3,7 +3,6 @@
 session_start();
 
 require_once __DIR__ . '/vendor/autoload.php';
-require_once 'Controllers/ControllerFront.php';
 
 
 
@@ -11,41 +10,27 @@ require_once 'Controllers/ControllerFront.php';
 try {
 
     $controllerFront = new \Projet\Controllers\ControllerFront();
-    if(isset($_GET['page'])) {
-        
-        if($_GET['page'] == 'accueil') {
+    if (isset($_GET['page'])) {
+
+        if ($_GET['page'] == 'accueil') {
             $controllerFront->home();
         }
 
         if ($_GET['page'] == 'contact') {
             $controllerFront->contact();
-        }
-
-        elseif($_GET['page'] == 'login') {
+        } elseif ($_GET['page'] == 'login') {
             $controllerFront->login();
-        }
-
-        elseif($_GET['page'] == 'aProposView') {
+        } elseif ($_GET['page'] == 'aProposView') {
             $controllerFront->aProposView();
-        }
-
-        elseif($_GET['page'] == 'produitView') {
+        } elseif ($_GET['page'] == 'produitView') {
             $controllerFront->produitView();
-        }
-
-        elseif($_GET['page'] == 'donneesPersoView') {
+        } elseif ($_GET['page'] == 'donneesPersoView') {
             $controllerFront->donneesPerso();
-        }
-
-        elseif($_GET['page'] == 'mentionsLegalesView') {
+        } elseif ($_GET['page'] == 'mentionsLegalesView') {
             $controllerFront->mentionsLegales();
-        }
-
-        elseif($_GET['page'] =='pageConnexionUser') {
+        } elseif ($_GET['page'] == 'pageConnexionUser') {
             $controllerFront->pageConnexionUser();
-        }
-
-        elseif ($_GET['action'] == 'contactPost') {
+        } elseif ($_GET['action'] == 'contactPost') {
             $civility   = htmlspecialchars($_POST['civility']);
             $lastname   = htmlspecialchars($_POST['lastname']);
             $firstname  = htmlspecialchars($_POST['firstname']);
@@ -56,21 +41,16 @@ try {
 
             if (!empty($civility) && (!empty($lastname) && (!empty($firstname) && (!empty($phone) && (!empty($mail) && (!empty($raison) && (!empty($contact)))))))) {
                 $frontController->contactPost($contactData);
-
             }
-             
         } else {
             throw new Exception("Cette page n'existe pas ou a été supprimée.");
         }
-        
-    }
-    else {
+    } else {
         $controllerFront->home();
     }
-}
-    catch(Exception $e) {
+} catch (Exception $e) {
     $error = $e->getMessage();
-    require('Views/front/errorView.php');
+    require('app/Views/front/errorView.php');
 }
 
 //pense bête pour plustard

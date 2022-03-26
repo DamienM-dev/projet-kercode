@@ -1,22 +1,22 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => 'dev-main',
-        'version' => 'dev-main',
+        'pretty_version' => '1.0.0+no-version-set',
+        'version' => '1.0.0.0',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'b39f313b03d759b7918c5d72990c0b0e5e432d2e',
+        'reference' => NULL,
         'name' => 'kercode/producteur',
         'dev' => true,
     ),
     'versions' => array(
         'kercode/producteur' => array(
-            'pretty_version' => 'dev-main',
-            'version' => 'dev-main',
+            'pretty_version' => '1.0.0+no-version-set',
+            'version' => '1.0.0.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'b39f313b03d759b7918c5d72990c0b0e5e432d2e',
+            'reference' => NULL,
             'dev_requirement' => false,
         ),
     ),
