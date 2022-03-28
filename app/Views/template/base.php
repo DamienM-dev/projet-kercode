@@ -14,6 +14,7 @@
     <div id="connexion">
         <a href="index.php?page=login">inscription</a>
         <a href="index.php?page=pageConnexionUser">Mon compte</a>
+        <a href="index.php?page=pageConnexionAdmin">admin</a>
     </div>
 
     <nav class="navbar">

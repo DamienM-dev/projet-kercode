@@ -18,16 +18,23 @@ body {
 }
 a {
     text-decoration: none;
+
+   
 }
 li {
     list-style: none;
 }
+//================TITRE================
 
+h1,h2,h3 {
+    text-align: center;
+}
 h1 {
     font-size: 1rem;
 }
-h1,h2,h3 {
-    text-align: center;
+h2 {
+    color: $couleurSecondaire;
+    font-size: 1.4rem;
 }
 
 
@@ -60,10 +67,6 @@ h1,h2,h3 {
         z-index: 4;
 
         
-    }
-    h2 {
-        color: $couleurSecondaire;
-        font-size: 1.4rem;
     }
     #logo {
         width: 15vw;
@@ -207,26 +210,36 @@ section#block_image_parallax {
             height: 250px;
             
             
-                    //=====GESTION DE L'ABSOLUTE=====
+            //=====GESTION DE L'ABSOLUTE=====
                     
-                    #block_inside_image_apropos {
-                        position: absolute;
-                        text-align: center;
-                        top: 15%;
-    margin: 0 10px;
+            #block_inside_image_apropos {
+                position: absolute;
+                text-align: center;
+                top: 15%;
+                margin: 0 10px;
     
-    h1 {
-        color: $couleurSecondaire;
-        margin-bottom: 10px;
-        font: {
-            size: 1.4rem;
-            weight: bold;
-        }
-     }
+                h1 {
+                    color: $couleurSecondaire;
+                    margin-bottom: 10px;
+                    font: {
+                        size: 1.4rem;
+                        weight: bold;
+                        }
+                    }
     }
 }
 
 // =============A PROPOS: CARD AGRICULTEUR=============
+
+
+section#block_notre_histoire{
+    margin: 10px;
+    text-align: center;
+
+    h2 {
+        margin-bottom: 10px;
+    }
+}
 
 .block_agriculteur {
     text-align: center;
@@ -235,6 +248,7 @@ section#block_image_parallax {
     margin-bottom: 10px;
     border: 1px $couleurPrincipal solid;
     background-color: $couleurPrincipal;
+    border-radius: 0 0 10px 10px;
 
     img {
         width: 100%;
@@ -247,12 +261,16 @@ section#block_image_parallax {
         margin-bottom: 50px;
     }
 
+    h3 {
+        color: $couleurTertiaire;
+        margin-bottom: 10px;
+    }
     
 }
 
 
 
-// =============PRODUITS=============
+// =============PRODUITS PAGE ACCUEIL=============
 
 .blocks_inside_produit {
     
@@ -260,11 +278,28 @@ section#block_image_parallax {
     border-radius: 0 20px;
     background-color: $couleurPrincipal;
     text-align: center;
+    width: 100%;
     
     img.image_produits {
         width: 100%;
     }
 
+}
+
+// =============PAGE PRODUITS=============
+
+section#block_produits {
+    text-align: center;
+
+    #block_inside_produits{
+
+        width: 100%;
+        margin: 10px;
+
+        img.image_produit_laitier{
+            width: 100%;
+        }
+    }
 }
 
 
@@ -417,6 +452,12 @@ footer {
             margin-top: 10px;
             padding: 10px;
             width: 60px;
+            color: $couleurSecondaire;
+
+            &:hover {
+
+                color: $couleurQuatre;
+            }
         }
 
     }

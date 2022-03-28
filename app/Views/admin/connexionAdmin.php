@@ -6,8 +6,8 @@ ob_start();
 
 ?>
 <section id="container_creation_administrateur">
-    <h1>Création administrateur</h1>
-        <form action="indexUser.php?action=creatAdmin" method="post">
+    <h1>Création administrateur/h1>
+        <form action="indexUser.php?action=connexionAdmin" method="post">
 
             <p>
                 <label for="mail"> email:</label>

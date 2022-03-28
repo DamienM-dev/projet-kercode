@@ -44,7 +44,7 @@ ob_start();
             </select>
         </div>
 
-        <textarea name="contact" id="contact" cols="30" rows="10" required></textarea>
+        <textarea name="content" id="content" cols="30" rows="10" required></textarea>
         <p><span>*</span> champs obligatoire</p>
         <button type="submit">Soumettre</button>
     </form>

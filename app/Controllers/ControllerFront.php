@@ -3,12 +3,10 @@
 namespace Projet\Controllers;
 
 
-
-
 class ControllerFront
 {
 
-  function home()
+  public function home()
   {
 
     // $slider = new \Projet\Models\AccueilModel();
@@ -16,50 +14,55 @@ class ControllerFront
     require('app/Views/front/accueilView.php');
   }
 
-  function login()
+  public function login()
   {
 
     require('app/Views/front/formulaireUser.php');
   }
 
-  function aProposView()
+  public function aProposView()
   {
 
     require('app/Views/front/aProposView.php');
   }
 
-  function produitView()
+  public function produitView()
   {
 
     require('app/Views/front/produitView.php');
   }
 
-  function contact()
+  public function contact()
   {
 
     require('app/Views/front/contactView.php');
   }
 
-  function donneesPerso()
+  public function donneesPerso()
   {
 
     require('app/Views/front/donneesPersoView.php');
   }
 
-  function mentionsLegales()
+  public function mentionsLegales()
   {
 
     require('app/Views/front/mentionsLegalesView.php');
   }
 
-  function pageConnexionUser()
+  public function pageConnexionUser()
   {
     require('app/Views/front/connexionUser.php');
   }
 
+  public function pageConnexionAdmin()
+  {
+    require('app/Views/admin/createAdmin.php');
+  }
+
   //=================gestion des mails contact===================
 
-  function contactPost($contactData)
+  public function contactPost($contactData)
   {
     $postMail = new \Projet\Models\ContactModel();
 

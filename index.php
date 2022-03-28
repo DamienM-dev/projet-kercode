@@ -18,28 +18,51 @@ try {
 
         if ($_GET['page'] == 'contact') {
             $controllerFront->contact();
+
         } elseif ($_GET['page'] == 'login') {
             $controllerFront->login();
+
         } elseif ($_GET['page'] == 'aProposView') {
             $controllerFront->aProposView();
+
         } elseif ($_GET['page'] == 'produitView') {
             $controllerFront->produitView();
+
         } elseif ($_GET['page'] == 'donneesPersoView') {
             $controllerFront->donneesPerso();
+
         } elseif ($_GET['page'] == 'mentionsLegalesView') {
             $controllerFront->mentionsLegales();
+
         } elseif ($_GET['page'] == 'pageConnexionUser') {
             $controllerFront->pageConnexionUser();
-        } elseif ($_GET['action'] == 'contactPost') {
+
+        } elseif ($_GET['page'] == 'pageConnexionAdmin') {
+
+            $controllerFront->pageConnexionAdmin();
+
+        } elseif ($_GET['page'] == 'contactPost') {
+
             $civility   = htmlspecialchars($_POST['civility']);
             $lastname   = htmlspecialchars($_POST['lastname']);
             $firstname  = htmlspecialchars($_POST['firstname']);
             $phone      = htmlspecialchars($_POST['phone']);
             $mail       = htmlspecialchars($_POST['mail']);
             $raison     = htmlspecialchars($_POST['raison']);
-            $contact    = htmlspecialchars($_POST['contact']);
+            $content    = htmlspecialchars($_POST['content']);
 
-            if (!empty($civility) && (!empty($lastname) && (!empty($firstname) && (!empty($phone) && (!empty($mail) && (!empty($raison) && (!empty($contact)))))))) {
+            $contactData = [
+                
+                'civility'  => $civility,
+                'lastname'  => $lastname,
+                'firstname' => $firstname,
+                'phone'     => $phone,
+                'mail'      => $mail,
+                'raison'    => $raison,
+                'content'   => $content
+            ];
+            
+            if (!empty($civility) && (!empty($lastname) && (!empty($firstname) && (!empty($phone) && (!empty($mail) && (!empty($raison) && (!empty($content)))))))) {
                 $frontController->contactPost($contactData);
             }
         } else {

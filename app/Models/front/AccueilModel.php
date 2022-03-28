@@ -13,7 +13,6 @@ class AccueilModel extends Manager
         $bdd = $this->dbConnect();
         $response = $bdd->query('SELECT url, alt, testimonial, photo  FROM slider');
 
-
         return $response->fetchAll();
     }
 }

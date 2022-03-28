@@ -5,12 +5,32 @@ namespace Projet\Controllers;
 class AdminController
 {
 
-    function createAdmin($mail, $mdp)
+    public function createAdmin($mail, $mdp)
     {
 
-        $userManager = new \Projet\Models\AdminModel();
-        $user = $userManager->creatAdmin($mail, $mdp);
+        $adminManager = new \Projet\Models\AdminModel();
+        $user = $adminManager->creatAdmin($mail, $mdp);
 
         require 'app/Views/admin/createAdmin.php';
+    }
+
+    public function connexionAdmin($mail, $mdp)
+    {
+        $adminManager = new \Projet\Models\AdminModel();
+        $connexionAdmin = $adminManager->recupInfo($mail, $mdp);
+
+        $result = $connexionAdmin->fetch();
+
+        $isPasswordCorrect = password_verify($mdp, $result['mdp']);
+
+        $_SESSION['mail'] = $result['mail'];
+        $_SESSION['mdp'] = $result['mdp'];
+        $_SESSION['id'] = $result['id'];
+
+
+        if ($isPasswordCorrect) {
+
+            require 'app/Views/front/AdminDashboard.php';
+        }
     }
 }
