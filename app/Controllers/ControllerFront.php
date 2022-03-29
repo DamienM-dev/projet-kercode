@@ -3,14 +3,15 @@
 namespace Projet\Controllers;
 
 
+
 class ControllerFront
 {
 
   public function home()
   {
 
-    // $slider = new \Projet\Models\AccueilModel();
-    // $testimonial = $slider->imageSlider();
+    $slider = new \Projet\Models\AccueilModel();
+    $testimonial = $slider->imageSlider();
     require('app/Views/front/accueilView.php');
   }
 

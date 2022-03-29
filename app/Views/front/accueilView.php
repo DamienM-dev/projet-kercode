@@ -2,6 +2,8 @@
 
 $title = "Accueil";
 
+require_once 'app/Controllers/ControllerFront.php';
+
 ob_start();
 
 ?>

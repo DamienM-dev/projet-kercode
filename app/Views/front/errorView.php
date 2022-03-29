@@ -8,9 +8,9 @@ ob_start();
 <section id="block_erreur">
 
     <div id="block_image_404">
-        <img src="Public/design/images/pages-erreur-404.jpg">
+    <lottie-player src="app/Public/design/images/erreur-champs.json" autoplay loop></lottie-player>
         <div id="block_bouton_404">
-            <h3>Besoin d'un coup de main ?</h3>
+            <h3>Nous somme entrain de travailler, revenez plus tard !</h3>
             <button>
                 <a href="index.php?page=accueil">Retournez à l'accueil !<a>
             </button>

@@ -10,6 +10,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 try {
 
     $controllerFront = new \Projet\Controllers\ControllerFront();
+    
     if (isset($_GET['page'])) {
 
         if ($_GET['page'] == 'accueil') {
@@ -63,7 +64,7 @@ try {
             ];
             
             if (!empty($civility) && (!empty($lastname) && (!empty($firstname) && (!empty($phone) && (!empty($mail) && (!empty($raison) && (!empty($content)))))))) {
-                $frontController->contactPost($contactData);
+                $controllerFront->contactPost($contactData);
             }
         } else {
             throw new Exception("Cette page n'existe pas ou a été supprimée.");
