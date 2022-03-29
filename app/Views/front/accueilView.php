@@ -13,12 +13,11 @@ ob_start();
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam faucibus ante et.</p>
         <button><a href="index.php?page=aProposView">A propos</a></button>
     </div>
-    </div>
 
 </section>
 
 <section id="block_pourquoi">
-    <h2>Pourquoi nous choisir</h2>
+    <h2 class="horizontal">Pourquoi nous choisir</h2>
     <div class="blocks_inside_pourquoi">
         <img src="app/Public/design/images/agriculture.png" alt="" class="image_pourquoi">
         <h3>Des produits de saisons</h3>
@@ -48,7 +47,7 @@ ob_start();
 </section>
 
 <section id="block_produits">
-    <h2>Nos produits</h2>
+    <h2 >Nos produits</h2>
 
     <div class="blocks_inside_produit">
         <figure>

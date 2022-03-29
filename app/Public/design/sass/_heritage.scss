@@ -13,4 +13,12 @@
     -webkit-animation:button-effet 1s infinite alternate;
 }
 
+//gestion du trait horizontal
+
+.trait {
+    content: '';
+    border-bottom: 1px $couleurQuatre solid;
+    display: inline-block;
+    vertical-align: middle;
+}
 
