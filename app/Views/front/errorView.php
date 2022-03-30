@@ -21,5 +21,5 @@ ob_start();
 <?php
 $content = ob_get_clean();
 
-require('app/Views/template/base.php');
+require_once('app/Views/template/base.php');
 ?>

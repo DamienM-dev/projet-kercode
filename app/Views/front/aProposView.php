@@ -30,7 +30,7 @@ ob_start();
 
 </section>
 
-<section id="block_notre_équipe">
+<section id="block_notre_equipe">
 
     <div class="block_agriculteur">
         <img src="app/Public/design/images/farmer.jpg" alt="Benoit, le laitier">

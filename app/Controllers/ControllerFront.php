@@ -38,6 +38,7 @@ class ControllerFront
 
     require('app/Views/front/contactView.php');
   }
+  
 
   public function donneesPerso()
   {

@@ -121,7 +121,7 @@ h2 {
     }
 }
 
-//=============BLOCK IMAGE PARALLAX =============
+//=============PAGE ACCUEIL: BLOCK IMAGE PARALLAX =============
 
 section#block_image_parallax {
 
@@ -153,7 +153,6 @@ section#block_image_parallax {
     button {
         
         @extend .button_style;
-
         background-color: $couleurSecondaire;
         color: $couleurPrincipal;
         margin-top: 20px;
@@ -227,7 +226,7 @@ section#block_image_parallax {
     }  
 }
 
-// =============A PROPOS=============
+// =============PAGE A PROPOS=============
 
         // =============A PROPOS: IMAGE PARRALAX=============
 
@@ -595,12 +594,12 @@ footer {
             height: 8vh;
         }
 
-        // =============BLOCK PARALLAX=============
+        // =============PAGE ACCUEIL: BLOCK PARALLAX=============
 
         section#block_image_parallax {
 
               
-            //=====GESTION DE L'ABSOLUTE=====
+            //=====PAGE ACCUEIL: BLOCK PARALLAX=>GESTION DE L'ABSOLUTE=====
         
         #block_absolute_image {
 
@@ -611,7 +610,7 @@ footer {
                 
     }
 
-        // =============BLOCK POURQUOI=============
+        // =============PAGE ACCUEIL: BLOCK POURQUOI=============
 
 #block_pourquoi {
     
@@ -631,13 +630,13 @@ footer {
     }  
 }
 
-// =============A PROPOS=============
+// =============PAGE A PROPOS=============
 
         // =============A PROPOS: IMAGE PARRALAX=============
 
         section#block_image_apropos {
             
-            //=====GESTION DE L'ABSOLUTE=====
+            //=====A PROPOS: IMAGE PARRALAX => GESTION DE L'ABSOLUTE=====
                     
             #block_inside_image_apropos {
         
@@ -713,12 +712,12 @@ footer {
         }
     }
 
-    // =============BLOCK PARALLAX=============
+    // =============PAGE ACCUEIL: BLOCK PARALLAX=============
 
     section#block_image_parallax {
 
               
-        //=====GESTION DE L'ABSOLUTE=====
+        //=====PAGE ACCUEIL: BLOCK PARALLAX => GESTION DE L'ABSOLUTE=====
     
     #block_absolute_image {
 
@@ -729,7 +728,7 @@ footer {
             
 }
 
-    // =============BLOCK POURQUOI=============
+    // =============PAGE ACCUEIL: BLOCK POURQUOI=============
 
     #block_pourquoi {
 
@@ -765,7 +764,7 @@ footer {
         }
 
     } 
-    // =============BLOCK PRODUIT=============
+    // =============PAGE ACCUEIL: BLOCK PRODUIT=============
 
     #block_produits{
 
@@ -787,6 +786,103 @@ footer {
             }
         }
     }
+
+    // =============PAGE A PROPOS: block_image_apropos=============
+
+    section#block_image_apropos {
+            
+        //=====A PROPOS: IMAGE PARRALAX => GESTION DE L'ABSOLUTE=====
+                
+        #block_inside_image_apropos {
+    
+            top: 25%;
+            margin: 0 215px;
+
+            h1 {
+                font-size: 1.7rem;
+            }
+        }
+
+    }
+    section#block_notre_equipe {
+        display: flex;
+        flex-wrap: wrap;
+
+        .block_agriculteur {
+
+            width: 31%;
+            height: 450px;
+            text-align: justify;
+
+            &:nth-child(1) {
+                margin-top: 0px;
+            }
+
+            p {
+                padding: 10px;
+            }
+
+            img {
+
+                height: 300px;
+
+            } 
+        }
+    }
+
+    // =============PAGE CONTACT============
+
+        #container_contact{
+
+            
+            margin-top: 60px;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row-reverse;
+            justify-content: space-around;
+            
+
+
+            h1 {
+                width: 100%;
+                font-size: 1.7rem;
+                margin-bottom: 20px;
+            }
+
+            iframe {
+                width: 600px;
+                height: 500px;
+            }
+
+        }
+
+        // =============FORMULAIRE INSCRIPTION============
+
+        #container_inscription {
+
+            margin-top: 60px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            .formulaire_grand {
+                display: flex;
+
+                p {
+                    margin: 10px;
+                }
+            }
+            
+            h1 {
+                width: 100%;
+                font-size: 1.7rem;
+                margin-bottom: 20px;
+            }
+
+        }
+
+
+
 }
 
 
