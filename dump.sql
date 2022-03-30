@@ -1,10 +1,9 @@
 CREATE TABLE `product` (
 	`id` INT NOT NULL AUTO_INCREMENT,
 	`name` varchar(100) NOT NULL,
-	`img` varchar(255) NOT NULL,
 	`alt` varchar(255) NOT NULL,
-	`price` DECIMAL(100) NOT NULL,
-	`categories_id` varchar(255) NOT NULL,
+	`price` DECIMAL(20) NOT NULL,
+	`categories_id` INT NOT NULL,
 	PRIMARY KEY (`id`)
 );
 
@@ -40,7 +39,8 @@ CREATE TABLE `slider` (
 	`url` varchar(255) NOT NULL,
 	`alt` varchar(255) NOT NULL,
 	`testimonial` varchar(255) NOT NULL,
-	`photo` varchar(255) NOT NULL
+	`photo` varchar(255) NOT NULL,
+	PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `contact` (

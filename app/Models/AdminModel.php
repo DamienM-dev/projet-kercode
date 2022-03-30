@@ -9,17 +9,17 @@ class AdminModel extends Manager
 {
     public function creatAdmin($mail, $mdp)
     {
-    
+
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare('INSERT INTO coordonnees($mail, $mdp) INNER JOIN producteur ON coordonnes_producteur = id_producteur  VALUE (?, ?)');
+        $req = $bdd->prepare('INSERT INTO coordonnees($mail, $mdp) 
+                              INNER JOIN producteur 
+                              ON coordonnes_producteur = id_producteur  
+                              VALUE (?, ?)');
         $req->execute(array($mail, $mdp));
 
         var_dump($req);
-    
-        return $req;
-    
 
-    
+        return $req;
     }
     public function recupInfo($mail, $mdp)
     {
@@ -29,6 +29,19 @@ class AdminModel extends Manager
 
         return $req;
     }
-    //penser à voir comment faire jointure pour récupére le reste des infos
+    //PLUS VALABLE
 
+    public function listerProduit()
+    {
+        $bdd = $this->dbConnect();
+        $reqListe = $bdd->prepare('SELECT name, alt, description, price, 
+                                   FROM product 
+                                   INNER JOIN categories 
+                                   ON product.categories_id = categories.id 
+                                   WHERE id= ?
+                                   ORDER BY id DESC');
+        $reqListe->execute(array());
+
+        return $reqListe;
+    }
 }

@@ -10,7 +10,7 @@ try {
     $backController = new \Projet\Controllers\AdminController();
 
     if (isset($_GET['action'])) {
-        
+
         if ($_GET['action'] == 'creatAdmin') {
 
             $mail   = htmlspecialchars($_POST['mail']);
@@ -19,20 +19,20 @@ try {
             $mdp    = password_hash($mdp, PASSWORD_DEFAULT);
 
             $backController->createAdmin($mail, $mdp);
-        }
-
-        elseif($_GET['action'] == 'connexionAdmin')
-        {
+        } elseif ($_GET['action'] == 'connexionAdmin') {
             $mail = htmlspecialchars($_POST['mail']);
             $mdp = $_POST['mdp'];
 
-            if(!empty($mail) && !empty($mdp)) {
+            if (!empty($mail) && !empty($mdp)) {
                 $backController->connexionAdmin($mail, $mdp);
             } else {
                 throw new Exception('Veuillez remplir les champs du formulaire');
             }
-        }
+        } //elseif ($_GET['action'] == 'listerProduit') {
+        //     $backController->listerProduit();
+        // }
 
+        // a voir si inutile
     }
 } catch (Exception $e) {
     require 'app/Views/front/errorView.php';
