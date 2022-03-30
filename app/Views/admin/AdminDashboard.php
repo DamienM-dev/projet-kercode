@@ -23,17 +23,23 @@ ob_start();
             <td>Catégorie</td>
             <td>actions</td>
         </tr>
-        <tr>
-            <td> <?= $product['name'] ?></td>
-            <td><?= $product['description'] ?></td>
-            <td><?= $product['price'] ?>€</td>
-            <td><?= $product['categories'] ?></td>
-            <td>
-                <button><a>modifier</a></button>
-                <button><a>modifier</a></button>
-                <button><a>ajouter</a></button>
-            </td>
-        </tr>
+
+       <?php while ($product = $reqListe->fetch()) {?>
+            <tr>
+                <td> <?= $product['name'] ?></td>
+                <td><?= $product['description'] ?></td>
+                <td><?= $product['price'] ?>€</td>
+                <td><?= $product['categories'] ?></td>
+                <td>
+                    <button><a>modifier</a></button>
+                    <button><a>modifier</a></button>
+                    <button><a>ajouter</a></button>
+                </td>
+            </tr>
+        };
+
+
+
     </table>
 
 </section>

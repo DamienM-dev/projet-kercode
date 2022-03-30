@@ -37,9 +37,6 @@ class AdminController
     public function listerProduit()
     {
         $adminManager = new \Projet\Models\AdminModel();
-        while ($product = $reqListe->fetch()) {
-        };
-
         require 'app/Views/front/AdminDashboard.php';
     }
 }
