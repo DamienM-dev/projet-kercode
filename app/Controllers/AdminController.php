@@ -34,10 +34,11 @@ class AdminController
             require 'app/Views/admin/AdminDashboard.php';
         } 
     }
-
     public function listerProduit()
     {
-        $adminManager = new \Projet\Models\Admin\AdminModel();
+        $adminManager = new \Projet\Models\front\ProduitModel();
+        $product = $adminManager->listerProduitDashboard();
+        
         require 'app/Views/front/AdminDashboard.php';
     }
 }

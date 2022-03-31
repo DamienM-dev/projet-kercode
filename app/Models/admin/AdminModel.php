@@ -21,6 +21,7 @@ class AdminModel extends \Projet\Models\Manager
 
         return $req;
     }
+
     public function recupInfo($mail, $mdp)
     {
         
@@ -31,20 +32,5 @@ class AdminModel extends \Projet\Models\Manager
         
 
         return $req;
-    }
-    //PLUS VALABLE
-
-    public function listerProduit()
-    {
-        $bdd = $this->dbConnect();
-        $reqListe = $bdd->prepare('SELECT name, alt, description, price, 
-                                   FROM product 
-                                   INNER JOIN categories 
-                                   ON product.categories_id = categories.id 
-                                   WHERE id= ?
-                                   ORDER BY id DESC');
-        $reqListe->execute(array());
-
-        return $reqListe;
     }
 }

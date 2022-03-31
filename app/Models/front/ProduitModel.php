@@ -65,4 +65,17 @@ class ProduitModel extends \Projet\Models\Manager
         return $produits;
      }
 
+     public function listerProduitDashboard()
+    {
+        $bdd = $this->dbConnect();
+        $reqListe = $bdd->prepare('SELECT name, alt, description, price 
+                                   FROM product 
+                                   INNER JOIN categories 
+                                   ON product.categories_id = categories.id 
+                                   WHERE id= ?
+                                   ORDER BY id DESC');
+        $reqListe->execute(array());
+
+        return $reqListe;
+    }
 }

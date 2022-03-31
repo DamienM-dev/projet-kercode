@@ -3,7 +3,6 @@
 session_start();
 
 require_once __DIR__ . '/vendor/autoload.php';
-//require_once "/app/Models/admin/AdminModel";
 
 try {
 
@@ -31,9 +30,11 @@ try {
             } else {
                 throw new Exception('Veuillez remplir les champs du formulaire');
             }
-        } //elseif ($_GET['action'] == 'listerProduit') {
-        //     $backController->listerProduit();
-        // }
+            
+        } elseif ($_GET['action'] == 'listerProduit') {
+             $backController->listerProduit();
+             
+         }
 
         // a voir si inutile
     }

@@ -24,34 +24,18 @@ ob_start();
             <td>actions</td>
         </tr>
 
-          while ($product = $reqListe->fetch()) {
-            <tr>
-                <td>   </td>
-                <td> $product['description'] </td>
-                <td> $product['price'] €</td>
-                <td> $product['categories'] </td>
-                <td>
-                    <button><a>modifier</a></button>
-                    <button><a>modifier</a></button>
-                    <button><a>ajouter</a></button>
-                </td>
-            </tr>
-        };
-
-       <?php while($product = $reqListe->fetch()) {
-                            echo '<tr>';
-                            echo '<td>'. $product['name'] . '</td>';
-                            echo '<td>'. $product['description'] . '</td>';
-                            echo '<td>'. $product['categories'] . '</td>';
+       <?php while($product = $reqListe->fetch()) { ?>
+                            <?= '<tr>';?>
+                            <?= '<td>'. $product['name'] . '</td>';?>
+                            <?= '<td>'. $product['description'] . '</td>';?>
+                            <?= '<td>'. $product['categories'] . '</td>';?>
                 
-                            echo '<button><a href="view.php?id='.$product['id'].'">Voir</a></button>';
-                            echo '<button><a href="update.php?id='.$product['id'].'"> Modifier</a></button>';
-                            echo '<button><a href="delete.php?id='.$product['id'].'">Supprimer</a></button>';
-                            echo '</td>';
-                            echo '</tr>';
-                        };?>
-
-
+                            <?= '<button><a href="view.php?id='.$product['id'].'">Voir</a></button>';?>
+                            <?= '<button><a href="update.php?id='.$product['id'].'"> Modifier</a></button>';?>
+                            <?= '<button><a href="delete.php?id='.$product['id'].'">Supprimer</a></button>';?>
+                            <?= '</td>';?>
+                            <?= '</tr>';?>
+                        <?php };?>
 
     </table>
 
