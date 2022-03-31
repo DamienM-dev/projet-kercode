@@ -1,46 +1,68 @@
 <?php
 
 
-namespace Projet\Models;
+namespace Projet\Models\front;
 
-class ProduitModel extends Manager
+class ProduitModel extends \Projet\Models\Manager
 {
-    private string $name;
-    private string $img;
-    private string $alt;
-    private float $price;
+    private ?string $name;
+    private ?string $img;
+    private ?string $alt;
+    private ?float $price;
 
-    function __construct(string $name, string $img, string $alt, float $price )
+    //Le ?string pour expliquer que la variable peut être null
+
+    function __construct(array $data=[])
     {
-        $this->name     = $name;
-        $this->img      = $img;
-        $this->alt      = $alt;
-        $this->price    = $price;
+        $this->name     = $data['name'] ?? null;
+        $this->img      = $data['img'] ?? null;
+        $this->alt      = $data['alt'] ?? null;
+        $this->price    = $data['price'] ?? null;
     }
 
     public function returnName():string {
+
+        $bdd = $this->dbConnect();
+        $produits = $bdd->prepare('SELECT name from product WHERE id=?');
+        $produits->execute(array());
+
         return $this->name;
     }
 
     public function returnImg():string {
+
+        $bdd = $this->dbConnect();
+        $produits = $bdd->prepare('SELECT img from product WHERE id=?');
+        $produits->execute(array());
+
         return $this->img;
     }
 
     public function returnAlt():string {
+
+        $bdd = $this->dbConnect();
+        $produits = $bdd->prepare('SELECT alt from product WHERE id=?');
+        $produits->execute(array());
+
         return $this->alt;
     }
     public function returnPrice():float {
+
+        $bdd = $this->dbConnect();
+        $produits = $bdd->prepare('SELECT price from product WHERE id=?');
+        $produits->execute(array());
+
         return $this->price;
     }
 
-    public function returnProduct($name, $price, $img, $alt)
+    public function returnProducts()
     {
 
         
         $bdd = $this->dbConnect();
-        $produit = $bdd->prepare('SELECT name, price, img, alt from product');
-        $produit ->execute(array($name, $price, $img, $alt));
-
-    }
+        $produits = $bdd->query('SELECT name, price, img, alt from product');
+        
+        return $produits;
+     }
 
 }

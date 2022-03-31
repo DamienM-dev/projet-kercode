@@ -1,9 +1,9 @@
 <?php
 
-namespace Projet\Models;
+namespace Projet\Models\front;
 
 
-class UserModel extends Manager
+class UserModel extends \Projet\Models\Manager
 {
 
     public function creatUser($data)
@@ -12,7 +12,7 @@ class UserModel extends Manager
         $bdd = $this->dbConnect();
 
 
-        $user = $bdd->prepare('INSERT INTO coordonnees(civility, lastname, firstname, address, codePostal, ville, mail, phone, mdp, rgpd) VALUE (:civility, :lastname, :firstname, :address, :codePostal, :ville, :mail, :phone, :mdp, :rgpd)');
+        $user = $bdd->prepare('INSERT INTO client(civility, lastname, firstname, address, codePostal, ville, mail, phone, mdp, rgpd) VALUE (:civility, :lastname, :firstname, :address, :codePostal, :ville, :mail, :phone, :mdp, :rgpd)');
         $user->execute(array(
 
             ':civility'   => $data['civility'],

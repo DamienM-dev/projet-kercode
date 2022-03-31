@@ -12,7 +12,7 @@ class UserController
     public function createUser($data)
     {
 
-        $userCreation = new \Projet\Models\UserModel();
+        $userCreation = new \Projet\Models\front\UserModel();
 
         $user = $userCreation->creatUser($data);
         require 'app/Views/front/formulaireUser.php';
@@ -22,8 +22,8 @@ class UserController
     public function connexionUser($mail, $mdp)
     {
 
-        $userManager = new \Projet\Models\AdminModel();
-        $userConnexion = $userManager->recupInfo($mail);
+        $userManager = new \Projet\Models\front\UserModel();
+        $userConnexion = $userManager->recupInfoUser($mail);
 
         $result = $userConnexion->fetch();
 

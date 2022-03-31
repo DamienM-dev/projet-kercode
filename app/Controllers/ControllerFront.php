@@ -10,7 +10,7 @@ class ControllerFront
   public function home()
   {
 
-    $slider = new \Projet\Models\AccueilModel();
+    $slider = new \Projet\Models\front\AccueilModel();
     $testimonial = $slider->imageSlider();
     require('app/Views/front/accueilView.php');
   }
@@ -29,6 +29,8 @@ class ControllerFront
 
   public function produitView()
   {
+    $produitModel = new \Projet\Models\front\ProduitModel();
+    $produits = $produitModel->returnProducts();
 
     require('app/Views/front/produitView.php');
   }
@@ -59,14 +61,14 @@ class ControllerFront
 
   public function pageConnexionAdmin()
   {
-    require('app/Views/admin/createAdmin.php');
+    require('app/Views/admin/connexionAdmin.php');
   }
 
   //=================gestion des mails contact===================
 
   public function contactPost($contactData)
   {
-    $postMail = new \Projet\Models\ContactModel();
+    $postMail = new \Projet\Models\front\ContactModel();
 
 
     if (filter_var($contactData['mail'], FILTER_VALIDATE_EMAIL)) {

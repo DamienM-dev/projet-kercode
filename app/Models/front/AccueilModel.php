@@ -1,10 +1,10 @@
 <?php
 
-namespace Projet\Models;
+namespace Projet\Models\front;
 
 
 
-class AccueilModel extends Manager
+class AccueilModel extends \Projet\Models\Manager
 {
 
     public function imageSlider()

@@ -1,8 +1,8 @@
 <?php
 
-namespace Projet\Models;
+namespace Projet\Models\front;
 
-class ContactModel extends Manager
+class ContactModel extends \Projet\Models\Manager
 {
     public function postMail($contactData)
     {

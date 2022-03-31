@@ -17,10 +17,10 @@ ob_start();
 
             <div class="produit_laitier_inside">
 
-                <?php foreach($produits as $produit) : ?>
-                <img src=<?= $produit->returnImg() ?> alt =<? $produit->returnAlt() ?>>
-                <h3><?= $produit->returnName()?></h3>
-                <p><?= $produit->returnPrice() ?></p>
+                <?php  foreach($produits as $produit) : ?>
+                <img src=<?= $produit['img'] ?> alt =<? $produit['alt'] ?>
+                <h3><?= $produit['name']?></h3>
+                <p><?= $produit['price'] ?></p>
                 <button><a href="#">Ajouter au panier</a></button>
             </div>
 
