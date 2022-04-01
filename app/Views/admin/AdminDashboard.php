@@ -12,7 +12,7 @@ ob_start();
 
     <div>
         <h2>Liste des produits disponibles</h2>
-        <button><a>Ajouter</a></button>
+        <button><a href="indexAdmin.php?action=ajouterProduit">Ajouter</a></button>
     </div>
 
     <table>
@@ -24,19 +24,21 @@ ob_start();
             <td>actions</td>
         </tr>
 
-       <?php while($product = $reqListe->fetch()) { ?>
-                            <?= '<tr>';?>
-                            <?= '<td>'. $product['name'] . '</td>';?>
-                            <?= '<td>'. $product['description'] . '</td>';?>
-                            <?= '<td>'. $product['categories'] . '</td>';?>
-                
-                            <?= '<button><a href="view.php?id='.$product['id'].'">Voir</a></button>';?>
-                            <?= '<button><a href="update.php?id='.$product['id'].'"> Modifier</a></button>';?>
-                            <?= '<button><a href="delete.php?id='.$product['id'].'">Supprimer</a></button>';?>
-                            <?= '</td>';?>
-                            <?= '</tr>';?>
-                        <?php };?>
+        <?php
+        while ($product = $product->fetch()) {
 
+            echo '<tr>';
+            echo   '<td>' . $product['name'] . '</td>';
+            echo   '<td>' . $product['description'] . '</td>';
+            echo   '<td>' . $product['price'] . '</td>';
+            echo   '<td>' . $product['categories'] . '</td>';
+
+            echo  '<button><a href="indexAdmin.php?page=ViewProductAdmin&id=' . $product['id'] . '">Voir</a></button>';
+            echo  '<button><a href="indexAdmin.php?page=deleteProductAdmin&id=' . $product['id'] . '">Supprimer</a></button>';
+            echo    '</td>';
+            echo    '</tr>';
+        }
+        ?>
     </table>
 
 </section>

@@ -12,7 +12,7 @@ class ProduitModel extends \Projet\Models\Manager
 
     //Le ?string pour expliquer que la variable peut être null
 
-    function __construct(array $data=[])
+    function __construct(array $data = [])
     {
         $this->name     = $data['name'] ?? null;
         $this->img      = $data['img'] ?? null;
@@ -20,7 +20,8 @@ class ProduitModel extends \Projet\Models\Manager
         $this->price    = $data['price'] ?? null;
     }
 
-    public function returnName():string {
+    public function returnName(): string
+    {
 
         $bdd = $this->dbConnect();
         $produits = $bdd->prepare('SELECT name from product WHERE id=?');
@@ -29,7 +30,8 @@ class ProduitModel extends \Projet\Models\Manager
         return $this->name;
     }
 
-    public function returnImg():string {
+    public function returnImg(): string
+    {
 
         $bdd = $this->dbConnect();
         $produits = $bdd->prepare('SELECT img from product WHERE id=?');
@@ -38,7 +40,8 @@ class ProduitModel extends \Projet\Models\Manager
         return $this->img;
     }
 
-    public function returnAlt():string {
+    public function returnAlt(): string
+    {
 
         $bdd = $this->dbConnect();
         $produits = $bdd->prepare('SELECT alt from product WHERE id=?');
@@ -46,7 +49,8 @@ class ProduitModel extends \Projet\Models\Manager
 
         return $this->alt;
     }
-    public function returnPrice():float {
+    public function returnPrice(): float
+    {
 
         $bdd = $this->dbConnect();
         $produits = $bdd->prepare('SELECT price from product WHERE id=?');
@@ -58,24 +62,26 @@ class ProduitModel extends \Projet\Models\Manager
     public function returnProducts()
     {
 
-        
+
         $bdd = $this->dbConnect();
         $produits = $bdd->query('SELECT name, price, img, alt from product');
-        
-        return $produits;
-     }
 
-     public function listerProduitDashboard()
+        return $produits;
+    }
+
+    public function listerProduitDashboard()
     {
         $bdd = $this->dbConnect();
-        $reqListe = $bdd->prepare('SELECT name, alt, description, price 
+        $reqListe = $bdd->prepare('SELECT id, name, alt, description, price 
                                    FROM product 
                                    INNER JOIN categories 
-                                   ON product.categories_id = categories.id 
-                                   WHERE id= ?
+                                   ON product.categories_id = categories.id
                                    ORDER BY id DESC');
         $reqListe->execute(array());
 
         return $reqListe;
+    }
+    public function ajouterProduitBdd()
+    {
     }
 }
