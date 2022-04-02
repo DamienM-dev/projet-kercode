@@ -11,7 +11,7 @@ class ControllerFront
   {
 
     $slider = new \Projet\Models\front\AccueilModel();
-    $testimonial = $slider->imageSlider();
+    $sliderImage = $slider->imageSlider();
     require('app/Views/front/accueilView.php');
   }
 

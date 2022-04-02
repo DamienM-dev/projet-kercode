@@ -18,7 +18,7 @@ ob_start();
             <div class="produit_laitier_inside">
 
                 <?php  foreach($produits as $produit) : ?>
-                <img src=<?= $produit['img'] ?> alt =<? $produit['alt'] ?>
+                <img src=<?= $produit['img'] ?> alt =<?= $produit['alt'] ?>
                 <h3><?= $produit['name']?></h3>
                 <p><?= $produit['price'] ?></p>
                 <button><a href="#">Ajouter au panier</a></button>

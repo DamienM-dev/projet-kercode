@@ -1,65 +1,32 @@
-CREATE TABLE `product` (
-	`id` INT NOT NULL AUTO_INCREMENT,
-	`name` varchar(100) NOT NULL,
-	`alt` varchar(255) NOT NULL,
-	`price` DECIMAL(20) NOT NULL,
-	`categories_id` INT NOT NULL,
-	PRIMARY KEY (`id`)
-);
+-- --------------------------------------------------------
+-- Hôte:                         127.0.0.1
+-- Version du serveur:           5.7.33 - MySQL Community Server (GPL)
+-- SE du serveur:                Win64
+-- HeidiSQL Version:             11.2.0.6213
+-- --------------------------------------------------------
 
-CREATE TABLE `client` (
-	`id` INT NOT NULL AUTO_INCREMENT,
-	`lastname` varchar(100) NOT NULL,
-	`firstname` varchar(100) NOT NULL,
-	`address` varchar(255) NOT NULL,
-	`codePostal` DECIMAL(5) NOT NULL,
-	`ville` varchar(50) NOT NULL,
-	`mail` varchar(100) NOT NULL,
-	`phone` varchar(30) NOT NULL,
-	PRIMARY KEY (`id`)
-);
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-CREATE TABLE `producteur` (
-	`id` INT NOT NULL AUTO_INCREMENT,
-	`lastname` varchar(100) NOT NULL,
-	`firstname` varchar(100) NOT NULL,
-	`mail` varchar(100) NOT NULL,
-	`phone` varchar(30) NOT NULL,
-	PRIMARY KEY (`id`)
-);
+-- Les données exportées n'étaient pas sélectionnées.
 
-CREATE TABLE `categories` (
-	`id` INT NOT NULL AUTO_INCREMENT,
-	`name` varchar(255) NOT NULL,
-	PRIMARY KEY (`id`)
-);
+-- Les données exportées n'étaient pas sélectionnées.
 
-CREATE TABLE `slider` (
-	`id` INT NOT NULL AUTO_INCREMENT,
-	`url` varchar(255) NOT NULL,
-	`alt` varchar(255) NOT NULL,
-	`testimonial` varchar(255) NOT NULL,
-	`photo` varchar(255) NOT NULL,
-	PRIMARY KEY (`id`)
-);
+-- Les données exportées n'étaient pas sélectionnées.
 
-CREATE TABLE `contact` (
-	`id` INT NOT NULL AUTO_INCREMENT,
-	`civility` BINARY NOT NULL,
-	`lastname` varchar(100) NOT NULL,
-	`firstname` varchar(100) NOT NULL,
-	`phone` varchar(30) NOT NULL,
-	`mail` varchar(100) NOT NULL,
-	`raison` varchar(255) NOT NULL,
-	`content` varchar(255) NOT NULL,
-	PRIMARY KEY (`id`)
-);
+-- Les données exportées n'étaient pas sélectionnées.
 
-ALTER TABLE `product` ADD CONSTRAINT `product_fk0` FOREIGN KEY (`categories_id`) REFERENCES `categories`(`id`);
+-- Les données exportées n'étaient pas sélectionnées.
 
+-- Les données exportées n'étaient pas sélectionnées.
 
+-- Les données exportées n'étaient pas sélectionnées.
 
-
-
-
-
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;

@@ -77,25 +77,24 @@ ob_start();
 </section>
 
 <section id="slider-block">
+    <h2>Les témoignages</h2>
+    
     <div class="slider">
 
+
         <div>
-            <img src="<?= $testimonial[0]['url'] ?>" alt="<?= $testimonial[0]['alt'] ?>" class="images_slider active">
-            <i class="fa-solid fa-quote-left"></i>
-            <img src="<?= $testimonial[0]['photo'] ?>">
+            <img src="<?= $sliderImage[0]['url'] ?>" alt="<?= $sliderImage[0]['alt'] ?>" class="images_slider active">
+            <!-- <i class="fa-solid fa-quote-left"></i> -->
         </div>
 
         <div>
-            <img src="<?= $testimonial[1]['url'] ?>" alt="<?= $testimonial[1]['alt'] ?>" class="images_slider">
-            <i class="fa-solid fa-quote-left"></i>
-            <img src="<?= $testimonial[1]['photo'] ?>">
+            <img src="<?= $sliderImage[1]['url'] ?>" alt="<?= $sliderImage[1]['alt'] ?>" class="images_slider">
+            <!-- <i class="fa-solid fa-quote-left"></i> -->
         </div>
 
         <div>
-            <img src="<?= $testimonial[2]['url'] ?>" alt="<?= $testimonial[2]['alt'] ?>" class="images_slider">
-            <i class="fa-solid fa-quote-left"></i>
-            <img src="<?= $testimonial[2]['photo'] ?>">
-            <p><?= $testimonial[2]['testimonial'] ?></p>
+            <img src="<?= $sliderImage[2]['url'] ?>" alt="<?= $sliderImage[2]['alt'] ?>" class="images_slider">
+            <!-- <i class="fa-solid fa-quote-left"></i> -->
         </div>
 
         <div class="suivant">
@@ -106,9 +105,7 @@ ob_start();
             <i class="fa-solid fa-circle-left"></i>
         </div>
         <div id="block_absolute_image">
-            <h1>Dayly Fresh est une association de producteur locaux</h1>
-            <p><?= $testimonial[0]['testimonial'] ?></p>
-
+            <h2>Dayly Fresh est une association de producteur locaux</h2>
         </div>
     </div>
 </section>

@@ -47,8 +47,8 @@ class AdminController
 
     public function ViewProductAdmin()
     {
-        // $adminManager = new \Projet\Models\front\ProduitModel();
-        // $productView = $adminManager->returnProducts();
+        $adminManager = new \Projet\Models\front\ProduitModel();
+        $productView = $adminManager->returnProducts();
 
         require 'app/Views/admin/produitView.php';
     }

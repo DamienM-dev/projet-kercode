@@ -162,7 +162,7 @@ section#block_image_parallax {
         }
     } 
 }
-    
+   
     
 }
 
@@ -419,55 +419,64 @@ section#block_produits {
 
 // =============SLIDER=============
 
-.slider {
-   height: 50vh;
-   position: relative;
 
-   img {
-       object-fit: cover;
-       height: 100%;
-       width: 100%;
-       position:absolute;
-       top: 0;
-       left: 0;
-       opacity: 0;
-       transition: opacity .5s ;
+#slider-block{
 
-       &.active {
-           opacity: 1;
-       }
-   }
+    margin-top: 20px;
 
-   .suivant, .precedent {
-       color: rgb(255, 255, 255);
-       font-size: 1rem;
-       position: absolute;
-       top: 50%;
-       transform: translateY(-50%);
-   }
-   .suivant {
-       right: 1rem;
-   }
-   .precedent {
-       left: 1rem;
-   }
-
-   //=====GESTION DE L'ABSOLUTE=====
-
-   #block_absolute_image {
-       position: absolute;
-       text-align: center;
-       top: 20%;
-
-       h1 {
-           color: $couleurSecondaire;
-           font: {
-               size: 1.4rem;
-               weight: bold;
+    .slider {
+       height: 50vh;
+       position: relative;
+    
+       img {
+           object-fit: cover;
+           height: 100%;
+           width: 100%;
+           position:absolute;
+           top: 0;
+           left: 0;
+           opacity: 0;
+           transition: opacity .5s ;
+    
+           &.active {
+               opacity: 1;
            }
-       } 
-   }
+       }
+    
+       .suivant, .precedent {
+           color: rgb(255, 255, 255);
+           font-size: 1rem;
+           position: absolute;
+           top: 50%;
+           transform: translateY(-50%);
+       }
+       .suivant {
+           right: 1rem;
+       }
+       .precedent {
+           left: 1rem;
+       }
+    
+       //=====GESTION DE L'ABSOLUTE=====
+    
+       #block_absolute_image {
+           position: absolute;
+           text-align: center;
+           top: 20%;
+    
+           h1 {
+               color: $couleurSecondaire;
+               font: {
+                   size: 1.4rem;
+                   weight: bold;
+               }
+           } 
+       }
+    }
 }
+
+
+
 
 // =============FORMULAIRES=============
 
@@ -608,6 +617,14 @@ footer {
             
         }
                 
+    }
+
+    // =================PAGE ACCUEIL: SLIDER=========================
+
+    #slider-block{
+
+        margin-top: 30px;
+
     }
 
         // =============PAGE ACCUEIL: BLOCK POURQUOI=============
@@ -785,6 +802,19 @@ footer {
                 object-fit: cover;
             }
         }
+    }
+
+    // =============PAGE ACCUEIL: SLIDER==================
+
+    #slider-block{
+
+        margin-top: 30px;
+
+        #block_absolute_image {
+
+            left: 180px;
+        }
+
     }
 
     // =============PAGE A PROPOS: block_image_apropos=============
