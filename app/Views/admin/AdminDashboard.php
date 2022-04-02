@@ -25,7 +25,7 @@ ob_start();
         </tr>
 
         <?php
-        while ($product = $product->fetch()) {
+        while ($product = $afficheProduct->fetch()) {
 
             echo '<tr>';
             echo   '<td>' . $product['name'] . '</td>';

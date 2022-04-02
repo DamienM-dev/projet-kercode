@@ -6,11 +6,11 @@ namespace Projet\Controllers;
 class AdminController
 {
     //creer admnistrateur, va peut être dégager
-    public function createAdmin($mail, $mdp)
+    public function createAdmin($lastname, $firstname,$mail, $mdp)
     {
 
         $adminManager = new \Projet\Models\Admin\AdminModel();
-        $user = $adminManager->creatAdmin($mail, $mdp);
+        $admin = $adminManager->creatAdmin($lastname, $firstname,$mail, $mdp);
 
         require 'app/Views/admin/createAdmin.php';
     }
@@ -29,7 +29,7 @@ class AdminController
         $_SESSION['id'] = $result['id'];
 
 
-        if ($isPasswordCorrect == false) {
+        if ($isPasswordCorrect) {
 
             require 'app/Views/admin/AdminDashboard.php';
         }

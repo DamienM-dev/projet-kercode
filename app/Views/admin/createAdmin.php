@@ -7,7 +7,17 @@ ob_start();
 ?>
 <section id="container_creation_administrateur">
     <h1>Création administrateur</h1>
-        <form action="indexUser.php?action=creatAdmin" method="post">
+        <form action="indexAdmin.php?action=creatAdmin" method="post">
+
+
+            <p>
+                <label for="lastname"> nom:</label>
+                <input type="text" name="lastname" id="lastname" placeholder="Exemple : Chirac" checked required>
+            </p>
+            <p>
+                <label for="firstname"> prenom: </label>
+                <input type="text" name="firstname" id="firstname" placeholder="Exemple : Jacques" required>
+            </p>
 
             <p>
                 <label for="mail"> email:</label>

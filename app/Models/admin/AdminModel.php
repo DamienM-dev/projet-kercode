@@ -7,15 +7,13 @@ namespace Projet\Models\Admin;
 
 class AdminModel extends \Projet\Models\Manager
 {
-    public function creatAdmin($mail, $mdp)
+    public function creatAdmin($lastname, $firstname, $mail, $mdp)
     {
 
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare('INSERT INTO coordonnees($mail, $mdp) 
-                              INNER JOIN producteur 
-                              ON            coordonnes_producteur = id_producteur  
-                              VALUE (?, ?)');
-        $req->execute(array($mail, $mdp));
+
+        $req = $bdd->prepare('INSERT INTO producteur (lastname, firstname, mail, mdp) VALUE (?, ?, ?, ?)');
+        $req->execute(array($lastname, $firstname, $mail, $mdp));
 
 
 
