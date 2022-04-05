@@ -281,10 +281,23 @@ section#block_notre_histoire{
     border: 1px $couleurPrincipal solid;
     background-color: $couleurPrincipal;
     border-radius: 0 0 10px 10px;
+    position: relative;
+    overflow-y: hidden;
+
+    &:hover .icon a i {
+
+        transform: translateY(15px);
+
+    }
 
     img {
-        width: 100%;
+        border-radius: 50%;
+        width: 60%;
+        transition: all .3s;
+        margin-top: 50px;
+
     }
+
     
     &:nth-child(1) {
         margin-top: 40px;
@@ -297,12 +310,35 @@ section#block_notre_histoire{
         color: $couleurTertiaire;
         margin-bottom: 10px;
     }
+
+    h3, p {
+        transition: all .3s;
+    }
+
+    .block_agriculteur:hover img, .block_agriculteur:hover h3, .block_agriculteur:hover p {
+        transform: translateY(-50px);
+    }
+    .agriculteur_reseau {
+        position:absolute;
+        bottom: 50px;
+        //pense bête pour demain, voir si cela aide pour centrer texte en abslotue
+        left: 50%;
+        transform: translate(-50%);
+
+        a {
+            i {
+                margin: 10px;
+                transition: all .6s;
+                transform: translateY(100px);
+            }
+        }
+    }
     
 }
 
 
 
-// =============PRODUITS PAGE ACCUEIL=============
+// =============PAGE ACCUEIL: PRODUITS =============
 
 .blocks_inside_produit {
     
@@ -328,8 +364,23 @@ section#block_produits {
         width: 100%;
         margin: 10px;
 
-        img.image_produit_laitier{
+        h1 {
+            font-size: 1.4rem;
+            color: $couleurSecondaire;
+            margin-bottom: 25px;
+        }
+
+        
+        .produit_laitier_inside {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             width: 100%;
+
+            img {
+                width:80%;
+                margin: auto;
+            }
         }
     }
 }

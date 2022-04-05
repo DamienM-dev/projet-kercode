@@ -2,7 +2,7 @@
 
 namespace Projet\Controllers;
 
-
+use Exception;
 class AdminController
 {
     //creer admnistrateur, va peut être dégager
@@ -30,30 +30,37 @@ class AdminController
 
 
         if ($isPasswordCorrect) {
+            $produitModel = new \Projet\Models\Admin\AdminModel();
+
+            $product = $produitModel->listerProduit();
 
             require 'app/Views/admin/AdminDashboard.php';
         }
     }
-    //affiche les produits présant en bdd dans dashboard
-    public function listerProduit()
+    
+
+    //affiche la vu global d'un produit dans le dashboard
+
+    public function ViewProductAdmin($id)
     {
+        
         $adminManager = new \Projet\Models\front\ProduitModel();
-        $product = $adminManager->listerProduitDashboard();
-
-        require 'app/Views/front/AdminDashboard.php';
-    }
-
-    //affiche la vu global d'un produit
-
-    public function ViewProductAdmin()
-    {
-        $adminManager = new \Projet\Models\front\ProduitModel();
-        $productView = $adminManager->returnProducts();
-
+        $produits= $adminManager->returnProduct($id);
+        
+       
+        
         require 'app/Views/admin/produitView.php';
     }
+    
+    //afficher view du formulaire d'ajout en bdd
 
-    //ajoute un prduit en bdd
+    public function ajouterProduitView() {
+
+        require 'app/Views/admin/ajouterProduitView.php';
+
+    }
+
+    //ajoute un produit en bdd
     public function ajouterProduit()
     {
         $adminManager = new \Projet\Models\front\ProduitModel();
@@ -62,4 +69,17 @@ class AdminController
 
         require 'app/Views/admin/ajouterProduitView.php';
     }
+
+    //DELETE un produit
+
+    public function deleteProduit($id)
+    {
+        
+            $adminManager = new \Projet\Models\Admin\AdminModel();
+            $deleteProduit = $adminManager->deleteProduit($id);
+        
+    
+            header('Location: indexAdmin.php?action=connexionAdmin');
+      
+    } 
 }

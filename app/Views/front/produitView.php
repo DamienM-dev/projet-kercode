@@ -15,15 +15,17 @@ ob_start();
         <div id="produits_laitier">
 
 
+            <?php  foreach($produits as $produit) : ?>
+                
             <div class="produit_laitier_inside">
 
-                <?php  foreach($produits as $produit) : ?>
-                <img src=<?= $produit['img'] ?> alt =<?= $produit['alt'] ?>
+                <img src="<?= $produit['img'] ?>" alt ="<?= $produit['alt'] ?>">
                 <h3><?= $produit['name']?></h3>
-                <p><?= $produit['price'] ?></p>
+                <p><?= $produit['price'] ?> €</p>
                 <button><a href="#">Ajouter au panier</a></button>
+                <div></div>
             </div>
-
+<?php echo 'ca marche ?' ?>
             <?php endforeach; ?>
 
         </div>

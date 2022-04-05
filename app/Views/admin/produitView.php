@@ -11,25 +11,25 @@ ob_start();
 
 
     <form>
-
         <div>
+        <?php foreach($produits as $Produit) : ?>
             <div>
                 <label>nom:</label>
-                <p><?= ' ' . $product['name'] ?></p>
+                <p><?=$produit['name'] ?></p>
             </div>
 
             <div>
                 <label>description:</label>
-                <p><?= ' ' . $product['description'] ?></p>
+                <p><?=$produit['description'] ?></p>
             </div>
 
             <div>
                 <label>price:</label>
-                <p><?= ' ' . $product['price'] ?></p>
+                <p><?=$produit['price'] ?></p>
             </div>
             <button><a>dashboard</a>
+            <?php endforeach; ?>
         </div>
-
     </form>
 
 </section>

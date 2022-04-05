@@ -34,6 +34,8 @@ class ControllerFront
 
     require('app/Views/front/produitView.php');
   }
+  
+ 
 
   public function contact()
   {

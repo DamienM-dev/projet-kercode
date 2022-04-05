@@ -10,7 +10,11 @@ ob_start();
 <section id="Vu_produit_dasboard">
 
 
-    <form action="indexAdmin.php?page=ajouterProduit" method="post" enctype="multipart/form-data">
+    <form action="indexAdmin?action=ajouterProduit" method="post" enctype="multipart/form-data">
+
+    <h1>Ajouter un produit</h1>
+
+    <?php foreach ( $ajouterProduit as $product) :?>
 
         <div>
             <div>
@@ -30,12 +34,26 @@ ob_start();
 
             <div>
                 <label for="categories">categories:</label>
+                <input type="number" name="categories" id="categories"><?= ' ' . $product['categories'] ?></input>
+            </div>
+            
+            <div>
+                <label for="categories">categories:</label>
                 <select name="categories" id="categories">
                     <!-- A finir -->
                 </select>
             </div>
+
+            <div>
+                <label for="img">images:</label>
+                <input type="files" name="img" id="img"><?= ' ' . $product['img'] ?></input>
+            </div>
+
+            <button type="substr"><a>soumettre</a></button>
             <button><a>dashboard</a>
         </div>
+
+        <?php endforeach; ?>
 
     </form>
 

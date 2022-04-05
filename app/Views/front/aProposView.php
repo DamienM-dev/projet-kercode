@@ -33,19 +33,42 @@ ob_start();
 <section id="block_notre_equipe">
 
     <div class="block_agriculteur">
-        <img src="app/Public/design/images/farmer.jpg" alt="Benoit, le laitier">
-        <h3>Benoit Le cam</h3>
-        <p>Notre éleveur laitier ainsi que fromager.</p>
+        <div class="agriculteur_information">
+            <img src="app/Public/design/images/farmer.jpg" alt="Benoit, le laitier">
+            <h3>John Doe</h3>
+            <p>Notre éleveur laitier ainsi que fromager.</p>
+        </div>
+        <div class="agriculteur_reseau">
+        <a href="#"><i class="fa-brands fa-facebook-f logo_footer fa-xl"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin-in logo_footer fa-xl"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram-square logo_footer fa-xl"></i></a>
+        </div>
     </div>
+
     <div class="block_agriculteur">
-        <img src="app/Public/design/images/farmer2.jpg" alt="Herve, l'éleveur">
-        <h3>Herve William</h3>
-        <p>Notre éleveur. Vous aurez le choix entre du boeuf, poulet ou du veau .</p>
+        <div class="agriculteur_information">
+            <img src="app/Public/design/images/farmer2.jpg" alt="Herve, l'éleveur">
+            <h3>James Doe</h3>
+            <p>Notre éleveur. Vous aurez le choix entre du boeuf, poulet ou du veau .</p>
+        </div>
+        <div class="agriculteur_reseau">
+        <a href="#"><i class="fa-brands fa-facebook-f logo_footer fa-xl"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin-in logo_footer fa-xl"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram-square logo_footer fa-xl"></i></a>
+        </div>
     </div>
+
     <div class="block_agriculteur">
-        <img src="app/Public/design/images/farmer3.jpg" alt="Marc, l'agriculteur">
-        <h3>Marc Martinez</h3>
-        <p>Notre agriculteur. Il vend des fruits et légumes de saisons garantis sans pesticides</p>
+        <div class="agriculteur_information">
+            <img src="app/Public/design/images/farmer3.jpg" alt="Marc, l'agriculteur">
+            <h3>Jane Doe</h3>
+            <p>Notre agriculteur. Il vend des fruits et légumes de saisons garantis sans pesticides</p>
+        </div>
+        <div class="agriculteur_reseau">
+        <a href="#"><i class="fa-brands fa-facebook-f logo_footer fa-xl"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin-in logo_footer fa-xl"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram-square logo_footer fa-xl"></i></a>
+        </div>
     </div>
 </section>
 

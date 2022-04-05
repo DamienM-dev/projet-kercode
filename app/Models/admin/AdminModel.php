@@ -7,6 +7,7 @@ namespace Projet\Models\Admin;
 
 class AdminModel extends \Projet\Models\Manager
 {
+    //créer administrateur
     public function creatAdmin($lastname, $firstname, $mail, $mdp)
     {
 
@@ -31,24 +32,34 @@ class AdminModel extends \Projet\Models\Manager
 
         return $req;
     }
+    
+    public $id;
+
+    //Lister les produits de la bdd sur le dashboard
     public function listerProduit()
     {
         $bdd = $this->dbConnect();
-        $reqListe = $bdd->prepare('SELECT name, alt, description, price, 
+        $product = $bdd->prepare("SELECT product.id, product.name, description, price
                                    FROM product 
                                    INNER JOIN categories 
                                    ON product.categories_id = categories.id 
-                                   WHERE id= ?
-                                   ORDER BY id DESC');
-        $reqListe->execute(array());
+                                   ORDER BY product.id DESC");
+        $product->execute(array());
+        
 
-        return $reqListe;
+        return $product->fetchAll();
     }
 
-    public function ajouterProduitBdd()
+    //DELETE un produit dpuis le dasboard
+
+    public function deleteProduit($id)
     {
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare('INSERT INTO product VALUE (?,?,?,?)');
-        $req->execute((array()));
+        $deleteProduit = $bdd->prepare("DELETE FROM product WHERE id = ? ");
+        $deleteProduit->execute(array($id));
+        
+
+        return $deleteProduit;
     }
+
 }

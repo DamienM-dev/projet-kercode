@@ -12,33 +12,33 @@ ob_start();
 
     <div>
         <h2>Liste des produits disponibles</h2>
-        <button><a href="indexAdmin.php?action=ajouterProduit">Ajouter</a></button>
+        <button><a href="indexAdmin.php?page=ajouterProduitView">Ajouter</a></button>
     </div>
 
     <table>
         <tr>
-            <td>Nom</td>
-            <td>description</td>
-            <td>prix</td>
-            <td>Catégorie</td>
-            <td>actions</td>
+            <th>Nom</th>
+            <th>description</th>
+            <th>prix</th>
+            <th>Catégorie</th>
+            <th>actions</th>
         </tr>
 
-        <?php
-        while ($product = $afficheProduct->fetch()) {
+        <?php foreach($product as $afficheProduct) : ?>
 
-            echo '<tr>';
-            echo   '<td>' . $product['name'] . '</td>';
-            echo   '<td>' . $product['description'] . '</td>';
-            echo   '<td>' . $product['price'] . '</td>';
-            echo   '<td>' . $product['categories'] . '</td>';
+            <tr>
+                <td><?= $afficheProduct['name'] ?></td>
+                <td><?= $afficheProduct['description'] ?></td>
+                <td><?= $afficheProduct['price'] ?></td>
+                <td><button><a href="indexAdmin.php?action=voirProduit&id=<?= $afficheProduct['id']?>">Voir</a></button></td>
+                <td><button><a href="#">modifier</a></button></td>
+                <td><button><a href="indexAdmin.php?action=deleteProduit&id=<?= $afficheProduct['id']?>">Supprimer</a></button></td>
+            </tr>
+            
+          
+        
+           <?php endforeach; ?>
 
-            echo  '<button><a href="indexAdmin.php?page=ViewProductAdmin&id=' . $product['id'] . '">Voir</a></button>';
-            echo  '<button><a href="indexAdmin.php?page=deleteProductAdmin&id=' . $product['id'] . '">Supprimer</a></button>';
-            echo    '</td>';
-            echo    '</tr>';
-        }
-        ?>
     </table>
 
 </section>

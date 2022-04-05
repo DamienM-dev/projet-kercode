@@ -3,8 +3,11 @@
 
 namespace Projet\Models\front;
 
+use Exception;
+
 class ProduitModel extends \Projet\Models\Manager
 {
+
     private ?string $name;
     private ?string $img;
     private ?string $alt;
@@ -19,7 +22,7 @@ class ProduitModel extends \Projet\Models\Manager
         $this->alt      = $data['alt'] ?? null;
         $this->price    = $data['price'] ?? null;
     }
-
+        //getter pour nom
     public function returnName(): string
     {
 
@@ -29,7 +32,7 @@ class ProduitModel extends \Projet\Models\Manager
 
         return $this->name;
     }
-
+        //getter pour image
     public function returnImg(): string
     {
 
@@ -39,7 +42,7 @@ class ProduitModel extends \Projet\Models\Manager
 
         return $this->img;
     }
-
+        //getter pour alt
     public function returnAlt(): string
     {
 
@@ -49,6 +52,7 @@ class ProduitModel extends \Projet\Models\Manager
 
         return $this->alt;
     }
+        //getter pour prix
     public function returnPrice(): float
     {
 
@@ -58,10 +62,9 @@ class ProduitModel extends \Projet\Models\Manager
 
         return $this->price;
     }
-
+        //return  DES produits
     public function returnProducts()
     {
-
 
         $bdd = $this->dbConnect();
         $produits = $bdd->query('SELECT name, price, img, alt from product');
@@ -69,19 +72,46 @@ class ProduitModel extends \Projet\Models\Manager
         return $produits;
     }
 
-    public function listerProduitDashboard()
-    {
-        $bdd = $this->dbConnect();
-        $reqListe = $bdd->prepare('SELECT id, name, alt, description, price 
-                                   FROM product 
-                                   INNER JOIN categories 
-                                   ON product.categories_id = categories.id
-                                   ORDER BY id DESC');
-        $reqListe->execute(array());
+      //return UN produit grace ID
 
-        return $reqListe;
+      public function returnProduct($id)
+      {
+          try {
+
+              $bdd = $this->dbConnect();
+              $produits = $bdd->prepare("SELECT product.id, product.name, description, price
+                                         FROM product 
+                                         INNER JOIN categories 
+                                         ON product.categories_id = categories.id 
+                                         WHERE product.id = ?");
+              $produits->execute(array('id'));
+              
+              
+              return $produits->fetch();
+          }
+          catch (Exception $e) {
+            die('Erreur : ' .$e->getMessage());
+          }
+      }
+
+      public function ajouterProduitBdd()
+      {
+        try {
+
+            $bdd = $this->dbConnect();
+            $ajouterProduit = $bdd->prepare("INSERT INTO product name, description, price, img VALUE (?,?,?,?)");
+            $ajouterProduit->execute(array());
+            
+            return $ajouterProduit;
+           
+        }
+        catch (Exception $e) {
+          die('Erreur : ' .$e->getMessage());
+        }
     }
-    public function ajouterProduitBdd()
-    {
-    }
+
+   
+
+    
+    
 }
