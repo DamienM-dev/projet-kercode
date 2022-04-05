@@ -38,25 +38,39 @@ try {
                 throw new Exception('Veuillez remplir les champs du formulaire');
             }
 
-            //lister produit dans dashboard
 
-        } elseif ($_GET['action'] == 'listerProduit') {
+            //Vu d'un produit sur le Dashbboard
+
+        } elseif ($_GET['action'] == 'voirProduit') {
             $id = $_GET['id'];
-            $backController->listerProduit();
+           
+        
+            $backController->ViewProductAdmin($id);
+            
 
-        //vue du produit dans dashboard
+        //afficher view du formulaire d'ajout en bdd
 
-        } elseif ($_GET['page'] == 'ViewProductAdmin') {
-            $id = $_GET['id'];
-            $backController->ViewProductAdmin();
+        } elseif ($_GET['page'] == 'ajouterProduitView') {
+            $backController->ajouterProduitView();
 
-
-
-        } elseif ($_GET['action'] == 'ajouterProduit') {
+        }
+        elseif ($_GET['action'] == 'ajouterProduit') {
 
             $backController->ajouterProduit();
+
+            //DELETE produit depuis dashboard
+        }elseif ($_GET['action'] == 'deleteProduit') {
+            $id = $_GET['id'];
+            $backController->deleteProduit($id);
         }
+
+
+    } else {
+        echo 'ligne 68';
     }
+    
+
+
 } catch (Exception $e) {
-    require 'app/Views/front/errorView.php';
+    die('Erreur : ' .$e->getMessage());
 }
