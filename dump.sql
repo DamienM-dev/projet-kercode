@@ -14,24 +14,29 @@
 
 
 -- Listage de la structure de la base pour producteur
+DROP DATABASE IF EXISTS `producteur`;
 CREATE DATABASE IF NOT EXISTS `producteur` /*!40100 DEFAULT CHARACTER SET utf32 */;
 USE `producteur`;
 
 -- Listage de la structure de la table producteur. categories
+DROP TABLE IF EXISTS `categories`;
 CREATE TABLE IF NOT EXISTS `categories` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 
 -- Listage des données de la table producteur.categories : ~2 rows (environ)
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
 INSERT INTO `categories` (`id`, `name`) VALUES
-	(1, 'fromage'),
-	(2, 'fruit');
+	(1, 'produit laitier'),
+	(2, 'fruit'),
+	(3, 'légume'),
+	(4, 'viande');
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 
 -- Listage de la structure de la table producteur. client
+DROP TABLE IF EXISTS `client`;
 CREATE TABLE IF NOT EXISTS `client` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `civility` tinyint(1) NOT NULL,
@@ -47,13 +52,14 @@ CREATE TABLE IF NOT EXISTS `client` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
--- Listage des données de la table producteur.client : ~1 rows (environ)
+-- Listage des données de la table producteur.client : ~0 rows (environ)
 /*!40000 ALTER TABLE `client` DISABLE KEYS */;
 INSERT INTO `client` (`id`, `civility`, `lastname`, `firstname`, `address`, `codePostal`, `ville`, `mail`, `phone`, `mdp`, `rgpd`) VALUES
 	(1, 0, 'admin', 'admin', 'hfhfh', 45899, 'paris', 'admin@gmail.fr', '0123456789', '$2y$10$G.QtMpGGc8TKzyL8DPNZYO10je6PCtBNDmqIwETTf7LDHzhKRjzAy', 0);
 /*!40000 ALTER TABLE `client` ENABLE KEYS */;
 
 -- Listage de la structure de la table producteur. contact
+DROP TABLE IF EXISTS `contact`;
 CREATE TABLE IF NOT EXISTS `contact` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `civility` binary(1) NOT NULL,
@@ -71,6 +77,7 @@ CREATE TABLE IF NOT EXISTS `contact` (
 /*!40000 ALTER TABLE `contact` ENABLE KEYS */;
 
 -- Listage de la structure de la table producteur. product
+DROP TABLE IF EXISTS `product`;
 CREATE TABLE IF NOT EXISTS `product` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
@@ -82,15 +89,17 @@ CREATE TABLE IF NOT EXISTS `product` (
   PRIMARY KEY (`id`),
   KEY `product_fk0` (`categories_id`),
   CONSTRAINT `product_fk0` FOREIGN KEY (`categories_id`) REFERENCES `categories` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4;
 
--- Listage des données de la table producteur.product : ~1 rows (environ)
+-- Listage des données de la table producteur.product : ~0 rows (environ)
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
 INSERT INTO `product` (`id`, `name`, `alt`, `description`, `price`, `categories_id`, `img`) VALUES
-	(10, 'cafe', 'cafe', 'cafe', 4, 2, 'cad');
+	(10, 'cafe', 'cafe', 'cafe', 4, 2, 'cad'),
+	(11, 'lait fermier', 'lait fermier', 'Lait non pasterisé ', 2, 1, 'app/Public/design/images/webp/lait-cremerie.webp');
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 
 -- Listage de la structure de la table producteur. producteur
+DROP TABLE IF EXISTS `producteur`;
 CREATE TABLE IF NOT EXISTS `producteur` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `lastname` varchar(100) NOT NULL,
@@ -134,6 +143,7 @@ INSERT INTO `producteur` (`id`, `lastname`, `firstname`, `mail`, `mdp`) VALUES
 /*!40000 ALTER TABLE `producteur` ENABLE KEYS */;
 
 -- Listage de la structure de la table producteur. slider
+DROP TABLE IF EXISTS `slider`;
 CREATE TABLE IF NOT EXISTS `slider` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `url` varchar(255) NOT NULL,
@@ -141,7 +151,7 @@ CREATE TABLE IF NOT EXISTS `slider` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
--- Listage des données de la table producteur.slider : ~3 rows (environ)
+-- Listage des données de la table producteur.slider : ~2 rows (environ)
 /*!40000 ALTER TABLE `slider` DISABLE KEYS */;
 INSERT INTO `slider` (`id`, `url`, `alt`) VALUES
 	(1, 'app/Public/design/images/herbe.jpg', 'herbe'),
@@ -150,6 +160,7 @@ INSERT INTO `slider` (`id`, `url`, `alt`) VALUES
 /*!40000 ALTER TABLE `slider` ENABLE KEYS */;
 
 -- Listage de la structure de la table producteur. testimonials
+DROP TABLE IF EXISTS `testimonials`;
 CREATE TABLE IF NOT EXISTS `testimonials` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `photo` varchar(255) NOT NULL,

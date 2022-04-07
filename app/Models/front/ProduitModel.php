@@ -79,30 +79,36 @@ class ProduitModel extends \Projet\Models\Manager
           try {
 
               $bdd = $this->dbConnect();
-              $produits = $bdd->prepare("SELECT product.id, product.name, description, price
+              $produit = $bdd->prepare("SELECT product.id, product.name, description, price, img, alt
                                          FROM product 
                                          INNER JOIN categories 
                                          ON product.categories_id = categories.id 
                                          WHERE product.id = ?");
-              $produits->execute(array('id'));
+              $produit->execute(array($id));
               
               
-              return $produits->fetch();
+              
+              return $produit->fetch();
           }
           catch (Exception $e) {
             die('Erreur : ' .$e->getMessage());
           }
       }
 
-      public function ajouterProduitBdd()
+      public function ajouterProduitBdd($name, $description, $price, $categories, $img)
       {
         try {
 
             $bdd = $this->dbConnect();
-            $ajouterProduit = $bdd->prepare("INSERT INTO product name, description, price, img VALUE (?,?,?,?)");
-            $ajouterProduit->execute(array());
+            $ajouterProduit = $bdd->prepare("INSERT INTO product (product.name, description, price, img)
+                                             SELECT categories.id
+                                             FROM categories 
+                                             INNER JOIN product
+                                             ON product.categories_id = categories.id");
+            $ajouterProduit->execute(array($name, $description, $price, $categories, $img));
             
             return $ajouterProduit;
+            
            
         }
         catch (Exception $e) {

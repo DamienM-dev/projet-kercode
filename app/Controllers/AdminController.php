@@ -5,7 +5,7 @@ namespace Projet\Controllers;
 use Exception;
 class AdminController
 {
-    //creer admnistrateur, va peut être dégager
+    //creer admnistrateur
     public function createAdmin($lastname, $firstname,$mail, $mdp)
     {
 
@@ -35,7 +35,7 @@ class AdminController
             $product = $produitModel->listerProduit();
 
             require 'app/Views/admin/AdminDashboard.php';
-        }
+        } 
     }
     
 
@@ -45,9 +45,7 @@ class AdminController
     {
         
         $adminManager = new \Projet\Models\front\ProduitModel();
-        $produits= $adminManager->returnProduct($id);
-        
-       
+        $produit= $adminManager->returnProduct($id);
         
         require 'app/Views/admin/produitView.php';
     }
@@ -55,19 +53,27 @@ class AdminController
     //afficher view du formulaire d'ajout en bdd
 
     public function ajouterProduitView() {
+        $produitModel = new \Projet\Models\Admin\AdminModel();
+        
+        $categories= $produitModel->selectCategory();
 
         require 'app/Views/admin/ajouterProduitView.php';
 
     }
 
     //ajoute un produit en bdd
-    public function ajouterProduit()
+    public function ajouterProduit($name, $description, $price, $categories, $img)
     {
         $adminManager = new \Projet\Models\front\ProduitModel();
-        $ajouterProduit = $adminManager->ajouterProduitBdd();
+        $ajouterProduit = $adminManager->ajouterProduitBdd($name, $description, $price, $categories, $img);
 
 
         require 'app/Views/admin/ajouterProduitView.php';
+    }
+
+    public function confirmationDelete()
+    {
+        require 'app/Views/admin/confirmationDelete.php';
     }
 
     //DELETE un produit
@@ -75,11 +81,24 @@ class AdminController
     public function deleteProduit($id)
     {
         
+        
             $adminManager = new \Projet\Models\Admin\AdminModel();
             $deleteProduit = $adminManager->deleteProduit($id);
         
     
-            header('Location: indexAdmin.php?action=connexionAdmin');
+            require 'app/Views/admin/AdminDashboard.php';
       
     } 
+    
+    public function retourDashboard()
+    {
+        require 'app/Views/admin/AdminDashboard.php';
+    }
+
+    public function selectCategory()
+    {
+        $adminManager = new \Projet\Models\Admin\AdminModel();
+        $categories = $adminManager->selectCategory();
+        require 'app/Views/admin/ajouterProduitView.php';
+    }
 }

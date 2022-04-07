@@ -43,6 +43,7 @@ try {
             $controllerFront->pageConnexionAdmin();
 
         } elseif ($_GET['page'] == 'contactPost') {
+            
 
             $civility   = htmlspecialchars($_POST['civility']);
             $lastname   = htmlspecialchars($_POST['lastname']);
@@ -62,6 +63,7 @@ try {
                 'raison'    => $raison,
                 'content'   => $content
             ];
+        
             
             if (!empty($civility) && (!empty($lastname) && (!empty($firstname) && (!empty($phone) && (!empty($mail) && (!empty($raison) && (!empty($content)))))))) {
                 $controllerFront->contactPost($contactData);

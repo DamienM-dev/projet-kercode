@@ -630,7 +630,64 @@ footer {
     
 }
 
+//=======DASHBOARD ADMINISTRATEUR=======
 
+    //=======DASHBOARD ADMINISTRATEUR: VU PRODUIT=======
+
+    #Vu_produit_dasboard {
+        text-align: center;
+
+        h3 {
+            color: $couleurSecondaire;
+            text-transform: uppercase;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        button {
+
+            background-color: rgb(24, 96, 124);
+            width: 120px;
+            margin: 15px auto;
+            display: block;
+            padding: 10px;
+
+            &:hover {
+                background-color:rgba(24, 96, 124, 0.411);
+            }
+
+            a {
+                color: white;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    // =============DASHBOARD ADMINISTRATEUR: GRAND ECRAN=============
+        
+        //=======DASHBOARD ADMINISTRATEUR: : GRAND ECRAN: VU PRODUIT=======
+
+
+    
+    @media screen and (min-width:1024px) {
+
+        #block_vu_produit_dasboard {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            margin-top: 100px;
+
+            h3 {
+                font-size: 1.4rem;
+            }
+
+            P {
+                font-size: 1.3rem;
+            }
+        }
+    }
   // =============MEDIUM ECRAN=============
 
   @media screen and (min-width:688px) 

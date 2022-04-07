@@ -10,27 +10,31 @@ ob_start();
 <section id="Vu_produit_dasboard">
 
 
-    <form>
-        <div>
-        <?php foreach($produits as $Produit) : ?>
-            <div>
-                <label>nom:</label>
-                <p><?=$produit['name'] ?></p>
+    <div id="block_vu_produit_dasboard">
+        <div id="Vu_produit_dasboard_inside">
+             <div>
+                <h3>nom:</h3>
+                <p><?=$produit['name'] ?><p>
             </div>
-
             <div>
-                <label>description:</label>
+                <h3>description:</h3>
                 <p><?=$produit['description'] ?></p>
             </div>
 
             <div>
-                <label>price:</label>
-                <p><?=$produit['price'] ?></p>
+                <h3>price:</h3>
+                <p><?=$produit['price']?> €</p>
             </div>
-            <button><a>dashboard</a>
-            <?php endforeach; ?>
         </div>
-    </form>
+
+        <div>
+            <img src="<?= $produit['img']?>" alt="<?=$produit['alt'] ?>">
+        </div>
+    </div>
+
+        <button type="button">
+            <a href="indexAdmin.php?action=retourDashboard">dashboard</a>
+        </button>
 
 </section>
 

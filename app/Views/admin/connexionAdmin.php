@@ -19,6 +19,7 @@ ob_start();
             </p>
 
             <button type="submit">Soumettre</button>
+            <
         </form>
 </section>
 

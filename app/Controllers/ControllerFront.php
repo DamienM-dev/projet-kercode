@@ -75,6 +75,7 @@ class ControllerFront
 
     if (filter_var($contactData['mail'], FILTER_VALIDATE_EMAIL)) {
       $Mail = $postMail->postMail($contactData);
+      var_dump($Mail);
       require 'app/Views/Front/confirmeContact.php';
     } else {
       header('Location: app/Views/front/errorView.php');

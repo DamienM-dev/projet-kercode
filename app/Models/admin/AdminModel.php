@@ -3,7 +3,7 @@
 
 namespace Projet\Models\Admin;
 
-
+use Exception;
 
 class AdminModel extends \Projet\Models\Manager
 {
@@ -39,7 +39,7 @@ class AdminModel extends \Projet\Models\Manager
     public function listerProduit()
     {
         $bdd = $this->dbConnect();
-        $product = $bdd->prepare("SELECT product.id, product.name, description, price
+        $product = $bdd->prepare("SELECT product.id, product.name, description, price, categories.name as category
                                    FROM product 
                                    INNER JOIN categories 
                                    ON product.categories_id = categories.id 
@@ -54,12 +54,27 @@ class AdminModel extends \Projet\Models\Manager
 
     public function deleteProduit($id)
     {
-        $bdd = $this->dbConnect();
-        $deleteProduit = $bdd->prepare("DELETE FROM product WHERE id = ? ");
-        $deleteProduit->execute(array($id));
+
+        try {
+
+            $bdd = $this->dbConnect();
+            $deleteProduit = $bdd->prepare("DELETE FROM product WHERE id = ? ");
+            $deleteProduit->execute(array($id));
+        } catch (Exception $e) {
+            die('Erreur : ' .$e->getMessage());
+          }
         
 
         return $deleteProduit;
+    }
+
+    public function selectCategory()
+    {
+        $bdd = $this->dbConnect();
+        $categories = $bdd->prepare('SELECT id, name FROM categories');
+        $categories->execute(array());
+
+        return $categories->fetchAll();
     }
 
 }

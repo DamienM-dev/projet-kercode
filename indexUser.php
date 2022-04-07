@@ -6,7 +6,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 
 try {
-    $backController = new \Projet\Controllers\UserController();
+    $userController = new \Projet\Controllers\UserController();
 
     if (isset($_GET['action'])) {
 
@@ -14,35 +14,43 @@ try {
 
         if ($_GET['action'] == 'creatUser') {
 
-            $civility   =                  $_POST['civility'];
-            $lastname   = htmlspecialchars($_POST['lastname']);
-            $firstname  = htmlspecialchars($_POST['firstname']);
-            $address    = htmlspecialchars($_POST['address']);
-            $codePostal = htmlspecialchars($_POST['codePostal']);
-            $ville      = htmlspecialchars($_POST['ville']);
-            $mail       = htmlspecialchars($_POST['mail']);
-            $phone      = htmlspecialchars($_POST['phone']);
-            $mdp        =                  $_POST['mdp'];
-            $rgpd       =                  $_POST['rgpd'];
+            try {
 
-            $mdp        = password_hash($mdp, PASSWORD_DEFAULT);
+                $civility   = htmlspecialchars($_POST['civility']);
+                $lastname   = htmlspecialchars($_POST['lastname']);
+                $firstname  = htmlspecialchars($_POST['firstname']);
+                $address    = htmlspecialchars($_POST['address']);
+                $codePostal = htmlspecialchars($_POST['codePostal']);
+                $ville      = htmlspecialchars($_POST['ville']);
+                $mail       = htmlspecialchars($_POST['mail']);
+                $phone      = htmlspecialchars($_POST['phone']);
+                $mdp        =                  $_POST['mdp'];
+                $rgpd       =htmlspecialchars($_POST['rgpd']);
+    
+                $mdp        = password_hash($mdp, PASSWORD_DEFAULT);
+    
+                $data = [
+    
+                    'civility'      => $civility,
+                    'lastname'      => $lastname,
+                    'firstname'     => $firstname,
+                    'address'       => $address,
+                    'codePostal'    => $codePostal,
+                    'ville'         => $ville,
+                    'mail'          => $mail,
+                    'phone'         => $phone,
+                    'mdp'           => $mdp,
+                    'rgpd'          => $rgpd
+                ];
+                
+    
+    
+                $userController->createUser($data);
+            } catch (Exception $e){
+                die('Erreur : ' .$e->getMessage());
+            }
 
-            $data = [
-
-                'civility'      => $civility,
-                'lastname'      => $lastname,
-                'firstname'     => $firstname,
-                'address'       => $address,
-                'codePostal'    => $codePostal,
-                'ville'         => $ville,
-                'mail'          => $mail,
-                'phone'         => $phone,
-                'mdp'           => $mdp,
-                'rgpd'          => $rgpd
-            ];
-
-
-            $backController->createUser($data);
+            
         }
 
 

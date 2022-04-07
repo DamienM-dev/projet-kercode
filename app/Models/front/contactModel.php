@@ -8,7 +8,7 @@ class ContactModel extends \Projet\Models\Manager
     {
         $bdd = $this->dbConnect();
 
-        $req = $bdd->prepare('INSERT INTO contact( $civility, $lastname, $firstname, $phone, $mail,  $raison, $content) VALUE(:civility, :lastname, :firstname, :phone, :mail,  :raison, :content)');
+        $req = $bdd->prepare('INSERT INTO contact( $civility, $lastname, $firstname, $phone, $mail,  $raison, $content) VALUES(:civility, :lastname, :firstname, :phone, :mail,  :raison, :content)');
         $req->execute(array(
             ':civility'     => $contactData['civility'],
             ':lastname'     => $contactData['lastname'],

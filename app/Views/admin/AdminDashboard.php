@@ -12,7 +12,7 @@ ob_start();
 
     <div>
         <h2>Liste des produits disponibles</h2>
-        <button><a href="indexAdmin.php?page=ajouterProduitView">Ajouter</a></button>
+        <button><a href="indexAdmin.php?action=ajouterProduitView">Ajouter</a></button>
     </div>
 
     <table>
@@ -26,13 +26,16 @@ ob_start();
 
         <?php foreach($product as $afficheProduct) : ?>
 
+
+
             <tr>
                 <td><?= $afficheProduct['name'] ?></td>
                 <td><?= $afficheProduct['description'] ?></td>
                 <td><?= $afficheProduct['price'] ?></td>
+                <td><?= $afficheProduct['category'] ?></td>
                 <td><button><a href="indexAdmin.php?action=voirProduit&id=<?= $afficheProduct['id']?>">Voir</a></button></td>
                 <td><button><a href="#">modifier</a></button></td>
-                <td><button><a href="indexAdmin.php?action=deleteProduit&id=<?= $afficheProduct['id']?>">Supprimer</a></button></td>
+                <td><button><a href="indexAdmin.php?action=confirmationDelete&id=<?= $afficheProduct['id']?>">Supprimer</a></button></td>
             </tr>
             
           
