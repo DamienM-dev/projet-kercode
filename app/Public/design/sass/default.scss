@@ -14,7 +14,7 @@
 // =============STYLE GENERAL=============
 
 body {
-     font-family: 'medio','argesta_displayregular',Georgia, 'Times New Roman', Times, serif;
+     font-family: 'Quicksand', sans-serif,Georgia, 'Times New Roman', Times, serif;
 }
 a {
     text-decoration: none;
@@ -76,7 +76,7 @@ h2 {
     ul.nav-menu {
         position: absolute;
         background-color:$couleurPrincipal;
-        top: 89px;
+        top: 75px;
         left: 0;
         right: 0;
         padding-left: 20px;
@@ -261,7 +261,7 @@ section#block_image_parallax {
     }
 }
 
-// =============A PROPOS: CARD AGRICULTEUR=============
+        // =============A PROPOS: CARD AGRICULTEUR=============
 
 
 section#block_notre_histoire{
@@ -274,8 +274,9 @@ section#block_notre_histoire{
 }
 
 .block_agriculteur {
+    cursor: pointer;
     text-align: center;
-    height: 370px;
+    height: 420px;
     margin: 0 10px;
     margin-bottom: 10px;
     border: 1px $couleurPrincipal solid;
@@ -284,13 +285,10 @@ section#block_notre_histoire{
     position: relative;
     overflow-y: hidden;
 
-    &:hover .icon a i {
 
-        transform: translateY(15px);
 
-    }
 
-    img {
+    img.photo_agriculteur {
         border-radius: 50%;
         width: 60%;
         transition: all .3s;
@@ -298,29 +296,18 @@ section#block_notre_histoire{
 
     }
 
-    
-    &:nth-child(1) {
-        margin-top: 40px;
-    }
-    &:nth-last-child(1) {
-        margin-bottom: 50px;
-    }
-
     h3 {
-        color: $couleurTertiaire;
-        margin-bottom: 10px;
+        margin-top: 20px;
+        font-size: 1.3rem;
     }
 
-    h3, p {
-        transition: all .3s;
+    p {
+        font-size: 1.2rem;
     }
 
-    .block_agriculteur:hover img, .block_agriculteur:hover h3, .block_agriculteur:hover p {
-        transform: translateY(-50px);
-    }
     .agriculteur_reseau {
         position:absolute;
-        bottom: 50px;
+        bottom: 20px;
         //pense bête pour demain, voir si cela aide pour centrer texte en abslotue
         left: 50%;
         transform: translate(-50%);
@@ -328,11 +315,33 @@ section#block_notre_histoire{
         a {
             i {
                 margin: 10px;
+                color: $couleurSecondaire;
                 transition: all .6s;
-                transform: translateY(100px);
+                transform: translateY(50px);
+
+                &:hover {
+                    color: $couleurQuatre;
+                }
             }
         }
     }
+    
+}
+
+
+.block_agriculteur h3, .block_agriculteur p {
+    
+    transition: all .3s;
+}
+
+.block_agriculteur:hover img, .block_agriculteur:hover h3, .block_agriculteur:hover p {
+    
+    transform: translateY(-50px);
+    
+}
+.block_agriculteur:hover .agriculteur_reseau a i {
+
+    transform: translateY(-20px);
     
 }
 
@@ -630,121 +639,66 @@ footer {
     
 }
 
-//=======DASHBOARD ADMINISTRATEUR=======
-
-    //=======DASHBOARD ADMINISTRATEUR: VU PRODUIT=======
-
-    #Vu_produit_dasboard {
-        text-align: center;
-
-        h3 {
-            color: $couleurSecondaire;
-            text-transform: uppercase;
-        }
-
-        p {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
-
-        button {
-
-            background-color: rgb(24, 96, 124);
-            width: 120px;
-            margin: 15px auto;
-            display: block;
-            padding: 10px;
-
-            &:hover {
-                background-color:rgba(24, 96, 124, 0.411);
-            }
-
-            a {
-                color: white;
-                text-transform: uppercase;
-            }
-        }
-    }
-
-    // =============DASHBOARD ADMINISTRATEUR: GRAND ECRAN=============
-        
-        //=======DASHBOARD ADMINISTRATEUR: : GRAND ECRAN: VU PRODUIT=======
 
 
     
-    @media screen and (min-width:1024px) {
-
-        #block_vu_produit_dasboard {
-            display: grid;
-            grid-template-columns: 50% 50%;
-            margin-top: 100px;
-
-            h3 {
-                font-size: 1.4rem;
-            }
-
-            P {
-                font-size: 1.3rem;
-            }
-        }
-    }
-  // =============MEDIUM ECRAN=============
+// =============MEDIUM ECRAN=============
 
   @media screen and (min-width:688px) 
   {
-        // =============CSS GENERAL=============
-
-    p {
+      // =============CSS GENERAL=============
+      
+      p {
     font-size: 1.2rem;
-    }
+}
 
-        // =============HEADER=============
+// =============HEADER=============
 
-        ul.nav-menu {
+ul.nav-menu {
+    
+    top: 99px;
+    
+}
 
-            top: 105px;
-
-        }
-           
-        #logo {
+#logo {
             width: 8vw;
             height: 8vh;
         }
-
+        
         // =============PAGE ACCUEIL: BLOCK PARALLAX=============
 
         section#block_image_parallax {
-
-              
+            
+            
             //=====PAGE ACCUEIL: BLOCK PARALLAX=>GESTION DE L'ABSOLUTE=====
         
-        #block_absolute_image {
+            #block_absolute_image {
 
-            top: 18%;
-            margin: 0 35px;
-            
-        }
+                top: 18%;
+                margin: 0 35px;
                 
+        }
+        
     }
-
-    // =================PAGE ACCUEIL: SLIDER=========================
-
-    #slider-block{
-
-        margin-top: 30px;
-
-    }
-
-        // =============PAGE ACCUEIL: BLOCK POURQUOI=============
-
-#block_pourquoi {
     
-    .blocks_inside_pourquoi{
+    // =================PAGE ACCUEIL: SLIDER=========================
+    
+    #slider-block{
+        
+        margin-top: 30px;
+        
+    }
 
-        height: 200px;
-
-        img.image_pourquoi {
-            width: 12vw; 
+    // =============PAGE ACCUEIL: BLOCK POURQUOI=============
+    
+        #block_pourquoi {
+            
+            .blocks_inside_pourquoi{
+                
+                height: 200px;
+        
+                img.image_pourquoi {
+                    width: 12vw; 
         }
 
         .design_block_hover {
@@ -757,47 +711,52 @@ footer {
 
 // =============PAGE A PROPOS=============
 
-        // =============A PROPOS: IMAGE PARRALAX=============
+// =============A PROPOS: IMAGE PARRALAX=============
 
         section#block_image_apropos {
             
             //=====A PROPOS: IMAGE PARRALAX => GESTION DE L'ABSOLUTE=====
-                    
+            
             #block_inside_image_apropos {
-        
+                
                 top: 18%;
                 margin: 0 85px;
-
+                
                 h1 {
                     font-size: 1.6rem;
                 }
         }
-}
+    }
 
 // =============A PROPOS: CARD AGRICULTEUR=============
 
 
 section#block_notre_histoire{
-
+    
     h2 {
        font-size: 1.3rem;
     }
 }
 
 .block_agriculteur {
- 
+    
     width: 100%;
-    height: 600px;
-
-
-    img {
-        height: 500px;
+    height: 500px;
+    
+    
+    img.photo_agriculteur  {
+        
+        width: 40%;
         object-fit: cover;
         
     }
     
     h3 {
-      font-size: 1.3rem;
+        font-size: 1.4rem;
+    }
+
+    p {
+        font-size: 1.3rem;
     }
     
 }
@@ -807,29 +766,29 @@ section#block_notre_histoire{
 
 footer {
     
-        .fa-xl {
-            font-size: 2rem;
-        }
+    .fa-xl {
+        font-size: 2rem;
     }
+}
 }
 
 
 //   =============GRAND ECRAN=============
 
- @media screen and (min-width:1024px) {
-
+@media screen and (min-width:1024px) {
+    
     //=============HEADER===============
-
+    
     svg.icon {
         display: none;
     }
-
+    
     ul.nav-menu {
         display: initial;
         position: static;
         border-top: none;
         top: 87px;
-
+        
         li.nav-item {
             position: relative;
             display: inline-block;
@@ -838,64 +797,64 @@ footer {
     }
 
     // =============PAGE ACCUEIL: BLOCK PARALLAX=============
-
-    section#block_image_parallax {
-
-              
-        //=====PAGE ACCUEIL: BLOCK PARALLAX => GESTION DE L'ABSOLUTE=====
     
-    #block_absolute_image {
-
-        top: 23%;
-        margin: 0 180px;
+    section#block_image_parallax {
+        
+        
+        //=====PAGE ACCUEIL: BLOCK PARALLAX => GESTION DE L'ABSOLUTE=====
+        
+        #block_absolute_image {
+            
+            top: 23%;
+            margin: 0 180px;
+            
+        }
         
     }
-            
-}
 
     // =============PAGE ACCUEIL: BLOCK POURQUOI=============
-
+    
     #block_pourquoi {
-
+        
         display: flex;
         flex-wrap: wrap;   
-       
-       h2{
-           width: 100%;
-       }
-
-       .blocks_inside_pourquoi 
-       {
-
-        height: 330px;
-        width: 31%;
-
-
-        img.image_pourquoi 
-        {
-         width: 10vw; 
-        }
-
-       .design_block_hover {
-        height: 330px;
         
-        button {
+        h2{
+            width: 100%;
+        }
+        
+        .blocks_inside_pourquoi 
+        {
+            
+            height: 330px;
+            width: 31%;
+            
+            
+            img.image_pourquoi 
+            {
+                width: 10vw; 
+            }
+        
+            .design_block_hover {
+                height: 330px;
+            
+                button {
             position: absolute;
             bottom: 20px;
             left: 31%;
             
         }
-            }
-        }
+    }
+}
 
-    } 
-    // =============PAGE ACCUEIL: BLOCK PRODUIT=============
+} 
+// =============PAGE ACCUEIL: BLOCK PRODUIT=============
 
-    #block_produits{
-
+#block_produits{
+    
         display: flex;
         flex-wrap: wrap;
-
+        
         h2 {
             width: 100%;
         }
@@ -903,7 +862,7 @@ footer {
             
             height: 330px;
             width: 31%;
-
+            
             img.image_produits {
 
                 height: 300px;
@@ -915,43 +874,43 @@ footer {
     // =============PAGE ACCUEIL: SLIDER==================
 
     #slider-block{
-
+        
         margin-top: 30px;
-
+        
         #block_absolute_image {
 
             left: 180px;
         }
-
+        
     }
-
-    // =============PAGE A PROPOS: block_image_apropos=============
-
-    section#block_image_apropos {
-            
-        //=====A PROPOS: IMAGE PARRALAX => GESTION DE L'ABSOLUTE=====
-                
-        #block_inside_image_apropos {
     
+    // =============PAGE A PROPOS: block_image_apropos=============
+    
+    section#block_image_apropos {
+        
+        //=====A PROPOS: IMAGE PARRALAX => GESTION DE L'ABSOLUTE=====
+        
+        #block_inside_image_apropos {
+            
             top: 25%;
             margin: 0 215px;
-
+            
             h1 {
                 font-size: 1.7rem;
             }
         }
-
+        
     }
     section#block_notre_equipe {
         display: flex;
         flex-wrap: wrap;
-
+        
         .block_agriculteur {
-
+            
             width: 31%;
             height: 450px;
             text-align: justify;
-
+            
             &:nth-child(1) {
                 margin-top: 0px;
             }
@@ -959,30 +918,33 @@ footer {
             p {
                 padding: 10px;
             }
-
-            img {
-
-                height: 300px;
-
+            
+            .agriculteur_information {
+                text-align: center;
+            }
+            img.photo_agriculteur {
+                
+                width: 60%;
+                
             } 
         }
     }
 
     // =============PAGE CONTACT============
-
-        #container_contact{
-
-            
-            margin-top: 60px;
-            display: flex;
-            flex-wrap: wrap;
-            flex-direction: row-reverse;
-            justify-content: space-around;
-            
-
-
-            h1 {
-                width: 100%;
+    
+    #container_contact{
+        
+        
+        margin-top: 60px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row-reverse;
+        justify-content: space-around;
+        
+        
+        
+        h1 {
+            width: 100%;
                 font-size: 1.7rem;
                 margin-bottom: 20px;
             }
@@ -991,18 +953,18 @@ footer {
                 width: 600px;
                 height: 500px;
             }
-
+            
         }
-
+        
         // =============FORMULAIRE INSCRIPTION============
-
+        
         #container_inscription {
-
+            
             margin-top: 60px;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-
+            
             .formulaire_grand {
                 display: flex;
 
@@ -1016,16 +978,102 @@ footer {
                 font-size: 1.7rem;
                 margin-bottom: 20px;
             }
-
+            
         }
-
-
-
+        
+        
+        
+    }
+    
+    
+    
+    
+    //=======DASHBOARD ADMINISTRATEUR=======
+    
+    //=======DASHBOARD ADMINISTRATEUR: VU GENERALE=======
+    
+    table {
+        text-align: center;
+        border-collapse: collapse;
+        width: 100%;
+        
+        th {
+            background-color: $couleurPrincipal;
+            padding: 10px;
+        }
+        td {
+            
+            border: solid black 1px;
+            color: white;
+            
+            
+    }
+    tr {
+        &:nth-child(even) {
+            background-color: $couleurQuatre;
+        }
+        &:nth-child(odd) {
+            background-color: $couleurTertiaire;
+        }
+        
+    }
 }
+//=======DASHBOARD ADMINISTRATEUR: VU PRODUIT=======
+
+#Vu_produit_dasboard {
+    text-align: center;
+
+    h3 {
+        color: $couleurSecondaire;
+        text-transform: uppercase;
+        }
+        
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        button {
+            
+            background-color: rgb(24, 96, 124);
+            width: 120px;
+            margin: 15px auto;
+            display: block;
+            padding: 10px;
+            
+            &:hover {
+                background-color:rgba(24, 96, 124, 0.411);
+            }
+            
+            a {
+                color: white;
+                text-transform: uppercase;
+            }
+        }
+    }
+    
+    // =============DASHBOARD ADMINISTRATEUR: GRAND ECRAN=============
+    
+    //=======DASHBOARD ADMINISTRATEUR: : GRAND ECRAN: VU PRODUIT=======
+    @media screen and (min-width:1024px) {
+    
 
 
-  
-
-  
-  
-  
+        //
+        #block_vu_produit_dasboard {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            margin-top: 100px;
+    
+            h3 {
+                font-size: 1.4rem;
+            }
+    
+            P {
+                font-size: 1.3rem;
+            }
+        }
+        #ajouter_produit_dasboard{
+            margin-top: 100px;
+        }
+    }
