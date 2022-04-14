@@ -28,6 +28,7 @@ try {
 
         } elseif ($_GET['page'] == 'produitView') {
             $controllerFront->produitView();
+            $controllerFront->countProduct();
 
         } elseif ($_GET['page'] == 'donneesPersoView') {
             $controllerFront->donneesPerso();
@@ -42,7 +43,11 @@ try {
 
             $controllerFront->pageConnexionAdmin();
 
-        } elseif ($_GET['page'] == 'contactPost') {
+        } elseif ($_GET['page'] == 'pagePanier') {
+
+            $controllerFront->pagePanier();
+
+        }elseif ($_GET['page'] == 'contactPost') {
             
 
             $civility   = htmlspecialchars($_POST['civility']);
@@ -64,7 +69,6 @@ try {
                 'content'   => $content
             ];
         
-            
             if (!empty($civility) && (!empty($lastname) && (!empty($firstname) && (!empty($phone) && (!empty($mail) && (!empty($raison) && (!empty($content)))))))) {
                 $controllerFront->contactPost($contactData);
             }

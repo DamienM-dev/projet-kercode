@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `categories` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 
--- Listage des données de la table producteur.categories : ~2 rows (environ)
+-- Listage des données de la table producteur.categories : ~4 rows (environ)
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
 INSERT INTO `categories` (`id`, `name`) VALUES
 	(1, 'produit laitier'),
@@ -85,17 +85,20 @@ CREATE TABLE IF NOT EXISTS `product` (
   `description` text NOT NULL,
   `price` decimal(20,0) NOT NULL,
   `categories_id` int(11) NOT NULL,
-  `img` varchar(50) NOT NULL,
+  `img` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `product_fk0` (`categories_id`),
   CONSTRAINT `product_fk0` FOREIGN KEY (`categories_id`) REFERENCES `categories` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4;
 
--- Listage des données de la table producteur.product : ~0 rows (environ)
+-- Listage des données de la table producteur.product : ~6 rows (environ)
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
 INSERT INTO `product` (`id`, `name`, `alt`, `description`, `price`, `categories_id`, `img`) VALUES
-	(10, 'cafe', 'cafe', 'cafe', 4, 2, 'cad'),
-	(11, 'lait fermier', 'lait fermier', 'Lait non pasterisé ', 2, 1, 'app/Public/design/images/webp/lait-cremerie.webp');
+	(10, 'cafe', 'cafe', 'cafe', 4, 2, 'app/Public/design/images/webp/tomme-de-vache-a-la-moutarde-violette.webp'),
+	(12, 'beurre', 'beurre', 'beurre demi sel', 2, 1, 'app/Public/design/images/webp/beurre-de-baratte-artisanal.webp'),
+	(13, 'lait fermier', 'lait fermier', 'Lait non pasterisé ', 2, 1, 'app/Public/design/images/webp/lait-cremerie.webp'),
+	(14, 'beurre', 'beurre', 'beurre demi sel', 2, 1, 'app/Public/design/images/webp/beurre-de-baratte-artisanal.webp'),
+	(15, 'cafe', 'cafe', 'cafe', 4, 2, 'app/Public/design/images/webp/tomme-de-vache-a-la-moutarde-violette.webp');
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 
 -- Listage de la structure de la table producteur. producteur
@@ -109,7 +112,7 @@ CREATE TABLE IF NOT EXISTS `producteur` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4;
 
--- Listage des données de la table producteur.producteur : ~28 rows (environ)
+-- Listage des données de la table producteur.producteur : ~25 rows (environ)
 /*!40000 ALTER TABLE `producteur` DISABLE KEYS */;
 INSERT INTO `producteur` (`id`, `lastname`, `firstname`, `mail`, `mdp`) VALUES
 	(1, 'admin', 'admin', 'admin@gmai.de', '$2y$10$0kA8hS.WzOr85NIotXG9Ce/lhO1xqCMmhKcvN27lzXlX35RbF..VK'),
@@ -170,10 +173,14 @@ CREATE TABLE IF NOT EXISTS `testimonials` (
   PRIMARY KEY (`id`),
   KEY `slider_id` (`slider_id`),
   CONSTRAINT `id_slider` FOREIGN KEY (`slider_id`) REFERENCES `slider` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf32;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf32;
 
--- Listage des données de la table producteur.testimonials : ~0 rows (environ)
+-- Listage des données de la table producteur.testimonials : ~3 rows (environ)
 /*!40000 ALTER TABLE `testimonials` DISABLE KEYS */;
+INSERT INTO `testimonials` (`id`, `photo`, `testimonial`, `alt`, `slider_id`) VALUES
+	(1, 'app\\Public\\design\\images\\visage-femme.jpg', 'ce site est super', 'femme témoignant de la grande qualité de ce projet', 1),
+	(2, 'app/Public/design/images/visage-souriant.jpg', 'Maintenant je consomne local', 'homme témoignant de la grande qualité de ce projet', 2),
+	(3, 'app\\Public\\design\\images\\visage-souriant-homme.jpg', 'Des produits frais toutes l\'année !', 'Un homme heureux', 3);
 /*!40000 ALTER TABLE `testimonials` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

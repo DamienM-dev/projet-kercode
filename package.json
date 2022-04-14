@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "javascript-form-validation": "^2.1.1",
+    "just-validate": "^3.5.1"
+  }
+}
