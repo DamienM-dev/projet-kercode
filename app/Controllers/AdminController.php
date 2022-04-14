@@ -2,7 +2,6 @@
 
 namespace Projet\Controllers;
 
-use Exception;
 class AdminController
 {
     //creer admnistrateur
@@ -14,6 +13,11 @@ class AdminController
 
         require 'app/Views/admin/createAdmin.php';
     }
+
+    public function pageCreationAdmin(){
+        require 'app/Views/admin/createAdmin.php';
+    }
+    
     //connecte l'admin a son dashboard
     public function connexionAdmin($mail, $mdp)
     {
@@ -47,6 +51,7 @@ class AdminController
         $adminManager = new \Projet\Models\front\ProduitModel();
         $produit= $adminManager->returnProduct($id);
         
+        
         require 'app/Views/admin/produitView.php';
     }
     
@@ -62,12 +67,12 @@ class AdminController
     }
 
     //ajoute un produit en bdd
-    public function ajouterProduit($name, $description, $price, $categories, $img)
+    public function ajouterProduit($name, $description, $price, $categories,  $alt, $img)
     {
         $adminManager = new \Projet\Models\front\ProduitModel();
-        $ajouterProduit = $adminManager->ajouterProduitBdd($name, $description, $price, $categories, $img);
-
-
+        $ajouterProduit = $adminManager->ajouterProduitBdd($name, $description, $price, $categories,  $alt, $img);
+    
+        
         require 'app/Views/admin/ajouterProduitView.php';
     }
 
@@ -81,17 +86,49 @@ class AdminController
     public function deleteProduit($id)
     {
         
-        
             $adminManager = new \Projet\Models\Admin\AdminModel();
+            
             $deleteProduit = $adminManager->deleteProduit($id);
+            $product = $adminManager->listerProduit();
         
     
             require 'app/Views/admin/AdminDashboard.php';
       
     } 
+
+    //affiche page UPDATE
+
+    public function modifierProduitView($id) {
+
+        $adminManager = new \Projet\Models\front\ProduitModel();
+        $produit= $adminManager->returnProduct($id);
+
+        $adminManager = new \Projet\Models\Admin\AdminModel();
+        $categories = $adminManager->selectCategory();
+        
+
+        require 'app/Views/admin/modifierProduitView.php';
+    }
+
+    //UPDATE produit
+
+    public function modifierProduit($name, $description, $price, $categories, $alt, $img) {
+        
+        $adminManager = new \Projet\Models\front\ProduitModel();
+        $produit = $adminManager->modifierProduit($name, $description, $price, $categories, $alt, $img);
+
+
+        require 'app/Views/admin/ProduitView.php';
+        $produit= $adminManager->returnProduct($id);
+    }
     
+    // retourne vers le dashboard admin
+
     public function retourDashboard()
+    
     {
+        $adminManager = new \Projet\Models\Admin\AdminModel();
+        $product = $adminManager->listerProduit();
         require 'app/Views/admin/AdminDashboard.php';
     }
 

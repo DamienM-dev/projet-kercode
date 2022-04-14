@@ -60,14 +60,18 @@ class AdminModel extends \Projet\Models\Manager
             $bdd = $this->dbConnect();
             $deleteProduit = $bdd->prepare("DELETE FROM product WHERE id = ? ");
             $deleteProduit->execute(array($id));
+            
+            return $deleteProduit;
+
         } catch (Exception $e) {
             die('Erreur : ' .$e->getMessage());
           }
         
 
-        return $deleteProduit;
     }
 
+    // Choix category dans la page ajouterProduitView
+    
     public function selectCategory()
     {
         $bdd = $this->dbConnect();

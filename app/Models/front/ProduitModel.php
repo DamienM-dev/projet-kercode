@@ -67,9 +67,19 @@ class ProduitModel extends \Projet\Models\Manager
     {
 
         $bdd = $this->dbConnect();
-        $produits = $bdd->query('SELECT name, price, img, alt from product');
+        $produits = $bdd->query('SELECT name, price, img, alt from product ');
 
         return $produits;
+    }
+
+    //compte le nombre de produit sur la page produit
+    public function countProduct()
+    {
+        $bdd = $this->dbConnect();
+        $produitsCount = $bdd->query('SELECT count(id) as cnt from product WHERE id ');
+
+        return $produitsCount->fetchAll();
+
     }
 
       //return UN produit grace ID
@@ -95,29 +105,70 @@ class ProduitModel extends \Projet\Models\Manager
           }
       }
 
-      public function ajouterProduitBdd($name, $description, $price, $categories, $img)
-      {
-        try {
 
+//modifie produit en bdd depuis dashboard
+
+
+      public function modifierProduit($name, $description, $price, $categories, $alt, $img)
+      {
+          try {
+                $bdd = $this->dbConnect();
+                $produit = $bdd->prepare('UPDATE product 
+                                          SET product.name = :name, description = :description, price = :price, categories_id = :categories_id, alt= :alt, img = :img
+                                          WHERE id = :id');
+                    $produit->execute(array(
+                        ':name'=>$name,
+                        ':description'=>$description,
+                        ':price'=>$price,
+                        ':alt'=>$alt,
+                        ':categories_id'=>$categories,
+                        ':img'=>$img,
+                        ':id'=>$_GET['id']
+                    ));
+              
+
+                    return $produit;
+
+
+} catch (Exception $e) {
+
+   
+            die('Erreur : ' .$e->getMessage());
+          }
+      }
+
+
+        //Ajoute produit en bdd depuis dashboard
+
+      public function ajouterProduitBdd($name, $description, $price, $categories,  $alt, $img)
+      {
+
+
+        try {
+           
+            
             $bdd = $this->dbConnect();
-            $ajouterProduit = $bdd->prepare("INSERT INTO product (product.name, description, price, img)
-                                             SELECT categories.id
-                                             FROM categories 
-                                             INNER JOIN product
-                                             ON product.categories_id = categories.id");
-            $ajouterProduit->execute(array($name, $description, $price, $categories, $img));
+
+            $ajouterProduit = $bdd->prepare("INSERT INTO product (product.name, description, price, alt, categories_id, img)
+                                            VALUES (:name, :description, :price, :alt, :categories_id, :img)");
+
+                           $ajouterProduit->execute(array(
+                               ':name'=>$name,
+                               ':description'=>$description,
+                               ':price'=>$price,
+                               ':alt'=>$alt,
+                               ':categories_id'=>$categories,
+                               ':img'=>$img
+                           ));
             
             return $ajouterProduit;
             
            
         }
         catch (Exception $e) {
+
           die('Erreur : ' .$e->getMessage());
         }
     }
-
-   
-
-    
-    
+  
 }

@@ -11,8 +11,12 @@ class AccueilModel extends \Projet\Models\Manager
     {
 
         $bdd = $this->dbConnect();
-        $response = $bdd->query('SELECT url, alt FROM slider');
+        $response = $bdd->query("SELECT url, slider.alt, photo, testimonial, testimonials.alt  as a
+                                FROM slider
+                                INNER JOIN testimonials
+                                ON slider.id = testimonials.slider_id");
 
         return $response->fetchAll();
+        
     }
 }

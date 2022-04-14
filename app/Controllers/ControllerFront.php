@@ -31,10 +31,22 @@ class ControllerFront
   {
     $produitModel = new \Projet\Models\front\ProduitModel();
     $produits = $produitModel->returnProducts();
+    $produitsCount = $produitModel->countProduct();
 
     require('app/Views/front/produitView.php');
   }
-  
+
+  //compte le nombre de produit sur page produit
+
+  public function countProduct() 
+  {
+
+    $produitModel = new \Projet\Models\front\ProduitModel();
+    $nbrPage = $produitModel->countProduct();
+
+    require('app/Views/front/produitView.php');
+
+  }
  
 
   public function contact()
@@ -64,6 +76,11 @@ class ControllerFront
   public function pageConnexionAdmin()
   {
     require('app/Views/admin/connexionAdmin.php');
+  }
+
+  public function pagePanier()
+  {
+    require('app/Views/front/panierView.php');
   }
 
   //=================gestion des mails contact===================
