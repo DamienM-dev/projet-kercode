@@ -4,6 +4,10 @@
     padding: 10px;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    
+    a {
+        color: $couleurPrincipal;
+    }
 }
 
 //gestion des animations buttons
@@ -20,5 +24,31 @@
     border-bottom: 1px $couleurQuatre solid;
     display: inline-block;
     vertical-align: middle;
+}
+
+//gestion des blocs appairaissant en hover
+
+.design_block_hover {
+    position: absolute;
+    border: 1px solid $couleurQuatre;
+    height: 170px;
+    width: 100%;
+    background-color: #4760727c;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    opacity: 0;
+
+    &:hover {
+        opacity: 1;
+    }
+    button {
+        @extend .button_style;
+
+        &:hover{
+            @extend .animation_button;
+        }
+    }
+
 }
 

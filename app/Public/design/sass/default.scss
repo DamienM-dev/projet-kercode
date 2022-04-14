@@ -15,6 +15,14 @@
 
 body {
      font-family: 'Quicksand', sans-serif,Georgia, 'Times New Roman', Times, serif;
+     
+     
+    }
+
+ #container {
+
+       
+    width: 100%;
 }
 a {
     text-decoration: none;
@@ -38,21 +46,28 @@ h2 {
     margin-top: 15px;
     margin-bottom: 20px;
 }
-// h2.horizontal::after {
+.hidden{
+    display: none;
+}
 
-//     @extend .trait;
 
-//     width: 15%;
-//     margin-left: 10px;
-// }
+//================TITRE DESIGN================
+
+h2.horizontal::after {
+
+    @extend .trait;
+
+    width: 25%;
+    margin-left: 10px;
+}
     
-// h2.horizontal::before {
+h2.horizontal::before {
 
-//     @extend .trait;
+    @extend .trait;
 
-//     width: 15%;
-//     margin-right: 10px;
-// }
+    width: 25%;
+    margin-right: 10px;
+}
 
 // EST-CE VRAIMENT UNE BONNE IDEE ?
 
@@ -131,6 +146,7 @@ section#block_image_parallax {
         repeat: no-repeat;
         attachment: fixed;
     }
+    position: relative;
     width: 100%;
     height: 250px;
     
@@ -166,9 +182,7 @@ section#block_image_parallax {
     
 }
 
-
-
-// =============BLOCK POURQUOI=============
+// =============PAGE ACCUEIL: BLOCK POURQUOI=============
 
 #block_pourquoi {
     
@@ -225,6 +239,104 @@ section#block_image_parallax {
         }
     }  
 }
+
+
+// =============PAGE ACCUEIL: PRODUITS =============
+
+.blocks_inside_produit {
+    
+    margin: 10px;
+    border-radius: 0 20px;
+    background-color: $couleurPrincipal;
+    text-align: center;
+    width: 100%;
+    
+    img.image_produits {
+        width: 100%;
+    }
+
+}
+
+// =============PAGE ACCUEIL: SLIDER=============
+
+
+#slider-block{
+
+    margin-top: 20px;
+
+    .slider {
+       height: 50vh;
+       position: relative;
+    
+       img {
+           object-fit: cover;
+           height: 100%;
+           width: 100%;
+           position:absolute;
+           top: 0;
+           left: 0;
+           opacity: 0;
+           transition: opacity .5s ;
+    
+           &.active {
+               opacity: 1;
+           }
+       }
+    
+       .suivant, .precedent {
+           color: rgb(255, 255, 255);
+           font-size: 1rem;
+           position: absolute;
+           top: 50%;
+           transform: translateY(-50%);
+       }
+       .suivant {
+           right: 1rem;
+       }
+       .precedent {
+           left: 1rem;
+       }
+    
+       //=====GESTION DE L'ABSOLUTE=====
+    
+       #block_absolute_image {
+           position: absolute;;
+           text-align: center;
+           top: 20%;
+           left: 50%;
+           transform: translate(-50%);
+           
+
+           .block_testimonials {
+                
+            width: 100%;
+            // =============PAGE ACCUEIL: TEMOIGNAGES=============
+
+            .photo_testimonials {
+
+                position: absolute;
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                left: 25%;
+                
+              }
+              p.testimonials {
+
+                
+                  margin-top: 120px;
+                  font: {
+                      size: 1.2rem;
+                      weight:bold ;
+
+                }
+                  color:$couleurTertiaire ;
+              } 
+           }
+       }
+    }
+}
+
 
 // =============PAGE A PROPOS=============
 
@@ -345,28 +457,11 @@ section#block_notre_histoire{
     
 }
 
-
-
-// =============PAGE ACCUEIL: PRODUITS =============
-
-.blocks_inside_produit {
-    
-    margin: 10px;
-    border-radius: 0 20px;
-    background-color: $couleurPrincipal;
-    text-align: center;
-    width: 100%;
-    
-    img.image_produits {
-        width: 100%;
-    }
-
-}
-
 // =============PAGE PRODUITS=============
 
 section#block_produits {
     text-align: center;
+    margin: 5px;
 
     #block_inside_produits{
 
@@ -381,20 +476,42 @@ section#block_produits {
 
         
         .produit_laitier_inside {
-            display: flex;
-            flex-direction: column;
             justify-content: center;
             width: 100%;
+            background-color: $couleurPrincipal;
+            margin-bottom: 30px;
 
             img {
-                width:80%;
+                width: 100%;
+                object-fit: cover;
                 margin: auto;
+            }
+
+            p {
+               font-size: 1.2rem;
+               font-weight: bold;
+               padding-bottom: 10px;
+            }
+
+            button {
+
+                    @extend .button_style;
+                    background-color: $couleurSecondaire;
+                    width: 70%;
+                    margin: auto;
+                    margin-top: 20px;
+                    margin-bottom: 30px;
+
             }
         }
     }
 }
 
+// =============PANIER=============
 
+#image_panier{
+    width: 200px;
+}
 
 // =============FORMULAIRES=============
 
@@ -475,64 +592,17 @@ section#block_produits {
     #condition_generale{
         display: flex;
     }
+
+}
+// =========GESTION ERREUR FORM=========
+
+.invalid_input{
+    display:none;
 }
 
-// =============SLIDER=============
-
-
-#slider-block{
-
-    margin-top: 20px;
-
-    .slider {
-       height: 50vh;
-       position: relative;
-    
-       img {
-           object-fit: cover;
-           height: 100%;
-           width: 100%;
-           position:absolute;
-           top: 0;
-           left: 0;
-           opacity: 0;
-           transition: opacity .5s ;
-    
-           &.active {
-               opacity: 1;
-           }
-       }
-    
-       .suivant, .precedent {
-           color: rgb(255, 255, 255);
-           font-size: 1rem;
-           position: absolute;
-           top: 50%;
-           transform: translateY(-50%);
-       }
-       .suivant {
-           right: 1rem;
-       }
-       .precedent {
-           left: 1rem;
-       }
-    
-       //=====GESTION DE L'ABSOLUTE=====
-    
-       #block_absolute_image {
-           position: absolute;
-           text-align: center;
-           top: 20%;
-    
-           h1 {
-               color: $couleurSecondaire;
-               font: {
-                   size: 1.4rem;
-                   weight: bold;
-               }
-           } 
-       }
-    }
+.invalid + .invalid_input {
+    display: block;
+    color: red;
 }
 
 
@@ -652,6 +722,24 @@ footer {
     font-size: 1.2rem;
 }
 
+//================TITRE DESIGN================
+
+h2.horizontal::after {
+
+    @extend .trait;
+
+    width: 35%;
+    margin-left: 10px;
+}
+    
+h2.horizontal::before {
+
+    @extend .trait;
+
+    width: 35%;
+    margin-right: 10px;
+}
+
 // =============HEADER=============
 
 ul.nav-menu {
@@ -761,6 +849,31 @@ section#block_notre_histoire{
     
 }
 
+// =============PAGE PRODUIT=============
+
+
+section#block_produits {
+
+h1 {
+    margin-top: 25px;
+}
+    
+    #produits_laitier {
+        
+        display: flex;
+        flex-wrap: wrap;
+        
+        .produit_laitier_inside{
+    
+           width: 30%;
+           margin: 10px;
+
+            
+        }
+    }
+    
+}
+
 
 //=============FOOTER=============
 
@@ -776,6 +889,31 @@ footer {
 //   =============GRAND ECRAN=============
 
 @media screen and (min-width:1024px) {
+
+    
+    //================TITRE DESIGN================
+
+    h2.horizontal::after {
+
+        content: '';
+        border-bottom: 1px $couleurQuatre solid;
+        display: inline-block;
+        vertical-align: middle;
+    
+        width: 40%;
+        margin-left: 10px;
+    }
+        
+    h2.horizontal::before {
+    
+        content: '';
+        border-bottom: 1px $couleurQuatre solid;
+        display: inline-block;
+        vertical-align: middle;
+    
+        width: 40%;
+        margin-right: 10px;
+    }
     
     //=============HEADER===============
     
@@ -876,6 +1014,10 @@ footer {
     #slider-block{
         
         margin-top: 30px;
+
+        h2 {
+            margin-top: 50px;
+        }
         
         #block_absolute_image {
 
@@ -977,14 +1119,30 @@ footer {
                 width: 100%;
                 font-size: 1.7rem;
                 margin-bottom: 20px;
-            }
+            }   
+        }    
+    }
+    
+// =========TRES GRAND ECRAN=========
+
+    @media screen and (min-width:1224px) {
+
+         // =============PAGE ACCUEIL: BLOCK PARALLAX=============
+    
+    section#block_image_parallax {
+        
+       
+        
+        //=====PAGE ACCUEIL: BLOCK PARALLAX => GESTION DE L'ABSOLUTE=====
+        
+        #block_absolute_image {
+            
+            left: 5%;
             
         }
         
-        
-        
     }
-    
+}
     
     
     
