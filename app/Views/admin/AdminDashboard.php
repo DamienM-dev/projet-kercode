@@ -12,6 +12,7 @@ ob_start();
 
     <div>
         <h2>Liste des produits disponibles</h2>
+        <button><a href="indexAdmin.php?action=pageCreationAdmin">Création de l'administration</a></button>
         <button><a href="indexAdmin.php?action=ajouterProduitView">Ajouter</a></button>
     </div>
 
@@ -29,12 +30,14 @@ ob_start();
 
 
             <tr>
+                <div>
+                    
+                </div>
                 <td><?= $afficheProduct['name'] ?></td>
                 <td><?= $afficheProduct['description'] ?></td>
                 <td><?= $afficheProduct['price'] ?></td>
                 <td><?= $afficheProduct['category'] ?></td>
                 <td><button><a href="indexAdmin.php?action=voirProduit&id=<?= $afficheProduct['id']?>">Voir</a></button></td>
-                <td><button><a href="#">modifier</a></button></td>
                 <td><button><a href="indexAdmin.php?action=confirmationDelete&id=<?= $afficheProduct['id']?>">Supprimer</a></button></td>
             </tr>
             

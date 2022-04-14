@@ -34,40 +34,40 @@ ob_start();
 
     <div class="block_agriculteur">
         <div class="agriculteur_information">
-            <img src="app/Public/design/images/farmer.jpg" alt="Benoit, le laitier">
+            <img src="app/Public/design/images/farmer.jpg" alt="John, le laitier" class="photo_agriculteur">
             <h3>John Doe</h3>
             <p>Notre éleveur laitier ainsi que fromager.</p>
         </div>
         <div class="agriculteur_reseau">
-        <a href="#"><i class="fa-brands fa-facebook-f logo_footer fa-xl"></i></a>
-        <a href="#"><i class="fa-brands fa-linkedin-in logo_footer fa-xl"></i></a>
-        <a href="#"><i class="fa-brands fa-instagram-square logo_footer fa-xl"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook-f logo_footer fa-2xl"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin-in logo_footer fa-2xl"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram-square logo_footer fa-2xl"></i></a>
         </div>
     </div>
 
     <div class="block_agriculteur">
         <div class="agriculteur_information">
-            <img src="app/Public/design/images/farmer2.jpg" alt="Herve, l'éleveur">
+            <img src="app/Public/design/images/farmer2.jpg" alt="John l'éleveur" class="photo_agriculteur">
             <h3>James Doe</h3>
             <p>Notre éleveur. Vous aurez le choix entre du boeuf, poulet ou du veau .</p>
         </div>
         <div class="agriculteur_reseau">
-        <a href="#"><i class="fa-brands fa-facebook-f logo_footer fa-xl"></i></a>
-        <a href="#"><i class="fa-brands fa-linkedin-in logo_footer fa-xl"></i></a>
-        <a href="#"><i class="fa-brands fa-instagram-square logo_footer fa-xl"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook-f logo_footer fa-2xl"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin-in logo_footer fa-2xl"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram-square logo_footer fa-2xl"></i></a>
         </div>
     </div>
 
     <div class="block_agriculteur">
         <div class="agriculteur_information">
-            <img src="app/Public/design/images/farmer3.jpg" alt="Marc, l'agriculteur">
+            <img src="app/Public/design/images/farmer3.jpg" alt="Jane, l'agriculteur" class="photo_agriculteur">
             <h3>Jane Doe</h3>
             <p>Notre agriculteur. Il vend des fruits et légumes de saisons garantis sans pesticides</p>
         </div>
         <div class="agriculteur_reseau">
-        <a href="#"><i class="fa-brands fa-facebook-f logo_footer fa-xl"></i></a>
-        <a href="#"><i class="fa-brands fa-linkedin-in logo_footer fa-xl"></i></a>
-        <a href="#"><i class="fa-brands fa-instagram-square logo_footer fa-xl"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook-f logo_footer fa-2xl"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin-in logo_footer fa-2xl"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram-square logo_footer fa-2xl"></i></a>
         </div>
     </div>
 </section>

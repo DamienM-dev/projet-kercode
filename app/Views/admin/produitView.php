@@ -1,7 +1,7 @@
 <?php
 
 
-$title = "Liste des produits";
+$title = "Vue produit";
 
 ob_start();
 
@@ -31,6 +31,12 @@ ob_start();
             <img src="<?= $produit['img']?>" alt="<?=$produit['alt'] ?>">
         </div>
     </div>
+
+    <button>
+        <a href="indexAdmin.php?action=modifierProduitView&id=<?= $produit['id']?>">modifier</a>
+    </button>
+    
+    
 
         <button type="button">
             <a href="indexAdmin.php?action=retourDashboard">dashboard</a>

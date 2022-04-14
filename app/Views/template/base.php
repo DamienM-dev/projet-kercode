@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/a67cfefc1f.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@0.4.0/dist/lottie-player.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&family=Space+Grotesk:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="app/Public/design/css/default.css">
     <title> <?= $title ?> </title>
 </head>
@@ -16,6 +19,7 @@
         <a href="index.php?page=login">inscription</a>
         <a href="index.php?page=pageConnexionUser">Mon compte</a>
         <a href="index.php?page=pageConnexionAdmin">admin</a>
+        <a href="index.php?page=pagePanier">panier</a>
     </div>
 
     <nav class="navbar">
@@ -50,14 +54,16 @@
             </li>
         </ul>
     </nav>
-
-    <div class="divider"></div>
 </header>
 
 <body>
+    <div id="container">
 
-    <?= $content ?>
-
+        
+        <?= $content ?>
+        
+    </div>
+    <script src="app/Public/design/js/panier.js"></script>
 </body>
 
 <footer>

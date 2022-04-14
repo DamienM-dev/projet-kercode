@@ -20,14 +20,12 @@ ob_start();
             <div class="produit_laitier_inside">
 
                 <img src="<?= $produit['img'] ?>" alt ="<?= $produit['alt'] ?>">
-                <h3><?= $produit['name']?></h3>
+                <h2><?= $produit['name']?></h2>
                 <p><?= $produit['price'] ?> €</p>
                 <button><a href="#">Ajouter au panier</a></button>
                 <div></div>
             </div>
-<?php echo 'ca marche ?' ?>
             <?php endforeach; ?>
-
         </div>
 
     </div>

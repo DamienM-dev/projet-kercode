@@ -12,6 +12,7 @@ ob_start();
 
     <div id="block_absolute_image">
         <h1>Dayly Fresh est une association de producteur locaux</h1>
+
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam faucibus ante et.</p>
         <button><a href="index.php?page=aProposView">A propos</a></button>
     </div>
@@ -19,7 +20,7 @@ ob_start();
 </section>
 
 <section id="block_pourquoi">
-    <h2 class="horizontal">Pourquoi nous choisir</h2>
+    <h2 class="horizontal">Nous choisir </h2>
     <div class="blocks_inside_pourquoi">
         <img src="app/Public/design/svg/nutrition/Color/Fruit.svg" alt="" class="image_pourquoi">
         <h3>Des produits de saisons</h3>
@@ -49,11 +50,11 @@ ob_start();
 </section>
 
 <section id="block_produits">
-    <h2 >Nos produits</h2>
+    <h2 class="horizontal" >Nos produits</h2>
 
     <div class="blocks_inside_produit">
         <figure>
-            <img src="app/Public/design/images/fromage.jpg" class="image_produits">
+            <img src="app/Public/design/images/fromage.jpg" alt="fromage" class="image_produits">
         </figure>
         <h3>Nos produits laitier</h3>
         <p>Vous trouverez un large choix de produits laitier</p>
@@ -61,7 +62,7 @@ ob_start();
 
     <div class="blocks_inside_produit">
         <figure>
-            <img src="app/Public/design/images/vegetaux.jpg" class="image_produits">
+            <img src="app/Public/design/images/vegetaux.jpg" alt="fruit" class="image_produits">
         </figure>
         <h3>Nos fuits et légumes</h3>
         <p>Vous trouverez un large choix de fuits et légumes de saison</p>
@@ -69,7 +70,7 @@ ob_start();
 
     <div class="blocks_inside_produit">
         <figure>
-            <img src="app/Public/design/images/viande.jpg" class="image_produits">
+            <img src="app/Public/design/images/viande.jpg" alt="viande" class="image_produits">
         </figure>
         <h3>Nos viandes</h3>
         <p>Nos viandes sont issus de l'élevage familial.</p>
@@ -77,7 +78,7 @@ ob_start();
 </section>
 
 <section id="slider-block">
-    <h2>Les témoignages</h2>
+    <h2 class="horizontal">Les témoignages</h2>
     
     <div class="slider">
 
@@ -104,11 +105,34 @@ ob_start();
         <div class="precedent">
             <i class="fa-solid fa-circle-left"></i>
         </div>
+
         <div id="block_absolute_image">
-            <h2>Dayly Fresh est une association de producteur locaux</h2>
+            
+    
+            <div class="block_testimonials">
+                <img src="<?= $sliderImage[0]['photo']?>" alt="<?= $sliderImage[0]['a'] ?>" class="photo_testimonials active">
+                <p class="testimonials ">"<?= $sliderImage[0]['testimonial'] ?>"</p>
+            </div>
+            
+            <div class="block_testimonials">
+                <img src="<?= $sliderImage[1]['photo']?>" alt="<?= $sliderImage[1]['a'] ?>" class="photo_testimonials">
+                <p class="testimonials hidden">"<?= $sliderImage[1]['testimonial'] ?>"</p>
+            </div>
+            
+            <div class="block_testimonials">
+                <img src="<?= $sliderImage[2]['photo']?>" alt="<?= $sliderImage[2]['a'] ?>" class="photo_testimonials">
+                <p class="testimonials hidden">"<?= $sliderImage[2]['testimonial'] ?>"</p>
+            </div>
+<!-- ajouter class hidden -->
         </div>
+
     </div>
 </section>
+
+
+
+
+
 
 
 
