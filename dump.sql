@@ -12,12 +12,6 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-
--- Listage de la structure de la base pour producteur
-DROP DATABASE IF EXISTS `producteur`;
-CREATE DATABASE IF NOT EXISTS `producteur` /*!40100 DEFAULT CHARACTER SET utf32 */;
-USE `producteur`;
-
 -- Listage de la structure de la table producteur. categories
 DROP TABLE IF EXISTS `categories`;
 CREATE TABLE IF NOT EXISTS `categories` (
@@ -39,7 +33,7 @@ INSERT INTO `categories` (`id`, `name`) VALUES
 DROP TABLE IF EXISTS `client`;
 CREATE TABLE IF NOT EXISTS `client` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `civility` tinyint(1) NOT NULL,
+  `civility` binary(50) NOT NULL DEFAULT '\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0',
   `lastname` varchar(100) NOT NULL,
   `firstname` varchar(100) NOT NULL,
   `address` varchar(255) NOT NULL,
@@ -48,14 +42,17 @@ CREATE TABLE IF NOT EXISTS `client` (
   `mail` varchar(100) NOT NULL,
   `phone` varchar(30) NOT NULL,
   `mdp` varchar(255) NOT NULL,
-  `rgpd` tinyint(1) NOT NULL,
+  `rgpd` binary(50) NOT NULL DEFAULT '\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 
--- Listage des données de la table producteur.client : ~0 rows (environ)
+-- Listage des données de la table producteur.client : ~4 rows (environ)
 /*!40000 ALTER TABLE `client` DISABLE KEYS */;
 INSERT INTO `client` (`id`, `civility`, `lastname`, `firstname`, `address`, `codePostal`, `ville`, `mail`, `phone`, `mdp`, `rgpd`) VALUES
-	(1, 0, 'admin', 'admin', 'hfhfh', 45899, 'paris', 'admin@gmail.fr', '0123456789', '$2y$10$G.QtMpGGc8TKzyL8DPNZYO10je6PCtBNDmqIwETTf7LDHzhKRjzAy', 0);
+	(1, _binary 0x3000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, 'admin', 'admin', 'hfhfh', 45899, 'paris', 'admin@gmail.fr', '0123456789', '$2y$10$G.QtMpGGc8TKzyL8DPNZYO10je6PCtBNDmqIwETTf7LDHzhKRjzAy', _binary 0x3000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000),
+	(2, _binary 0x4D72000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, 'miremont', 'damien', 'adfdfdfff', 56000, 'GGGG', 'damien@gmail.com', '0629471465', '$2y$10$KOlF4gcjAMxKjFGZFYsMxe6.udl/HmC3UoWr5goynxbJeC64oAmNu', _binary 0x6F6E000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000),
+	(3, _binary 0x4D72000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, 'miremont', 'damien', 'adfdfdfff', 56000, 'GGGG', 'damien@gmail.com', '0629471465', '$2y$10$PHWe0h9cMap37WoKkzoVAeQyGw.qM5vQfyTp6GAQW3WJ4Ej2Z6Bc6', _binary 0x6F6E000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000),
+	(4, _binary 0x4D72000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, 'ESSA', 'ESSSA', 'SSS', 56000, 'GGGG', 'damien@gmail.com', '0629471465', '$2y$10$WTL1e7LvrBkCGjBh4mU8teMoGL0pgTI/PLjqOtJUF8oKf4HXUCAsm', _binary 0x6F6E000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000);
 /*!40000 ALTER TABLE `client` ENABLE KEYS */;
 
 -- Listage de la structure de la table producteur. contact
@@ -91,14 +88,14 @@ CREATE TABLE IF NOT EXISTS `product` (
   CONSTRAINT `product_fk0` FOREIGN KEY (`categories_id`) REFERENCES `categories` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4;
 
--- Listage des données de la table producteur.product : ~6 rows (environ)
+-- Listage des données de la table producteur.product : ~5 rows (environ)
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
 INSERT INTO `product` (`id`, `name`, `alt`, `description`, `price`, `categories_id`, `img`) VALUES
-	(10, 'cafe', 'cafe', 'cafe', 4, 2, 'app/Public/design/images/webp/tomme-de-vache-a-la-moutarde-violette.webp'),
-	(12, 'beurre', 'beurre', 'beurre demi sel', 2, 1, 'app/Public/design/images/webp/beurre-de-baratte-artisanal.webp'),
-	(13, 'lait fermier', 'lait fermier', 'Lait non pasterisé ', 2, 1, 'app/Public/design/images/webp/lait-cremerie.webp'),
-	(14, 'beurre', 'beurre', 'beurre demi sel', 2, 1, 'app/Public/design/images/webp/beurre-de-baratte-artisanal.webp'),
-	(15, 'cafe', 'cafe', 'cafe', 4, 2, 'app/Public/design/images/webp/tomme-de-vache-a-la-moutarde-violette.webp');
+	(10, 'cafe', 'cafe', 'cafe', 4, 2, 'app/Public/design/images/webp/cerises.webp'),
+	(12, 'beurre', 'beurre', 'beurre demi sel', 2, 1, 'app/Public/design/images/webp/cerises.webp'),
+	(13, 'lait fermier', 'lait fermier', 'Lait non pasterisé ', 2, 1, 'app/Public/design/images/webp/cerises.webp'),
+	(14, 'beurre', 'beurre', 'beurre demi sel', 2, 1, 'app/Public/design/images/webp/cerises.webp'),
+	(15, 'pêche', 'cafe', 'cafe', 4, 1, 'app/Public/design/images/webp/cerises.webp ');
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 
 -- Listage de la structure de la table producteur. producteur
@@ -112,7 +109,7 @@ CREATE TABLE IF NOT EXISTS `producteur` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4;
 
--- Listage des données de la table producteur.producteur : ~25 rows (environ)
+-- Listage des données de la table producteur.producteur : ~28 rows (environ)
 /*!40000 ALTER TABLE `producteur` DISABLE KEYS */;
 INSERT INTO `producteur` (`id`, `lastname`, `firstname`, `mail`, `mdp`) VALUES
 	(1, 'admin', 'admin', 'admin@gmai.de', '$2y$10$0kA8hS.WzOr85NIotXG9Ce/lhO1xqCMmhKcvN27lzXlX35RbF..VK'),
@@ -154,7 +151,7 @@ CREATE TABLE IF NOT EXISTS `slider` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
--- Listage des données de la table producteur.slider : ~2 rows (environ)
+-- Listage des données de la table producteur.slider : ~3 rows (environ)
 /*!40000 ALTER TABLE `slider` DISABLE KEYS */;
 INSERT INTO `slider` (`id`, `url`, `alt`) VALUES
 	(1, 'app/Public/design/images/herbe.jpg', 'herbe'),

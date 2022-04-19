@@ -4,6 +4,21 @@ session_start();
 
 require_once __DIR__ . '/vendor/autoload.php';
 
+
+
+function eCatcher($e) {
+    if($_ENV["APP_ENV"] == "development") {
+      $whoops = new \Whoops\Run;
+      $whoops->allowQuit(false);
+      $whoops->writeToOutput(false);
+      $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+      $html = $whoops->handleException($e);
+  
+      echo $html;
+    }
+  }
+
+
 try {
 
 
@@ -15,6 +30,30 @@ try {
 
         if ($_GET['action'] == 'creatAdmin') {
 
+            $lastnameError = $firstnameError = $mailError = $mdpError= "";
+
+            if(empty ($lastnameError)){
+
+                $lastnameError = "Nom de famille obligatoire !";
+            }
+
+            if(empty ($firstnameError)){
+
+                $firstnameError = "prénom obligatoire !";
+
+            }
+
+            if(empty ($mailError)){
+
+                $lastnameError = "email obligatoire !";
+            }
+
+            if(empty ($mdpError)){
+
+                $mdpError = "mot de passe obligatoire !";
+
+            }
+    
                 $lastname    = htmlspecialchars($_POST['lastname']);
                 $firstname   = htmlspecialchars($_POST['firstname']);
                 $mail        = htmlspecialchars($_POST['mail']);
@@ -32,6 +71,7 @@ try {
 
             $mail = htmlspecialchars($_POST['mail']);
             $mdp  = $_POST['mdp'];
+            
 
             if (!empty($mail) && !empty($mdp)) {
                 $backController->connexionAdmin($mail, $mdp);
@@ -39,10 +79,14 @@ try {
                 throw new Exception('Veuillez remplir les champs du formulaire');
             }
 
+ 
+        } elseif ($_GET['action'] == 'deconnexionAdmin') {
 
-            //Vu d'un produit sur le Dashbboard
+            $backController->deconnexionAdmin();
+        
+        //Vu d'un produit sur le Dashbboard
 
-        } elseif ($_GET['action'] == 'voirProduit') {
+       } elseif ($_GET['action'] == 'voirProduit') {
             $id = $_GET['id'];
             
             
@@ -111,7 +155,7 @@ try {
             $img           = htmlspecialchars($_POST['img']);
            
 
-            $backController->modifierProduit($name, $description, $price, $categories, $alt, $img);
+            $backController->modifierProduit($id, $name, $description, $price, $categories, $alt, $img);
         }elseif($_GET['action'] == 'pageCreationAdmin') {
             $backController->pageCreationAdmin();
         }
@@ -121,9 +165,42 @@ try {
         echo 'ERREUR !';
     }
     
-    
-
 
 } catch (Exception $e) {
-    die('Erreur : ' .$e->getMessage());
-}
+    eCatcher($e);
+    if($e->getCode === 404) {
+        die('Erreur : ' .$e->getMessage());
+    } else {
+                header("location: app/View/front/errorView.php");
+            } 
+
+} catch (Error $e) {
+        eCatcher($e);
+        header("location: app/View/front/errorView.php");
+    }
+
+
+
+// catch (Exception $e) {
+//     eCatcher($e);
+//     if($e->getCode() === 404) {
+
+//         die('Erreur : ' .$e->getMessage());
+//     } else {
+//         header("location: app/View/front/errorView.php")
+//     }
+// } catch (Error $e) {
+//     eCatcher($e);
+//     header("location: app/View/front/errorView.php")
+// }
+
+// ajouter catch erroe $e
+// var_dump($e): a supprimer avnt l'envois
+// gestion en fonction de l'environnement prod ou dev
+// utiliser whoops
+// zjout du errorHandler
+
+// function eCatcher($e) {
+//     if($_ENV["APP_ENV"] == "development") {
+//       var_dump($e);die;
+//     }

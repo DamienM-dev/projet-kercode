@@ -4,7 +4,17 @@ session_start();
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-
+function eCatcher($e) {
+    if($_ENV["APP_ENV"] == "development") {
+      $whoops = new \Whoops\Run;
+      $whoops->allowQuit(false);
+      $whoops->writeToOutput(false);
+      $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+      $html = $whoops->handleException($e);
+  
+      echo $html;
+    }
+  }
 
 
 try {
@@ -27,8 +37,7 @@ try {
             $controllerFront->aProposView();
 
         } elseif ($_GET['page'] == 'produitView') {
-            $controllerFront->produitView();
-            $controllerFront->countProduct();
+            $controllerFront->produitView();      
 
         } elseif ($_GET['page'] == 'donneesPersoView') {
             $controllerFront->donneesPerso();
@@ -60,17 +69,18 @@ try {
 
             $contactData = [
                 
-                'civility'  => $civility,
-                'lastname'  => $lastname,
-                'firstname' => $firstname,
-                'phone'     => $phone,
-                'mail'      => $mail,
-                'raison'    => $raison,
-                'content'   => $content
+                'civility'     => $civility,
+                'lastname'     => $lastname,
+                'firstname'    => $firstname,
+                'phone'        => $phone,
+                'mail'         => $mail,
+                'raison'       => $raison,
+                'content'      => $content
             ];
         
             if (!empty($civility) && (!empty($lastname) && (!empty($firstname) && (!empty($phone) && (!empty($mail) && (!empty($raison) && (!empty($content)))))))) {
                 $controllerFront->contactPost($contactData);
+                
             }
         } else {
             throw new Exception("Cette page n'existe pas ou a été supprimée.");
@@ -79,9 +89,18 @@ try {
         $controllerFront->home();
     }
 } catch (Exception $e) {
-    $error = $e->getMessage();
-    require('app/Views/front/errorView.php');
-}
+    
+    eCatcher($e);
+    if($e->getCode === 404) {
+        die('Erreur : ' .$e->getMessage());
+    } else {
+                header("location: app/View/front/errorView.php");
+            } 
+
+} catch (Error $e) {
+        eCatcher($e);
+        header("location: app/View/front/errorView.php");
+    }
 
 //pense bête pour plustard
 // Verifier doublons de mon email :

@@ -11,5 +11,7 @@
             "email": "84769945+DamienM-dev@users.noreply.github.com"
         }
     ],
-    "require": {}
+    "require": {
+        "filp/whoops": "^2.14"
+    }
 }
