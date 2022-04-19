@@ -44,15 +44,16 @@ CREATE TABLE IF NOT EXISTS `client` (
   `mdp` varchar(255) NOT NULL,
   `rgpd` binary(50) NOT NULL DEFAULT '\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 
--- Listage des données de la table producteur.client : ~4 rows (environ)
+-- Listage des données de la table producteur.client : ~5 rows (environ)
 /*!40000 ALTER TABLE `client` DISABLE KEYS */;
 INSERT INTO `client` (`id`, `civility`, `lastname`, `firstname`, `address`, `codePostal`, `ville`, `mail`, `phone`, `mdp`, `rgpd`) VALUES
 	(1, _binary 0x3000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, 'admin', 'admin', 'hfhfh', 45899, 'paris', 'admin@gmail.fr', '0123456789', '$2y$10$G.QtMpGGc8TKzyL8DPNZYO10je6PCtBNDmqIwETTf7LDHzhKRjzAy', _binary 0x3000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000),
-	(2, _binary 0x4D72000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, 'miremont', 'damien', 'adfdfdfff', 56000, 'GGGG', 'damien@gmail.com', '0629471465', '$2y$10$KOlF4gcjAMxKjFGZFYsMxe6.udl/HmC3UoWr5goynxbJeC64oAmNu', _binary 0x6F6E000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000),
-	(3, _binary 0x4D72000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, 'miremont', 'damien', 'adfdfdfff', 56000, 'GGGG', 'damien@gmail.com', '0629471465', '$2y$10$PHWe0h9cMap37WoKkzoVAeQyGw.qM5vQfyTp6GAQW3WJ4Ej2Z6Bc6', _binary 0x6F6E000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000),
-	(4, _binary 0x4D72000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, 'ESSA', 'ESSSA', 'SSS', 56000, 'GGGG', 'damien@gmail.com', '0629471465', '$2y$10$WTL1e7LvrBkCGjBh4mU8teMoGL0pgTI/PLjqOtJUF8oKf4HXUCAsm', _binary 0x6F6E000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000);
+	(2, _binary 0x4D72000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, 'blanchard', 'bernard', 'dffz', 36102, 'Kaunas', 'dzef@gm.gd', '0123456789', '$2y$10$bYuo8.dsrIIhBOhlTJ.gIO2LdsaSi9KFk9/epGdwsg46w/vnIbuvu', _binary 0x6F6E000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000),
+	(3, _binary 0x4D72000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, 'ff', 'dddd', 'ffffff', 56311, 'dddd', 'ddd@g.ds', '0123456789', '$2y$10$D2aZv8obigZ8U6QDJDyZmuMQ0A08IZGUxH4exnrVREZ8pjEDFz7ju', _binary 0x6F6E000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000),
+	(4, _binary 0x4D72000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, 'ff', 'dddd', 'ffffff', 56311, 'dddd', 'ddd@g.ds', '0123456789', '$2y$10$Ct2gBlfBa.S34hA4dalzuuI4LpbEtaZ5dK4CRliC.zIQ9U7lmryiS', _binary 0x6F6E000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000),
+	(5, _binary 0x4D72000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, 'ff', 'dddd', 'ffffff', 56311, 'dddd', 'ddd@g.ds', '0123456789', '$2y$10$fH91lXDiX4r7dQrCtkvLoOmu/z0Bhd7aIBV4uNqVA4haGl2PQU752', _binary 0x6F6E000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000);
 /*!40000 ALTER TABLE `client` ENABLE KEYS */;
 
 -- Listage de la structure de la table producteur. contact
@@ -86,16 +87,16 @@ CREATE TABLE IF NOT EXISTS `product` (
   PRIMARY KEY (`id`),
   KEY `product_fk0` (`categories_id`),
   CONSTRAINT `product_fk0` FOREIGN KEY (`categories_id`) REFERENCES `categories` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4;
 
 -- Listage des données de la table producteur.product : ~5 rows (environ)
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
 INSERT INTO `product` (`id`, `name`, `alt`, `description`, `price`, `categories_id`, `img`) VALUES
-	(10, 'cafe', 'cafe', 'cafe', 4, 2, 'app/Public/design/images/webp/cerises.webp'),
-	(12, 'beurre', 'beurre', 'beurre demi sel', 2, 1, 'app/Public/design/images/webp/cerises.webp'),
-	(13, 'lait fermier', 'lait fermier', 'Lait non pasterisé ', 2, 1, 'app/Public/design/images/webp/cerises.webp'),
-	(14, 'beurre', 'beurre', 'beurre demi sel', 2, 1, 'app/Public/design/images/webp/cerises.webp'),
-	(15, 'pêche', 'cafe', 'cafe', 4, 1, 'app/Public/design/images/webp/cerises.webp ');
+	(13, 'lait fermier', 'lait fermier bio', 'Lait fermier bio', 3, 1, 'app/Public/design/images/webp/lait-fermier-bio.webp'),
+	(14, 'beurre', ' beurre de baratte', 'beurre de baratte demi sel', 2, 1, 'app/Public/design/images/webp/beurre-de-baratte-moule.webp'),
+	(15, 'cerise', 'cerise', 'cerise', 4, 2, 'app/Public/design/images/webp/cerises.webp'),
+	(16, 'oignon', 'oignon rouge', 'Oignon originaire de Bretagne', 1, 3, 'app/Public/design/images/webp/oignon-rouge-bio-origine-france.webp'),
+	(17, 'yaourt', 'yaourt', 'yaourt', 5, 1, 'app/Public/design/images/webp/yaourt.webp');
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 
 -- Listage de la structure de la table producteur. producteur
