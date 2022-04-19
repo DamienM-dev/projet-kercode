@@ -483,6 +483,7 @@ section#block_produits {
 
             img {
                 width: 100%;
+                height:50vh;
                 object-fit: cover;
                 margin: auto;
             }
@@ -596,14 +597,6 @@ section#block_produits {
 }
 // =========GESTION ERREUR FORM=========
 
-.invalid_input{
-    display:none;
-}
-
-.invalid + .invalid_input {
-    display: block;
-    color: red;
-}
 
 
 
@@ -868,7 +861,12 @@ h1 {
            width: 30%;
            margin: 10px;
 
-            
+           img {
+         
+            height:30vh;
+        }
+
+ 
         }
     }
     
@@ -882,7 +880,18 @@ footer {
     .fa-xl {
         font-size: 2rem;
     }
+    }
 }
+
+//==============GESTION ERREUR DES FORMULAIRES=================
+
+.input_error {
+    color: rgb(170, 13, 13);
+    font : {
+        size: 16px;
+        style: italic;
+    }
+    height: 25px;
 }
 
 
@@ -1132,7 +1141,6 @@ footer {
     section#block_image_parallax {
         
        
-        
         //=====PAGE ACCUEIL: BLOCK PARALLAX => GESTION DE L'ABSOLUTE=====
         
         #block_absolute_image {
@@ -1147,9 +1155,103 @@ footer {
     
     
     //=======DASHBOARD ADMINISTRATEUR=======
+
+
+    //=======PAGE formulaire CONNEXION DASHBOARD ADMINISTRATEUR=======
+
+section#container_connexion_administrateur, section#container_connexion_client {
+
+    h1{
+        margin : {
+            top:25px;
+            bottom: 10px;
+        }
+        color: $couleurSecondaire;
+        font-size: 1.2rem;
+    }
+
+    #form_connexion_administrateur, #form_connexion_client {
+        text-align: center;
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            font-weight: bold
+        }
+
+        input {
+            height: 30px;
+            width: 200px;
+            margin-bottom: 10px;
+        }
+
+        button {
+
+            @extend .button_style;
+            background-color: $couleurSecondaire;
+            color: $couleurPrincipal;
+            margin-bottom: 25px;
+
+            &:hover{
+                background-color: $couleurQuatre;
+            }
+        }
+    }
+}
+
     
-    //=======DASHBOARD ADMINISTRATEUR: VU GENERALE=======
+        //=======DASHBOARD ADMINISTRATEUR: VU GENERALE=======
     
+    #header_dashboard{
+        
+        .navbar {
+
+
+            #bouton_admin_header{
+                display: flex;
+            }
+
+
+            button {
+            
+                background-color: rgb(193, 6, 43);
+                width: 160px;
+                display: block;
+                margin: 10px;
+                padding: 10px;
+
+                &:nth-child(1) {
+                    background-color: green;
+                }
+                
+                &:hover {
+                    background-color:rgba(193, 6, 43, 0.549);
+                }
+                
+                a {
+                    color: white;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+
+
+    #dashboard{
+        h1{
+            margin-top: 40px;
+            font-size: 1.3rem;
+            color: black;
+        }
+
+        .fa-circle-plus {
+            font-size: 30px;
+            color: green;
+            margin: 10px;
+        }
+    }
+
     table {
         text-align: center;
         border-collapse: collapse;
@@ -1164,18 +1266,54 @@ footer {
             border: solid black 1px;
             color: white;
             
-            
+            a{
+                color: white;
+            }
     }
+
     tr {
         &:nth-child(even) {
-            background-color: $couleurQuatre;
+            background-color: #2a9d8f;
         }
         &:nth-child(odd) {
-            background-color: $couleurTertiaire;
+            background-color: #e76f51;
         }
-        
     }
 }
+
+
+    div#blocks_dashboard {
+
+
+        div.block_nombre_dashboard {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            background-color:#e9c46a;
+            width:  350px;
+            height: 130px;
+            margin:50px auto;
+            text-align: center;
+            color: white;
+
+            i {
+                font-size: 60px;
+                color: black;
+            }
+        }
+
+        #emails {
+            background-color:#2a9d8f;
+        }
+        #nombres_produits {
+            background-color: #e76f51;
+        }
+
+        p {
+            font-size: 1.4rem;
+            color: black;
+        }
+    }
 //=======DASHBOARD ADMINISTRATEUR: VU PRODUIT=======
 
 #Vu_produit_dasboard {
@@ -1209,14 +1347,64 @@ footer {
             }
         }
     }
+
+    //=======DASHBOARD ADMINISTRATEUR: MODIFICATION PRODUIT=======
+
+#modifier_produit_dashboard {
+
+    text-align: center;
+    display: block;
+
+    h1 {
+        margin: 20px;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    input, select{
+        height: 30px;
+        width: 200px;
+        margin-bottom: 10px;
+    }
+
+    input :nth-child(4) {
+        height: 90px;
+    }
+
+    button {
+        width: 100px;
+        height: 25px;
+    }
+
+    button.bouton_dashboard {
+        background-color: lightseagreen;
+        
+        a {
+            color: white;
+        }
+    }
+}
     
     // =============DASHBOARD ADMINISTRATEUR: GRAND ECRAN=============
     
     //=======DASHBOARD ADMINISTRATEUR: : GRAND ECRAN: VU PRODUIT=======
     @media screen and (min-width:1024px) {
-    
 
 
+        //=======PAGE CONNEXION DASHBOARD ADMINISTRATEUR ET CLIENT=======
+
+section#container_connexion_administrateur, section#container_connexion_client {
+
+    h1{
+        margin : {
+            top:50px;
+        }
+    }
+}
         //
         #block_vu_produit_dasboard {
             display: grid;
@@ -1235,3 +1423,4 @@ footer {
             margin-top: 100px;
         }
     }
+

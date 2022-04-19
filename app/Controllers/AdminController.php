@@ -31,15 +31,39 @@ class AdminController
         $_SESSION['mail'] = $result['mail'];
         $_SESSION['mdp'] = $result['mdp'];
         $_SESSION['id'] = $result['id'];
-
-
-        if ($isPasswordCorrect) {
+        $_SESSION['firstname'] = $result['firstname'];
+        
+        
+        
+        if ($isPasswordCorrect && filter_var($result['mail'], FILTER_VALIDATE_EMAIL)) {
             $produitModel = new \Projet\Models\Admin\AdminModel();
+            
+            $product        = $produitModel->listerProduit();
+            $nombreClient   = $adminManager->nombreClient();
+            $emailCount     = $adminManager->countEmail();
+          
+            
 
-            $product = $produitModel->listerProduit();
-
+            
+            $adminManager = new \Projet\Models\front\ProduitModel();
+            $produitsCount = $adminManager->countProduct();
             require 'app/Views/admin/AdminDashboard.php';
+
+
         } 
+            
+    }
+
+    public function deconnexionAdmin() 
+    {
+
+            session_unset();
+            session_destroy();
+
+            $controllerFront = new \Projet\Controllers\ControllerFront();
+            $controllerFront->home();
+            exit();
+
     }
     
 
@@ -52,7 +76,7 @@ class AdminController
         $produit= $adminManager->returnProduct($id);
         
         
-        require 'app/Views/admin/produitView.php';
+        require 'app/Views/admin/produitAdminView.php';
     }
     
     //afficher view du formulaire d'ajout en bdd
@@ -90,6 +114,11 @@ class AdminController
             
             $deleteProduit = $adminManager->deleteProduit($id);
             $product = $adminManager->listerProduit();
+            $nombreClient = $adminManager->nombreClient();
+            $emailCount = $adminManager->countEmail();
+
+            $adminManager = new \Projet\Models\front\ProduitModel();
+            $produitsCount = $adminManager->countProduct();
         
     
             require 'app/Views/admin/AdminDashboard.php';
@@ -106,20 +135,24 @@ class AdminController
         $adminManager = new \Projet\Models\Admin\AdminModel();
         $categories = $adminManager->selectCategory();
         
+        
 
         require 'app/Views/admin/modifierProduitView.php';
     }
 
     //UPDATE produit
 
-    public function modifierProduit($name, $description, $price, $categories, $alt, $img) {
+    public function modifierProduit($id, $name, $description, $price, $categories, $alt, $img) {
         
         $adminManager = new \Projet\Models\front\ProduitModel();
-        $produit = $adminManager->modifierProduit($name, $description, $price, $categories, $alt, $img);
+        $produit = $adminManager->modifierProduit($id, $name, $description, $price, $categories, $alt, $img);
 
 
-        require 'app/Views/admin/ProduitView.php';
+
         $produit= $adminManager->returnProduct($id);
+        require 'app/Views/admin/ProduitAdminView.php';
+        
+        
     }
     
     // retourne vers le dashboard admin
@@ -129,13 +162,46 @@ class AdminController
     {
         $adminManager = new \Projet\Models\Admin\AdminModel();
         $product = $adminManager->listerProduit();
+        $nombreClient = $adminManager->nombreClient();
+        $emailCount = $adminManager->countEmail();
+
+        $adminManager = new \Projet\Models\front\ProduitModel();
+         $produitsCount = $adminManager->countProduct();
         require 'app/Views/admin/AdminDashboard.php';
     }
+
+     // Selectionne categorie d'un produit
 
     public function selectCategory()
     {
         $adminManager = new \Projet\Models\Admin\AdminModel();
         $categories = $adminManager->selectCategory();
         require 'app/Views/admin/ajouterProduitView.php';
+    }
+
+     // compte nombre client
+
+    public function nombreClient()
+    {
+        $adminManager = new \Projet\Models\Admin\AdminModel();
+        $nombreClient = $adminManager->nombreClient();
+
+        require 'app/Views/admin/AdminDashboard.php';
+    }
+
+    // compte nombre de produit
+
+    public function countProduct()
+    {
+        $adminManager = new \Projet\Models\front\ProduitModel();
+        $produitsCount = $adminManager->countProduct();
+    }
+
+    // compte nombres d'email
+
+    public function countEmail()
+    {
+        $adminManager = new \Projet\Models\Admin\AdminModel();
+        $emailCount = $adminManager->countEmail();
     }
 }

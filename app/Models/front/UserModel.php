@@ -14,7 +14,7 @@ class UserModel extends \Projet\Models\Manager
 
         $user = $bdd->prepare('INSERT INTO client(civility, lastname, firstname, address, codePostal, ville, mail, phone, mdp, rgpd) VALUE (:civility, :lastname, :firstname, :address, :codePostal, :ville, :mail, :phone, :mdp, :rgpd)');
         $user->execute(array(
-
+            
             ':civility'   => $data['civility'],
             ':lastname'   => $data['lastname'],
             ':firstname'  => $data['firstname'],
@@ -26,8 +26,9 @@ class UserModel extends \Projet\Models\Manager
             ':mdp'        => $data['mdp'],
             ':rgpd'       => $data['rgpd']
         ));
-
+        
         return $user;
+        
     }
 }
 

@@ -19,7 +19,6 @@
         <a href="index.php?page=login">inscription</a>
         <a href="index.php?page=pageConnexionUser">Mon compte</a>
         <a href="index.php?page=pageConnexionAdmin">admin</a>
-        <a href="index.php?page=pagePanier">panier</a>
     </div>
 
     <nav class="navbar">
@@ -53,6 +52,7 @@
                 <a href="index.php?page=contact">contact</a>
             </li>
         </ul>
+        <a href="index.php?page=pagePanier"><i class="fa-solid fa-basket-shopping fa-2x"></i></a>
     </nav>
 </header>
 

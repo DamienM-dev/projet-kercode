@@ -1,13 +1,29 @@
-window.onload = () => {
-    let mail = document.querySelector("#mail");
+document.querySelector('.validationForm input[type="submit"]').addEventListener("click", (e) => {
+    e.preventDefault();
 
-    mail.addEventListener("change", function(){
-        let type = new Email();
+    //prend la valeur de input, et et vérifie si il est valide sinon affiche message erreur
 
-        if(type.isValid(this.value)){
-            this.classList.remove("invalid");
-        }else {
-            this.classList("invalid");
-        }
-    });
-};
+    let valid = document.querySelector('.validationForm').checkValidity();
+
+
+    if(!valid){
+
+        message(input);
+    }
+});
+
+function message(input){
+
+    if(input.validity.valueMissing){
+
+        input.setCustomValidity("Ce champ est obligatoire");
+    }
+    if(input.validity.tooShort){
+
+        input.setCustomValidity(`Ce champ doit comporter au minimum ${input.minLength} caractéres`);
+    }
+    input.reportValidity();
+
+}
+
+//checkValidity est identique à reportValidity() quaf que lui ne renvois aucun message quand champs non valid

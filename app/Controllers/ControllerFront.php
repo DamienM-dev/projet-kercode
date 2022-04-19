@@ -44,7 +44,7 @@ class ControllerFront
     $produitModel = new \Projet\Models\front\ProduitModel();
     $nbrPage = $produitModel->countProduct();
 
-    require('app/Views/front/produitView.php');
+    require('app/Views/admin/adminDashboard.php');
 
   }
  
@@ -89,11 +89,10 @@ class ControllerFront
   {
     $postMail = new \Projet\Models\front\ContactModel();
 
-
     if (filter_var($contactData['mail'], FILTER_VALIDATE_EMAIL)) {
       $Mail = $postMail->postMail($contactData);
-      var_dump($Mail);
-      require 'app/Views/Front/confirmeContact.php';
+      require 'app/Views/Front/confirmeUser.php';
+      
     } else {
       header('Location: app/Views/front/errorView.php');
     }

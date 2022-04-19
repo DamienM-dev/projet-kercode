@@ -8,7 +8,7 @@ ob_start();
 <section id="container_contact">
 
     <h1>Fomulaire de contact</h1>
-    <form id="contact" action="index.php?action=contactPost" method="post">
+    <form id="contact" action="index.php?page=contactPost" method="post">
 
         <div>
             <label for="civility"> Civilité <span>*</span></label>

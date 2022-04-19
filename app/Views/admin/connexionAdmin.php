@@ -7,7 +7,8 @@ ob_start();
 ?>
 <section id="container_connexion_administrateur">
     <h1>Connexion administrateur</h1>
-        <form action="indexAdmin.php?action=connexionAdmin" method="post">
+        <form id="form_connexion_administrateur" action="indexAdmin.php?action=connexionAdmin" method="post">
+
 
             <p>
                 <label for="mail"> email:</label>
@@ -19,7 +20,6 @@ ob_start();
             </p>
 
             <button type="submit">Soumettre</button>
-            <
         </form>
 </section>
 

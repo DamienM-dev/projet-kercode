@@ -7,7 +7,7 @@ ob_start();
 <section id="container_inscription">
 
     <h1>Inscrivez-vous pour acceder à nos produits !</h1>
-    <form action="indexUser.php?action=creatUser" method="post">
+    <form class="validationForm" action="indexUser.php?action=creatUser" method="post">
 
 
         <div>
@@ -80,7 +80,7 @@ ob_start();
 
                     <p>
                         <label for="mdp"> Mot de passe<span>*</span>: </label>
-                        <input type="password" name="mdp" id="mdp" class="invalid" placeholder="Exemple : €19Bernadette33" required>
+                        <input type="password" name="mdp" id="mdp" class="invalid" placeholder="Exemple : €19Bernadette33" minlength="5" required>
                         <div class="invalid_input"></div>
                         <div class="invalid_input">
                             <p class="messageError">Champs manquant</p>
@@ -100,8 +100,7 @@ ob_start();
                 </div>
                 <button type="submit">Soumettre</button>
     </form>
-    <script src="app/js/form/dist/EmailField.min.js"></script>
-    <script src="app/js/form.js"></script>
+    <script src="app/Public/design/js/form.js"></script>
 </section>
 <?php
 

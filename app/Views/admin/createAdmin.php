@@ -7,29 +7,29 @@ ob_start();
 ?>
 <section id="container_creation_administrateur">
     <h1>Création administrateur</h1>
-        <form action="indexAdmin.php?action=creatAdmin" method="post">
+        <form class="validationForm" action="indexAdmin.php?action=creatAdmin" method="post">
 
 
             <p>
                 <label for="lastname"> nom:</label>
                 <input type="text" name="lastname" id="lastname" placeholder="Exemple : Chirac" checked required>
-                <div class="input_error"></div>
+                <div class="input_error"><?= $lastnameError ?></div>
             </p>
             <p>
                 <label for="firstname"> prenom: </label>
                 <input type="text" name="firstname" id="firstname" placeholder="Exemple : Jacques" required>
-                <div class="input_error"></div>
+                <div class="input_error"> <?= $firstnameError ?> </div>
             </p>
 
             <p>
                 <label for="mail"> email:</label>
                 <input type="mail" name="mail" id="mail" placeholder="Exemple : Jacques@mail.com" checked required>
-                <div class="input_error"></div>
+                <div class="input_error"> <?= $mailError ?> </div>
             </p>
             <p>
                 <label for="mdp"> Mot de passe: </label>
                 <input type="password" name="mdp" id="mdp" placeholder="Exemple : €19Bernadette33" required>
-                <div class="input_error"></div>
+                <div class="input_error"> <?= $mdpError ?> </div>
             </p>
 
             <button type="submit">Soumettre</button>

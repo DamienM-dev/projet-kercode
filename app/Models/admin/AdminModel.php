@@ -25,7 +25,7 @@ class AdminModel extends \Projet\Models\Manager
     {
 
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare('SELECT id, mail, mdp FROM producteur WHERE mail = ?');
+        $req = $bdd->prepare('SELECT id, mail, mdp, firstname FROM producteur WHERE mail = ?');
         $req->execute(array($mail));
 
 
@@ -81,4 +81,23 @@ class AdminModel extends \Projet\Models\Manager
         return $categories->fetchAll();
     }
 
+    //Nombre client
+
+    public function nombreClient()
+    {
+        $bdd = $this->dbConnect();
+        $nombreClient = $bdd->query('SELECT count(id) FROM client WHERE id');
+
+        return $nombreClient;
+        
+    }
+    
+    public function countEmail()
+    {
+        $bdd = $this->dbConnect();
+        $emailCount = $bdd->query('SELECT count(content) FROM contact WHERE id');
+    
+        return $emailCount;
+    }
+    
 }

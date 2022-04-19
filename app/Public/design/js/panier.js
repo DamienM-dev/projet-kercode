@@ -1,3 +1,6 @@
+//   ===================FONCTION PANIER ===================
+
+
 //JSON.stringify, transforme un objet complexe (tableau) en chaine de charactére récupérable grace a JSON.parse dans le localstorage
 //On l'utilise car le localstorge ne permettent que de stocker des objets simples (string, nombre...)
 
@@ -95,3 +98,15 @@ function getNumberProduct()
 
     return total;
   }
+
+//   ===================UTILISATION FONCTION ===================
+
+let button_ajout = document.getElementsByClassName('button_ajout');
+
+
+button_ajout.forEach(button_ajout => {
+        button_ajout.addEventListener('click', function() {
+            addBasket();
+        
+    });
+})

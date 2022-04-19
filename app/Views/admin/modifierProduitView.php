@@ -8,6 +8,8 @@ ob_start();
 
 <section id="modifier_produit_dashboard">
 
+<h1>Modification des produits</h1>
+
 <form method="post" action="indexAdmin.php?action=modifierProduit&id=<?=$produit['id']?>">
     <div id="">
         <div id="block_modifier_produit">
@@ -48,10 +50,10 @@ ob_start();
 
     </div>
 
-    <button>
+    <button type="submit" >
         <a>modifier</a>
     </button>
-    <button type="button">
+    <button type="button" class="bouton_dashboard">
         <a href="indexAdmin.php?action=retourDashboard">dashboard</a>
     </button>
 </form>

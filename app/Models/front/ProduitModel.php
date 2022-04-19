@@ -77,8 +77,9 @@ class ProduitModel extends \Projet\Models\Manager
     {
         $bdd = $this->dbConnect();
         $produitsCount = $bdd->query('SELECT count(id) as cnt from product WHERE id ');
+        
 
-        return $produitsCount->fetchAll();
+        return $produitsCount;
 
     }
 
@@ -109,21 +110,22 @@ class ProduitModel extends \Projet\Models\Manager
 //modifie produit en bdd depuis dashboard
 
 
-      public function modifierProduit($name, $description, $price, $categories, $alt, $img)
+      public function modifierProduit($id, $name, $description, $price, $categories, $alt, $img)
       {
           try {
                 $bdd = $this->dbConnect();
                 $produit = $bdd->prepare('UPDATE product 
-                                          SET product.name = :name, description = :description, price = :price, categories_id = :categories_id, alt= :alt, img = :img
+                                          SET product.id = :id, product.name = :name, description = :description, price = :price, categories_id = :categories_id, alt= :alt, img = :img
                                           WHERE id = :id');
                     $produit->execute(array(
-                        ':name'=>$name,
-                        ':description'=>$description,
-                        ':price'=>$price,
-                        ':alt'=>$alt,
-                        ':categories_id'=>$categories,
-                        ':img'=>$img,
-                        ':id'=>$_GET['id']
+
+                        ':name'             =>$name,
+                        ':description'      =>$description,
+                        ':price'            =>$price,
+                        ':alt'              =>$alt,
+                        ':categories_id'    =>$categories,
+                        ':img'              =>$img,
+                        ':id'               =>$_GET['id']
                     ));
               
 

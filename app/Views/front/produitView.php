@@ -22,19 +22,14 @@ ob_start();
                 <img src="<?= $produit['img'] ?>" alt ="<?= $produit['alt'] ?>">
                 <h2><?= $produit['name']?></h2>
                 <p><?= $produit['price'] ?> €</p>
-                <button><a href="#">Ajouter au panier</a></button>
+                <button class="button_ajout"><a href="#">Ajouter au panier</a></button>
                 <div></div>
             </div>
             <?php endforeach; ?>
         </div>
-
     </div>
 
-
-
 </section>
-
-
 
 
 
