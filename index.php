@@ -4,6 +4,16 @@ session_start();
 
 require_once __DIR__ . '/vendor/autoload.php';
 
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+
+function errorHandler($errno, $errstr) {
+    throw new Exception($errno, $errstr);
+}
+
+set_error_handler('errorHandler');
+
 function eCatcher($e) {
     if($_ENV["APP_ENV"] == "development") {
       $whoops = new \Whoops\Run;
