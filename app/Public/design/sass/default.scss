@@ -12,10 +12,13 @@
 }
 
 // =============STYLE GENERAL=============
-
+html {
+    height: 100%;
+}
 body {
      font-family: 'Quicksand', sans-serif,Georgia, 'Times New Roman', Times, serif;
-     
+     min-height: 100%;
+     position: relative;
      
     }
 
@@ -53,21 +56,21 @@ h2 {
 
 //================TITRE DESIGN================
 
-h2.horizontal::after {
+// h2.horizontal::after {
 
-    @extend .trait;
+//     @extend .trait;
 
-    width: 25%;
-    margin-left: 10px;
-}
+//     width: 25%;
+//     margin-left: 10px;
+// }
     
-h2.horizontal::before {
+// h2.horizontal::before {
 
-    @extend .trait;
+//     @extend .trait;
 
-    width: 25%;
-    margin-right: 10px;
-}
+//     width: 25%;
+//     margin-right: 10px;
+// }
 
 // EST-CE VRAIMENT UNE BONNE IDEE ?
 
@@ -109,8 +112,9 @@ h2.horizontal::before {
                 letter-spacing: 0.8px;
             }
         }
-
-        
+    }
+    .active, a.liens_menu:hover {
+        color: green;
     }
     #logo {
         width: 15vw;
@@ -156,8 +160,9 @@ section#block_image_parallax {
    #block_absolute_image {
         position: absolute;
         text-align: center;
+        width: 100%;
         top: 15%;
-        margin: 0 10px;
+       
 
     h1 {
         color: $couleurSecondaire;
@@ -166,7 +171,7 @@ section#block_image_parallax {
             weight: bold;
         }
     }
-    button {
+    .button {
         
         @extend .button_style;
         background-color: $couleurSecondaire;
@@ -197,14 +202,18 @@ section#block_image_parallax {
         background-color: $couleurPrincipal;
 
         img.image_pourquoi {
-            width: 15vw; 
+            width: 15vw;
+            padding : {
+                top: 15px;
+                bottom: 15px;
+            } 
         }
 
         h3 {
             margin-bottom: 10px;
         }
 
-        button {
+        .button {
             @extend .button_style;
         }
 
@@ -214,7 +223,7 @@ section#block_image_parallax {
             border: 1px solid $couleurQuatre;
             left: -10px;
             top: -10px;
-            height: 170px;
+            height: 180px;
             width: 100%;
             background-color: #4760727c;
             margin: 10px;
@@ -225,7 +234,7 @@ section#block_image_parallax {
             &:hover {
                 opacity: 1;
             }
-            button {
+            .button {
                 @extend .button_style;
                 background-color: $couleurSecondaire;
                 color: $couleurPrincipal;
@@ -263,17 +272,19 @@ section#block_image_parallax {
 #slider-block{
 
     margin-top: 20px;
+    position: relative;
+    
 
     .slider {
        height: 50vh;
-       position: relative;
+       
     
        img {
            object-fit: cover;
-           height: 100%;
+           height: 50%;
            width: 100%;
            position:absolute;
-           top: 0;
+           top: 10%;
            left: 0;
            opacity: 0;
            transition: opacity .5s ;
@@ -287,7 +298,7 @@ section#block_image_parallax {
            color: rgb(255, 255, 255);
            font-size: 1rem;
            position: absolute;
-           top: 50%;
+           top: 37%;
            transform: translateY(-50%);
        }
        .suivant {
@@ -299,13 +310,8 @@ section#block_image_parallax {
     
        //=====GESTION DE L'ABSOLUTE=====
     
-       #block_absolute_image {
-           position: absolute;;
-           text-align: center;
-           top: 20%;
-           left: 50%;
-           transform: translate(-50%);
-           
+       #block_absolute_image_testimonial{
+          
 
            .block_testimonials {
                 
@@ -314,15 +320,21 @@ section#block_image_parallax {
 
             .photo_testimonials {
 
+                display: block;
                 position: absolute;
                 width: 100px;
                 height: 100px;
+                left: 50%;
+                transform: translate(-50%);
                 border-radius: 50%;
-                left: 25%;
+               
                 
               }
               p.testimonials {
 
+                position: absolute;
+                z-index: 10000;
+                right: 35%;
                 
                   margin-top: 120px;
                   font: {
@@ -350,6 +362,7 @@ section#block_image_parallax {
                 repeat:     no-repeat;
                 attachment: fixed;
             }
+            position: relative;
             width: 100%;
             height: 250px;
             
@@ -359,8 +372,9 @@ section#block_image_parallax {
             #block_inside_image_apropos {
                 position: absolute;
                 text-align: center;
-                top: 15%;
-                margin: 0 10px;
+                width: 100%;
+                top: 26%;
+            
     
                 h1 {
                     color: $couleurSecondaire;
@@ -377,12 +391,18 @@ section#block_image_parallax {
 
 
 section#block_notre_histoire{
-    margin: 10px;
+    margin: 30px;
     text-align: center;
 
     h2 {
         margin-bottom: 10px;
     }
+
+   
+}
+
+section#block_notre_equipe {
+    height: 1508px;
 }
 
 .block_agriculteur {
@@ -390,7 +410,7 @@ section#block_notre_histoire{
     text-align: center;
     height: 420px;
     margin: 0 10px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     border: 1px $couleurPrincipal solid;
     background-color: $couleurPrincipal;
     border-radius: 0 0 10px 10px;
@@ -402,7 +422,7 @@ section#block_notre_histoire{
 
     img.photo_agriculteur {
         border-radius: 50%;
-        width: 60%;
+        width: 40%;
         transition: all .3s;
         margin-top: 50px;
 
@@ -420,7 +440,6 @@ section#block_notre_histoire{
     .agriculteur_reseau {
         position:absolute;
         bottom: 20px;
-        //pense bête pour demain, voir si cela aide pour centrer texte en abslotue
         left: 50%;
         transform: translate(-50%);
 
@@ -494,7 +513,7 @@ section#block_produits {
                padding-bottom: 10px;
             }
 
-            button {
+            .button {
 
                     @extend .button_style;
                     background-color: $couleurSecondaire;
@@ -571,7 +590,7 @@ section#block_produits {
                 }
         }
         
-        button {
+        .button {
             @extend .button_style;
             background-color: $couleurSecondaire;
             color: $couleurPrincipal;
@@ -616,7 +635,9 @@ section#block_produits {
         
     }
     form {
-           
+    
+            height: 1200px;
+        
         div.center_formulaire {
             label {
                 font-size: 1.2rem;
@@ -639,13 +660,17 @@ section#block_produits {
 //=============FOOTER=============
 
 footer {
+    position: absolute;
+    bottom: 0;
     height: 200px;
+    width: 100%;
     background-color: $couleurPrincipal;
     color: $couleurSecondaire;
 
     #logo_reseau_sociaux {
         width: 100%;
         text-align: center;
+        padding-top: 25px;
        
         .logo_footer{
             margin-top: 10px;
@@ -684,7 +709,7 @@ footer {
         top: 50%;
         left: 100px;
 
-        button {
+        .button {
 
             @extend .button_style;
             background-color: $couleurSecondaire;
@@ -717,21 +742,21 @@ footer {
 
 //================TITRE DESIGN================
 
-h2.horizontal::after {
+// h2.horizontal::after {
 
-    @extend .trait;
+//     @extend .trait;
 
-    width: 35%;
-    margin-left: 10px;
-}
+//     width: 35%;
+//     margin-left: 10px;
+// }
     
-h2.horizontal::before {
+// h2.horizontal::before {
 
-    @extend .trait;
+//     @extend .trait;
 
-    width: 35%;
-    margin-right: 10px;
-}
+//     width: 35%;
+//     margin-right: 10px;
+// }
 
 // =============HEADER=============
 
@@ -748,19 +773,7 @@ ul.nav-menu {
         
         // =============PAGE ACCUEIL: BLOCK PARALLAX=============
 
-        section#block_image_parallax {
-            
-            
-            //=====PAGE ACCUEIL: BLOCK PARALLAX=>GESTION DE L'ABSOLUTE=====
-        
-            #block_absolute_image {
-
-                top: 18%;
-                margin: 0 35px;
-                
-        }
-        
-    }
+ 
     
     // =================PAGE ACCUEIL: SLIDER=========================
     
@@ -776,7 +789,7 @@ ul.nav-menu {
             
             .blocks_inside_pourquoi{
                 
-                height: 200px;
+                height: 220px;
         
                 img.image_pourquoi {
                     width: 12vw; 
@@ -784,10 +797,21 @@ ul.nav-menu {
 
         .design_block_hover {
             
-            height: 200px;
+            height: 220px;
             
         }
     }  
+}
+// =============PAGE ACCUEIL PRODUIT=============
+
+.blocks_inside_produit {
+    width: 80%;
+    margin:auto;
+    margin-bottom: 25px;
+
+    p {
+        padding-bottom: 20px;
+    }
 }
 
 // =============PAGE A PROPOS=============
@@ -800,8 +824,7 @@ ul.nav-menu {
             
             #block_inside_image_apropos {
                 
-                top: 18%;
-                margin: 0 85px;
+            
                 
                 h1 {
                     font-size: 1.6rem;
@@ -821,13 +844,13 @@ section#block_notre_histoire{
 
 .block_agriculteur {
     
-    width: 100%;
-    height: 500px;
+    
+    height: 400px;
     
     
     img.photo_agriculteur  {
         
-        width: 40%;
+        width: 250px;
         object-fit: cover;
         
     }
@@ -841,7 +864,6 @@ section#block_notre_histoire{
     }
     
 }
-
 // =============PAGE PRODUIT=============
 
 
@@ -902,27 +924,27 @@ footer {
     
     //================TITRE DESIGN================
 
-    h2.horizontal::after {
+    // h2.horizontal::after {
 
-        content: '';
-        border-bottom: 1px $couleurQuatre solid;
-        display: inline-block;
-        vertical-align: middle;
+    //     content: '';
+    //     border-bottom: 1px $couleurQuatre solid;
+    //     display: inline-block;
+    //     vertical-align: middle;
     
-        width: 40%;
-        margin-left: 10px;
-    }
+    //     width: 40%;
+    //     margin-left: 10px;
+    // }
         
-    h2.horizontal::before {
+    // h2.horizontal::before {
     
-        content: '';
-        border-bottom: 1px $couleurQuatre solid;
-        display: inline-block;
-        vertical-align: middle;
+    //     content: '';
+    //     border-bottom: 1px $couleurQuatre solid;
+    //     display: inline-block;
+    //     vertical-align: middle;
     
-        width: 40%;
-        margin-right: 10px;
-    }
+    //     width: 40%;
+    //     margin-right: 10px;
+    // }
     
     //=============HEADER===============
     
@@ -945,19 +967,7 @@ footer {
 
     // =============PAGE ACCUEIL: BLOCK PARALLAX=============
     
-    section#block_image_parallax {
-        
-        
-        //=====PAGE ACCUEIL: BLOCK PARALLAX => GESTION DE L'ABSOLUTE=====
-        
-        #block_absolute_image {
-            
-            top: 23%;
-            margin: 0 180px;
-            
-        }
-        
-    }
+   
 
     // =============PAGE ACCUEIL: BLOCK POURQUOI=============
     
@@ -985,7 +995,7 @@ footer {
             .design_block_hover {
                 height: 330px;
             
-                button {
+                .button {
             position: absolute;
             bottom: 20px;
             left: 31%;
@@ -1028,11 +1038,6 @@ footer {
             margin-top: 50px;
         }
         
-        #block_absolute_image {
-
-            left: 180px;
-        }
-        
     }
     
     // =============PAGE A PROPOS: block_image_apropos=============
@@ -1043,8 +1048,7 @@ footer {
         
         #block_inside_image_apropos {
             
-            top: 25%;
-            margin: 0 215px;
+          
             
             h1 {
                 font-size: 1.7rem;
@@ -1055,11 +1059,12 @@ footer {
     section#block_notre_equipe {
         display: flex;
         flex-wrap: wrap;
+        height: 900px;
         
         .block_agriculteur {
             
             width: 31%;
-            height: 450px;
+            height: 600px;
             text-align: justify;
             
             &:nth-child(1) {
@@ -1111,16 +1116,19 @@ footer {
         
         #container_inscription {
             
+            
             margin-top: 60px;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+
+            
             
             .formulaire_grand {
                 display: flex;
 
-                p {
-                    margin: 10px;
+                div {
+                    margin: 20px;
                 }
             }
             
@@ -1138,18 +1146,7 @@ footer {
 
          // =============PAGE ACCUEIL: BLOCK PARALLAX=============
     
-    section#block_image_parallax {
-        
-       
-        //=====PAGE ACCUEIL: BLOCK PARALLAX => GESTION DE L'ABSOLUTE=====
-        
-        #block_absolute_image {
-            
-            left: 5%;
-            
-        }
-        
-    }
+  
 }
     
     
@@ -1210,6 +1207,7 @@ section#container_connexion_administrateur, section#container_connexion_client {
 
             #bouton_admin_header{
                 display: flex;
+                flex-direction: column;
             }
 
 
@@ -1256,6 +1254,7 @@ section#container_connexion_administrateur, section#container_connexion_client {
         text-align: center;
         border-collapse: collapse;
         width: 100%;
+        margin-bottom: 50px;
         
         th {
             background-color: $couleurPrincipal;
@@ -1263,20 +1262,25 @@ section#container_connexion_administrateur, section#container_connexion_client {
         }
         td {
             
-            border: solid black 1px;
+           
             color: white;
             
             a{
                 color: white;
             }
+
+            .icone_tableau {
+                font-size: 20px;
+                padding: 10px;
+            }
     }
 
     tr {
         &:nth-child(even) {
-            background-color: #2a9d8f;
+            background-color: #062C30;
         }
         &:nth-child(odd) {
-            background-color: #e76f51;
+            background-color: #05595B;
         }
     }
 }
@@ -1289,7 +1293,7 @@ section#container_connexion_administrateur, section#container_connexion_client {
             display: flex;
             justify-content: space-evenly;
             align-items: center;
-            background-color:#e9c46a;
+            background-color:#05595B;
             width:  350px;
             height: 130px;
             margin:50px auto;
@@ -1298,20 +1302,20 @@ section#container_connexion_administrateur, section#container_connexion_client {
 
             i {
                 font-size: 60px;
-                color: black;
+                color: white;
             }
         }
 
         #emails {
-            background-color:#2a9d8f;
+            background-color:#062C30;
         }
         #nombres_produits {
-            background-color: #e76f51;
+            background-color: #E2D784;
         }
 
         p {
             font-size: 1.4rem;
-            color: black;
+            color: white;
         }
     }
 //=======DASHBOARD ADMINISTRATEUR: VU PRODUIT=======
@@ -1327,6 +1331,9 @@ section#container_connexion_administrateur, section#container_connexion_client {
         p {
             font-size: 1.2rem;
             margin-bottom: 10px;
+        }
+        .image_produit_view_dasboard {
+            width: 40vw;
         }
         
         button {
@@ -1348,12 +1355,44 @@ section#container_connexion_administrateur, section#container_connexion_client {
         }
     }
 
+    //=======DASHBOARD ADMINISTRATEUR: AJOUTER PRODUIT=======
+
+    #ajouter_form {
+
+        h1 {
+            margin: {
+                top:30px;
+                bottom:20px;
+            }
+        }
+
+        label, SELECT {
+            display: block;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            font-weight: bold;
+        
+
+        }
+        #ajouter_form_inside {
+            text-align: center;
+        }
+
+        input {
+            height: 30px;
+            width: 200px;
+            margin-bottom: 10px;
+        }
+    }
+    
+
     //=======DASHBOARD ADMINISTRATEUR: MODIFICATION PRODUIT=======
 
 #modifier_produit_dashboard {
 
-    text-align: center;
-    display: block;
+    form {
+        text-align: center;
+    }
 
     h1 {
         margin: 20px;
@@ -1376,6 +1415,7 @@ section#container_connexion_administrateur, section#container_connexion_client {
     }
 
     button {
+        margin-bottom: 25px;
         width: 100px;
         height: 25px;
     }
@@ -1421,6 +1461,12 @@ section#container_connexion_administrateur, section#container_connexion_client {
         }
         #ajouter_produit_dasboard{
             margin-top: 100px;
+        }
+
+        // ============DASHBOARD ADMINISTRATEUR: VU générale ============
+
+        #bouton_admin_header{
+            flex-direction: row;
         }
     }
 

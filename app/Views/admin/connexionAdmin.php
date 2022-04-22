@@ -10,14 +10,14 @@ ob_start();
         <form id="form_connexion_administrateur" action="indexAdmin.php?action=connexionAdmin" method="post">
 
 
-            <p>
+            <div>
                 <label for="mail"> email:</label>
-                <input type="mail" name="mail" id="mail" placeholder="Exemple : Jacques@mail.com" checked required>
-            </p>
-            <p>
+                <input type="email" name="mail" id="mail" placeholder="Exemple : Jacques@mail.com" required>
+            </div>
+            <div>
                 <label for="mdp"> Mot de passe: </label>
                 <input type="password" name="mdp" id="mdp" placeholder="Exemple : €19Bernadette33" required>
-            </p>
+            </div>
 
             <button type="submit">Soumettre</button>
         </form>

@@ -21,7 +21,7 @@ class AdminModel extends \Projet\Models\Manager
         return $req;
     }
 
-    public function recupInfo($mail, $mdp)
+    public function recupInfo($mail)
     {
 
         $bdd = $this->dbConnect();

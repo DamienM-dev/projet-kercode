@@ -13,8 +13,6 @@ $content = ob_get_clean();
 
 ?>
 
-
-
 <?php
 
 require('app/Views/template/base.php');

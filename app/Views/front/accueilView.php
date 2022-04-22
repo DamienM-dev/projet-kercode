@@ -14,43 +14,43 @@ ob_start();
         <h1>Dayly Fresh est une association de producteur locaux</h1>
 
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam faucibus ante et.</p>
-        <button><a href="index.php?page=aProposView">A propos</a></button>
+        <a href="index.php?page=aProposView" class="button">A propos</a>
     </div>
 
 </section>
 
 <section id="block_pourquoi">
-    <h2 class="horizontal">Nous choisir </h2>
+    <h2>Nous choisir </h2>
     <div class="blocks_inside_pourquoi">
         <img src="app/Public/design/svg/nutrition/Color/Fruit.svg" alt="" class="image_pourquoi">
         <h3>Des produits de saisons</h3>
         <p>Pour votre plus grand plaisir, nous ne vendons que des produits de saison </p>
         <div class="design_block_hover">
-            <button><a href="index.php?page=produitView">En savoir plus</a></button>
+            <a href="index.php?page=produitView" class="button">En savoir plus</a>
         </div>
     </div>
 
     <div class="blocks_inside_pourquoi">
-        <img src="app/Public/design/svg/ecology/color/No Pesticides.svg" alt="" class="image_pourquoi">
+        <img src="app/Public/design/svg/ecology/color/NoPesticides.svg" alt="" class="image_pourquoi">
         <h3>Des produits naturels</h3>
         <p>Ici nous n'utilisons aucun pesticide, aucun engrain, tout est naturel </p>
         <div class="design_block_hover">
-            <button><a href="index.php?page=produitView">En savoir plus</a></button>
+            <a href="index.php?page=produitView" class="button">En savoir plus</a>
         </div>
     </div>
 
     <div class="blocks_inside_pourquoi">
-        <img src="app/Public/design/svg/nutrition/Color/Protein Meat.svg" alt="" class="image_pourquoi">
+        <img src="app/Public/design/svg/nutrition/Color/ProteinMeat.svg" alt="" class="image_pourquoi">
         <h3>Des produits de saisons</h3>
         <p>Pour votre plus grand plaisir, nous ne vendons que des produits de saison </p>
         <div class="design_block_hover">
-            <button><a href="index.php?page=produitView">En savoir plus</a></button>
+            <a href="index.php?page=produitView" class="button">En savoir plus</a>
         </div>
     </div>
 </section>
 
 <section id="block_produits">
-    <h2 class="horizontal" >Nos produits</h2>
+    <h2>Nos produits</h2>
 
     <div class="blocks_inside_produit">
         <figure>
@@ -78,7 +78,7 @@ ob_start();
 </section>
 
 <section id="slider-block">
-    <h2 class="horizontal">Les témoignages</h2>
+    <h2>Les témoignages</h2>
     
     <div class="slider">
 
@@ -106,7 +106,7 @@ ob_start();
             <i class="fa-solid fa-circle-left"></i>
         </div>
 
-        <div id="block_absolute_image">
+        <div id="block_absolute_image_testimonial">
             
     
             <div class="block_testimonials">
@@ -123,7 +123,6 @@ ob_start();
                 <img src="<?= $sliderImage[2]['photo']?>" alt="<?= $sliderImage[2]['a'] ?>" class="photo_testimonials">
                 <p class="testimonials hidden">"<?= $sliderImage[2]['testimonial'] ?>"</p>
             </div>
-<!-- ajouter class hidden -->
         </div>
 
     </div>

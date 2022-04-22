@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="app/Public/design/css/default.css">
     <title> <?= $title ?> </title>
 </head>
+<body>
+    <div id="container">
 
 <header>
     <div id="connexion">
@@ -40,47 +42,45 @@
         <input type="checkbox" id="btn">
         <ul class="nav-menu">
             <li class="nav-item">
-                <a href="index.php">accueil</a>
+                <a href="index.php" class="liens_menu">accueil</a>
             </li>
             <li class="nav-item">
-                <a href="index.php?page=aProposView">a propos</a>
+                <a href="index.php?page=aProposView" class="liens_menu">a propos</a>
             </li>
             <li class="nav-item">
-                <a href="index.php?page=produitView">produit</a>
+                <a href="index.php?page=produitView" class="liens_menu">produit</a>
             </li>
             <li class="nav-item">
-                <a href="index.php?page=contact">contact</a>
+                <a href="index.php?page=contact" class="liens_menu">contact</a>
             </li>
         </ul>
         <a href="index.php?page=pagePanier"><i class="fa-solid fa-basket-shopping fa-2x"></i></a>
     </nav>
 </header>
 
-<body>
-    <div id="container">
 
         
         <?= $content ?>
         
     </div>
     <script src="app/Public/design/js/panier.js"></script>
-</body>
+    
+    <footer>
 
-<footer>
-
-    <div id="logo_reseau_sociaux">
+        <div id="logo_reseau_sociaux">
         <a href="#"><i class="fa-brands fa-twitter logo_footer fa-xl"></i></a>
         <a href="#"><i class="fa-brands fa-facebook-f logo_footer fa-xl"></i></a>
         <a href="#"><i class="fa-brands fa-linkedin-in logo_footer fa-xl"></i></a>
         <a href="#"><i class="fa-brands fa-instagram-square logo_footer fa-xl"></i></a>
     </div>
-
+    
     <div id="block_copyright">
         <p><a href="index.php?page=mentionsLegalesView">Mentions légales</a></p>
         <p><a href="index.php?page=donneesPersoView">Données personelles</a></p>
         <p>© Daily Fresh</p>
     </div>
-
+    
 </footer>
+</body>
 
 </html>

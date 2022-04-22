@@ -30,6 +30,20 @@ class UserModel extends \Projet\Models\Manager
         return $user;
         
     }
+
+    //==============CONNEXION USER============================
+
+    public function recupInfoUser($mail)
+    {
+
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('SELECT id, mail, mdp, firstname FROM client WHERE mail = ?');
+        $req->execute(array($mail));
+
+
+
+        return $req;
+    }
 }
 
 // pour la value :nom au lieu de ? car c'est une requéte contenant une clé=>valeur ? A confirmer !

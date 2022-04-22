@@ -18,13 +18,13 @@ set_error_handler('errorHandler');
 
 function eCatcher($e) {
     if($_ENV["APP_ENV"] == "development") {
-      $whoops = new \Whoops\Run;
-      $whoops->allowQuit(false);
-      $whoops->writeToOutput(false);
-      $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
-      $html = $whoops->handleException($e);
-  
-      echo $html;
+        $whoops = new \Whoops\Run;
+        $whoops->allowQuit(false);
+        $whoops->writeToOutput(false);
+        $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+        $html = $whoops->handleException($e);
+        
+        require 'app/Views/front/errorView.php';
     }
   }
 
@@ -182,7 +182,7 @@ try {
         die('Erreur : ' .$e->getMessage());
     } else {
                 header("location: app/View/front/errorView.php");
-            } 
+            } header("location: app/View/front/errorView.php");
 
 } catch (Error $e) {
         eCatcher($e);

@@ -23,7 +23,7 @@ ob_start();
 
             <p>
                 <label for="mail"> email:</label>
-                <input type="mail" name="mail" id="mail" placeholder="Exemple : Jacques@mail.com" checked required>
+                <input type="email" name="mail" id="mail" placeholder="Exemple : Jacques@mail.com" checked required>
                 <div class="input_error"> <?= $mailError ?> </div>
             </p>
             <p>

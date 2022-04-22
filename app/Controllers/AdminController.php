@@ -22,9 +22,13 @@ class AdminController
     public function connexionAdmin($mail, $mdp)
     {
         $adminManager = new \Projet\Models\Admin\AdminModel();
-        $connexionAdmin = $adminManager->recupInfo($mail, $mdp);
+        $connexionAdmin = $adminManager->recupInfo($mail);
 
         $result = $connexionAdmin->fetch();
+
+        if ($result['mdp'] === $mdp) {
+            echo "les informations ne sont pas correct";
+        }
 
         $isPasswordCorrect = password_verify($mdp, $result['mdp']);
 
@@ -50,7 +54,9 @@ class AdminController
             require 'app/Views/admin/AdminDashboard.php';
 
 
-        } 
+        } else {
+            require 'app/Views/front/erreurPass.php';
+        }
             
     }
 

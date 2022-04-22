@@ -28,7 +28,7 @@ ob_start();
         </div>
 
         <div>
-            <img src="<?= $produit['img']?>" alt="<?=$produit['alt'] ?>">
+            <img src="<?= $produit['img']?>" alt="<?=$produit['alt'] ?>" class="image_produit_view_dasboard">
         </div>
     </div>
 

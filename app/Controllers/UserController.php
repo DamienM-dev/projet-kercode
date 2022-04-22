@@ -23,8 +23,10 @@ class UserController
     public function connexionUser($mail, $mdp)
     {
 
+    
         $userManager = new \Projet\Models\front\UserModel();
         $userConnexion = $userManager->recupInfoUser($mail);
+        
 
         $result = $userConnexion->fetch();
 
@@ -35,9 +37,13 @@ class UserController
         $_SESSION['id'] = $result['id'];
 
 
-        if ($isPasswordCorrect) {
+        if ($isPasswordCorrect && filter_var($result['mail'], FILTER_VALIDATE_EMAIL)) {
+
+            $userCreation = new \Projet\Models\front\UserModel();
 
             require 'app/Views/front/userDashboard.php';
+        } else {
+            require 'app/Views/front/erreurPass.php';
         }
     }
 }

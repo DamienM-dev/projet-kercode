@@ -10,6 +10,7 @@ ob_start();
     <div id="block_image_404">
     <lottie-player src="app/Public/design/images/erreur-champs.json" autoplay loop></lottie-player>
         <div id="block_bouton_404">
+            <?= $html; ?>
             <h3>Nous somme entrain de travailler, revenez plus tard !</h3>
             <button>
                 <a href="index.php?page=accueil">Retournez à l'accueil !<a>

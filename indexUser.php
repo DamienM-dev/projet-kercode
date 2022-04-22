@@ -1,5 +1,7 @@
 <?php
 
+
+
 session_start();
 
 require_once __DIR__ . '/vendor/autoload.php';
@@ -22,7 +24,7 @@ function eCatcher($e) {
       $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
       $html = $whoops->handleException($e);
   
-      echo $html;
+      require 'app/Views/front/errorView.php';
     }
   }
 
@@ -88,12 +90,15 @@ try {
         //========CONNEXION de l'utilisateur========
 
         if ($_GET['action'] == 'connexionUser') {
+            
             $mail = htmlspecialchars($_POST['mail']);
             $mdp  = $_POST['mdp'];
-
-
+            
+            
             if (!empty($mail) && !empty($mdp)) {
-                $backController->connexionUser($mail, $mdp);
+                $userController->connexionUser($mail, $mdp);
+                
+                
             } else {
                 throw new Exception('Veuillez renseigner vos identifiants');
             }

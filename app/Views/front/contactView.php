@@ -32,7 +32,7 @@ ob_start();
                 <input type="tel" name="phone" id="phone" placeholder="Exemple : 0123456789" maxlength="10">
             </div>
             <label for="mail"> email :</label>
-            <input type="mail" name="mail" id="mail" placeholder="Exemple : Jacques@mail.com" required>
+            <input type="email" name="mail" id="mail" placeholder="Exemple : Jacques@mail.com" required>
         </div>
 
         <div class="center_formulaire">

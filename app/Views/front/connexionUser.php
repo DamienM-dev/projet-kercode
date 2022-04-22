@@ -9,14 +9,14 @@ ob_start();
     <h1>Entrer vos informations</h1>
     <form id="form_connexion_client" action="indexUser.php?action=connexionUser" method="post">
 
-        <p>
+        <div>
             <label for="mail"> email:</label>
-            <input type="mail" name="mail" id="mail" placeholder="Exemple : Jacques@mail.com" checked required>
-        </p>
-        <p>
+            <input type="email" name="mail" id="mail" placeholder="Exemple : Jacques@mail.com" required>
+        </div>
+        <div>
             <label for="mdp"> Mot de passe: </label>
             <input type="password" name="mdp" id="mdp" placeholder="Exemple : €19Bernadette33" required>
-        </p>
+        </div>
 
         <button type="submit">Connexion</button>
     </form>

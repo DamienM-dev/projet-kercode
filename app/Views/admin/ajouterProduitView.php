@@ -10,11 +10,11 @@ ob_start();
 <section id="ajouter_produit_dasboard">
 
 
-    <form action="indexAdmin.php?action=ajouterProduit" method="post" enctype="multipart/form-data">
+    <form action="indexAdmin.php?action=ajouterProduit" method="post" enctype="multipart/form-data" id="ajouter_form">
 
         <h1>Ajouter un produit</h1>
         
-            <div>
+            <div id="ajouter_form_inside">
                 <div>
                     <label for="name">nom:</label>
                     <input type="text" name="name" id="name" placeholder="nom" />

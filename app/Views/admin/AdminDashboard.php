@@ -77,8 +77,8 @@
                 <td><?= $afficheProduct['price'] ?></td>
                 <td><?= $afficheProduct['category'] ?></td>
                 <td>
-                    <a href="indexAdmin.php?action=voirProduit&id=<?= $afficheProduct['id']?>"><i class="fa-solid fa-eye"></i></a>
-                    <a href="indexAdmin.php?action=confirmationDelete&id=<?= $afficheProduct['id']?>"><i class="fa-solid fa-trash-can"></i></a>
+                    <a href="indexAdmin.php?action=voirProduit&id=<?= $afficheProduct['id']?>"><i class="fa-solid fa-eye icone_tableau"></i></a>
+                    <a href="indexAdmin.php?action=confirmationDelete&id=<?= $afficheProduct['id']?>"><i class="fa-solid fa-trash-can icone_tableau"></i></a>
                 </td>
     
             </tr>
@@ -89,11 +89,5 @@
 
 </section>
 
-
-
-<footer>
-
-
-</footer>
 
 </html>
