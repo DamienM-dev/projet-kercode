@@ -7,7 +7,6 @@
         alt="CSS Valide !" />
     </a>
 </p>
-<p>https://app.snyk.io/org/damienm-dev/project/7d27375d-8c72-41b1-ba6b-af64a634f95e/history/7579d316-c7ca-4ddf-9fd9-321a9b5d265b</p>
 
--Pour réduire les risques de problémes lors de la lecture de mon DUMP, je conseil de l'ouvrir avec HeidiSQL.
+-Pour réduire les risques de problémes lors de la lecture de mon DUMP, je conseil de l'ouvrir avec HeidiSQL.<br>
 -Certaines de mes dépendances requiére la présence de PHP 8.
