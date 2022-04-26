@@ -129,14 +129,14 @@ try {
 
         }elseif ($_GET['action'] == 'deleteProduit') {
             
-            $id = $_GET['id'];
+            $id = htmlspecialchars($_GET['id']);
             $backController->deleteProduit($id);
             
             //page CONFIRMATION DELETE
 
         }elseif ($_GET['action'] == 'confirmationDelete') {
 
-            $id = $_GET['id'];
+            $id = htmlspecialchars($_GET['id']);
             $backController->confirmationDelete($id);
             
             //retour à la page dashboard
@@ -189,28 +189,3 @@ try {
         header("location: app/View/front/errorView.php");
     }
 
-
-
-// catch (Exception $e) {
-//     eCatcher($e);
-//     if($e->getCode() === 404) {
-
-//         die('Erreur : ' .$e->getMessage());
-//     } else {
-//         header("location: app/View/front/errorView.php")
-//     }
-// } catch (Error $e) {
-//     eCatcher($e);
-//     header("location: app/View/front/errorView.php")
-// }
-
-// ajouter catch erroe $e
-// var_dump($e): a supprimer avnt l'envois
-// gestion en fonction de l'environnement prod ou dev
-// utiliser whoops
-// zjout du errorHandler
-
-// function eCatcher($e) {
-//     if($_ENV["APP_ENV"] == "development") {
-//       var_dump($e);die;
-//     }
