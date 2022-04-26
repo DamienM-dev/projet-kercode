@@ -14,7 +14,7 @@ ob_start();
     
     <div>
         <h2>êtes vous sur de vouloir supprimer ?</h2>
-        <button><a href="indexAdmin.php?action=deleteProduit&id=<?=$id?>">Supprimer</a></button>
+        <button><a href="indexAdmin.php?action=deleteProduit&id=<?=htmlspecialchars($id);?>">Supprimer</a></button>
         <button><a href="indexAdmin.php?action=retourDashboard">dashboard</a></button>
         
     </div>
