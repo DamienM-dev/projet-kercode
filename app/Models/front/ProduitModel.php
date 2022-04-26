@@ -67,7 +67,7 @@ class ProduitModel extends \Projet\Models\Manager
     {
 
         $bdd = $this->dbConnect();
-        $produits = $bdd->query('SELECT name, price, img, alt from product ');
+        $produits = $bdd->query('SELECT id, name, description, price, img, alt from product ');
 
         return $produits;
     }

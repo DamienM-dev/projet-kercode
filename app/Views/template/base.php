@@ -1,3 +1,9 @@
+<?php $menu = $_SERVER['REQUEST_URI'];
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -18,17 +24,12 @@
 
 <header>
     <div id="connexion">
-        <a href="index.php?page=login">inscription</a>
-        <a href="index.php?page=pageConnexionUser">Mon compte</a>
-        <a href="index.php?page=pageConnexionAdmin">admin</a>
+        <a href="index.php?page=login" title="INSCRIPTION" >inscription</a>
+        <a href="index.php?page=pageConnexionUser" title="Mon compte">Mon compte</a>
+        <a href="index.php?page=pageConnexionAdmin" title="Connexion Admin">admin</a>
     </div>
 
     <nav class="navbar">
-        <figure>
-            <a href="index.php">
-                <img src="app/Public/design/images/logo.svg" alt="Logo" id="logo">
-            </a>
-        </figure>
         <h2>Daily fresh</h2>
 
         <label for="btn">
@@ -39,48 +40,55 @@
             </svg>
         </label>
 
-        <input type="checkbox" id="btn">
+    
+           <input type="checkbox" id="btn">
         <ul class="nav-menu">
             <li class="nav-item">
-                <a href="index.php" class="liens_menu">accueil</a>
+                <a href="index.php" class="liens_menu <?php if($menu=='/index.php') echo'active'; ?>" title="Accueil">accueil</a>
             </li>
             <li class="nav-item">
-                <a href="index.php?page=aProposView" class="liens_menu">a propos</a>
+                <a href="index.php?page=aProposView" class="liens_menu <?php if($menu=='/index.php?page=aProposView') echo'active'; ?>" title="A propos">a propos</a>
             </li>
             <li class="nav-item">
-                <a href="index.php?page=produitView" class="liens_menu">produit</a>
+                <a href="index.php?page=produitView" class="liens_menu <?php if($menu=='/index.php?page=produitView') echo'active'; ?>" title="produit">produit</a>
             </li>
             <li class="nav-item">
-                <a href="index.php?page=contact" class="liens_menu">contact</a>
+                <a href="index.php?page=contact" class="liens_menu <?php if($menu=='/index.php?page=contact') echo'active'; ?>" title="Contact">contact</a>
             </li>
         </ul>
-        <a href="index.php?page=pagePanier"><i class="fa-solid fa-basket-shopping fa-2x"></i></a>
+        
+        <div id="block_panier">
+            <a href="index.php?page=pagePanier" title="Panier" id="panier"><i class="fa-solid fa-basket-shopping fa-2x"></i></a>
+            <div id="nombre"> </div>
+        </div> 
+    
+        
     </nav>
 </header>
 
 
         
         <?= $content ?>
-        
     </div>
-    <script src="app/Public/design/js/panier.js"></script>
+    
     
     <footer>
 
         <div id="logo_reseau_sociaux">
-        <a href="#"><i class="fa-brands fa-twitter logo_footer fa-xl"></i></a>
-        <a href="#"><i class="fa-brands fa-facebook-f logo_footer fa-xl"></i></a>
-        <a href="#"><i class="fa-brands fa-linkedin-in logo_footer fa-xl"></i></a>
-        <a href="#"><i class="fa-brands fa-instagram-square logo_footer fa-xl"></i></a>
+            <a href="#" title="Twitter"><i class="fa-brands fa-twitter logo_footer fa-xl"></i></a>
+        <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f logo_footer fa-xl"></i></a>
+        <a href="#" title="Linkedin"><i class="fa-brands fa-linkedin-in logo_footer fa-xl"></i></a>
+        <a href="#" title="Instagram"><i class="fa-brands fa-instagram-square logo_footer fa-xl"></i></a>
     </div>
     
     <div id="block_copyright">
-        <p><a href="index.php?page=mentionsLegalesView">Mentions légales</a></p>
-        <p><a href="index.php?page=donneesPersoView">Données personelles</a></p>
+        <p><a href="index.php?page=mentionsLegalesView" title="Mention légale">Mentions légales</a></p>
+        <p><a href="index.php?page=donneesPersoView" title="Données perso">Données personelles</a></p>
         <p>© Daily Fresh</p>
     </div>
     
 </footer>
+<script src="app/Public/design/js/panier.js" defer></script>
 </body>
 
 </html>

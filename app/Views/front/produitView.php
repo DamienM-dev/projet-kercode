@@ -1,12 +1,11 @@
 <?php
-
 $title = "Nos produits";
 
 ob_start();
 
 ?>
 
-<section id="block_produits">
+<section id="block_produitsView">
 
     <div id="block_inside_produits">
 
@@ -21,9 +20,10 @@ ob_start();
 
                 <img src="<?= $produit['img'] ?>" alt ="<?= $produit['alt'] ?>">
                 <h2><?= $produit['name']?></h2>
+                <p><?= $produit['description']?></p>
                 <p><?= $produit['price'] ?> €</p>
-                <a href="#">Ajouter au panier</a>
-                <div></div>
+            <a href="#" class="button_ajout button" title="ajouter panier" data-product='{"id":<?= $produit["id"]; ?>}'>Ajouter au panier</a>
+
             </div>
             <?php endforeach; ?>
         </div>

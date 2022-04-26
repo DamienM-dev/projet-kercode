@@ -39,9 +39,9 @@ ob_start();
             <p>Notre éleveur laitier ainsi que fromager.</p>
         </div>
         <div class="agriculteur_reseau">
-        <a href="#"><i class="fa-brands fa-facebook-f logo_footer fa-2xl"></i></a>
-        <a href="#"><i class="fa-brands fa-linkedin-in logo_footer fa-2xl"></i></a>
-        <a href="#"><i class="fa-brands fa-instagram-square logo_footer fa-2xl"></i></a>
+        <a href="#" title="facebook"><i class="fa-brands fa-facebook-f logo_footer fa-2xl"></i></a>
+        <a href="#" title="linkedin"><i class="fa-brands fa-linkedin-in logo_footer fa-2xl"></i></a>
+        <a href="#" title="instagram"><i class="fa-brands fa-instagram-square logo_footer fa-2xl"></i></a>
         </div>
     </div>
 
@@ -52,9 +52,9 @@ ob_start();
             <p>Notre éleveur. Vous aurez le choix entre du boeuf, poulet ou du veau .</p>
         </div>
         <div class="agriculteur_reseau">
-        <a href="#"><i class="fa-brands fa-facebook-f logo_footer fa-2xl"></i></a>
-        <a href="#"><i class="fa-brands fa-linkedin-in logo_footer fa-2xl"></i></a>
-        <a href="#"><i class="fa-brands fa-instagram-square logo_footer fa-2xl"></i></a>
+        <a href="#" title="facebook"><i class="fa-brands fa-facebook-f logo_footer fa-2xl"></i></a>
+        <a href="#" title="linkedin"><i class="fa-brands fa-linkedin-in logo_footer fa-2xl"></i></a>
+        <a href="#" title="instagram"><i class="fa-brands fa-instagram-square logo_footer fa-2xl"></i></a>
         </div>
     </div>
 
@@ -65,9 +65,9 @@ ob_start();
             <p>Notre agriculteur. Il vend des fruits et légumes de saisons garantis sans pesticides</p>
         </div>
         <div class="agriculteur_reseau">
-        <a href="#"><i class="fa-brands fa-facebook-f logo_footer fa-2xl"></i></a>
-        <a href="#"><i class="fa-brands fa-linkedin-in logo_footer fa-2xl"></i></a>
-        <a href="#"><i class="fa-brands fa-instagram-square logo_footer fa-2xl"></i></a>
+        <a href="#" title="facebook"><i class="fa-brands fa-facebook-f logo_footer fa-2xl"></i></a>
+        <a href="#" title="linkedin"><i class="fa-brands fa-linkedin-in logo_footer fa-2xl"></i></a>
+        <a href="#" title="instagram"><i class="fa-brands fa-instagram-square logo_footer fa-2xl"></i></a>
         </div>
     </div>
 </section>

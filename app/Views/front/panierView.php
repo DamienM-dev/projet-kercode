@@ -25,9 +25,9 @@ ob_start();
             </div>
             <div id="block_quantite_produit">
                 <div>
-                    <button>-</button>
-                    <span class="quantite_produit">0</span>
-                    <button>+</button>
+                    <button class="quantity_modficiation">-</button>
+                    <input type="text" class="quantity" value=0>
+                    <button class="quantity_modficiation">+</button>
                 </div>
                 <div>
                     <p>prix total</p>
@@ -51,9 +51,9 @@ ob_start();
 
 
 
-
 <?php
 $content = ob_get_clean();
 require('app/Views/template/base.php');
 
 ?>
+

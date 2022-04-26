@@ -1,18 +1,16 @@
 //   ===================FONCTION PANIER ===================
 
-
 //JSON.stringify, transforme un objet complexe (tableau) en chaine de charactére récupérable grace a JSON.parse dans le localstorage
 //On l'utilise car le localstorge ne permettent que de stocker des objets simples (string, nombre...)
 
 function saveBasket(basket){
     localStorage.setItem("basket", JSON.stringify(basket));
 }
-
 //récupére la clé enregistré 
 
 function getBasket(){
     let basket = localStorage.getItem("basket");
-
+    
     if(basket == null) {
         //panier vide
         return [];
@@ -30,19 +28,20 @@ function getBasket(){
 
 function addBasket(product)
 {
-
     let basket = getBasket();
     let foundProduct = basket.find(p => p.id == product.id);
-
+    
     if(foundProduct != undefined) {
-
+        
         foundProduct.quantity++;
+    
+        
 
+        console.log(product);
     }else {
         product.quantity = 1;
         basket.push(product);
     }
-
     saveBasket(basket);
 }
 
@@ -102,11 +101,30 @@ function getNumberProduct()
 //   ===================UTILISATION FONCTION ===================
 
 let button_ajout = document.getElementsByClassName('button_ajout');
+let panier_valeur = document.getElementById('panier');
+let count = 0;
+let nombre = document.getElementById('nombre');
 
 
-button_ajout.forEach(button_ajout => {
-        button_ajout.addEventListener('click', function() {
-            addBasket();
+
+[...button_ajout].forEach(button => {
+    button.addEventListener('click', function(e) {
+        let product = JSON.parse(e.target.dataset.product);
         
+        
+        count++;
+        nombre.innerHTML = count;
+        console.log(count);
+
+
+        
+        addBasket(product);
+    
     });
 })
+
+
+
+
+
+

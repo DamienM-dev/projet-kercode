@@ -13,7 +13,7 @@ ob_start();
             <?= $html; ?>
             <h3>Nous somme entrain de travailler, revenez plus tard !</h3>
             <button>
-                <a href="index.php?page=accueil">Retournez à l'accueil !<a>
+                <a href="index.php?page=accueil" title="Retour accueil">Retournez à l'accueil !<a>
             </button>
         </div>
     </div>
