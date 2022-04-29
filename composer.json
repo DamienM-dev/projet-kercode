@@ -1,0 +1,18 @@
+{
+    "name": "kercode/producteur",
+    "autoload": {
+        "psr-4": {
+            "Projet\\": "./app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "DamienM-dev",
+            "email": "84769945+DamienM-dev@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "filp/whoops": "^2.14",
+        "vlucas/phpdotenv": "^5.4"
+    }
+}
