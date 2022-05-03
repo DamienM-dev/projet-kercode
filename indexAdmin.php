@@ -40,29 +40,7 @@ try {
 
         if ($_GET['action'] == 'creatAdmin') {
 
-            $lastnameError = $firstnameError = $mailError = $mdpError= "";
 
-            if(empty ($lastnameError)){
-
-                $lastnameError = "Nom de famille obligatoire !";
-            }
-
-            if(empty ($firstnameError)){
-
-                $firstnameError = "prénom obligatoire !";
-
-            }
-
-            if(empty ($mailError)){
-
-                $lastnameError = "email obligatoire !";
-            }
-
-            if(empty ($mdpError)){
-
-                $mdpError = "mot de passe obligatoire !";
-
-            }
     
                 $lastname    = htmlspecialchars($_POST['lastname']);
                 $firstname   = htmlspecialchars($_POST['firstname']);
@@ -81,15 +59,13 @@ try {
 
             $mail = htmlspecialchars($_POST['mail']);
             $mdp  = $_POST['mdp'];
-            
-
+        
             if (!empty($mail) && !empty($mdp)) {
                 $backController->connexionAdmin($mail, $mdp);
             } else {
                 throw new Exception('Veuillez remplir les champs du formulaire');
             }
 
- 
         } elseif ($_GET['action'] == 'deconnexionAdmin') {
 
             $backController->deconnexionAdmin();
@@ -118,8 +94,8 @@ try {
             $name          = htmlspecialchars($_POST['name']);
             $description   = htmlspecialchars($_POST['description']);
             $price         = htmlspecialchars($_POST['price']);
-            $categories    = htmlspecialchars( $_POST['categories']);
-            $alt           = htmlspecialchars( $_POST['alt']);
+            $categories    = htmlspecialchars($_POST['categories']);
+            $alt           = htmlspecialchars($_POST['alt']);
             $img           = htmlspecialchars($_POST['img']);
             
             
@@ -147,7 +123,7 @@ try {
             //affiche page modification produit
 
         }elseif ($_GET['action'] == 'modifierProduitView') {
-            $id = $_GET['id'];
+            $id = htmlspecialchars($_GET['id']);
             
             $backController->modifierProduitView($id);
         
@@ -155,7 +131,7 @@ try {
             //modifier un produit
 
         }elseif($_GET['action'] == 'modifierProduit') {
-            $id = $_GET['id'];
+            $id = htmlspecialchars($_GET['id']);
 
             $name          = htmlspecialchars($_POST['name']);
             $description   = htmlspecialchars($_POST['description']);
@@ -167,6 +143,7 @@ try {
 
             $backController->modifierProduit($id, $name, $description, $price, $categories, $alt, $img);
         }elseif($_GET['action'] == 'pageCreationAdmin') {
+            
             $backController->pageCreationAdmin();
         }
 

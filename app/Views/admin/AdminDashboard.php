@@ -17,7 +17,7 @@
    
     <nav class="navbar">
         
-        <h2>Bonjour <?= $_SESSION['firstname'] ?></h2>
+        <h2>Bonjour <span id="name"> <?= $_SESSION['firstname'] ?></span></h2>
         <div id="bouton_admin_header">
             <button><a href="indexAdmin.php?action=pageCreationAdmin">Création administrateur</a></button>
             <button><a href="indexAdmin.php?action=deconnexionAdmin">déconnexion</a></button>

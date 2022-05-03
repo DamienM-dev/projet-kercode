@@ -26,7 +26,7 @@ ob_start();
 
                 <div>
                     <label for="price">price:</label>
-                    <input type="number" name="price" id="price" placeholder="prix"/>
+                    <input type="number" step="0.01" name="price" id="price" placeholder="prix"/>
                 </div>
     
                 <div>
@@ -51,7 +51,7 @@ ob_start();
                 </div>
 
 
-                <button type="submite"><a>soumettre</a></button>
+                <button type="submit">soumettre</button>
                 <button><a href="indexAdmin.php?action=retourDashboard">dashboard</a></button>
             </div>
 

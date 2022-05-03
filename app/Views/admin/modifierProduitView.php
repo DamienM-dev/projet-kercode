@@ -11,7 +11,7 @@ ob_start();
 <h1>Modification des produits</h1>
 
 <form method="post" action="indexAdmin.php?action=modifierProduit&id=<?=$produit['id']?>">
-    <div id="">
+    <div >
         <div id="block_modifier_produit">
              <div>
                 <label for="name">nom:</label>

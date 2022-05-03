@@ -93,17 +93,16 @@ ob_start();
 
         <div>
             <img src="<?= $sliderImage[0]['url'] ?>" alt="<?= $sliderImage[0]['alt'] ?>" class="images_slider active">
-            <!-- <i class="fa-solid fa-quote-left"></i> -->
         </div>
 
         <div>
             <img src="<?= $sliderImage[1]['url'] ?>" alt="<?= $sliderImage[1]['alt'] ?>" class="images_slider">
-            <!-- <i class="fa-solid fa-quote-left"></i> -->
+           
         </div>
 
         <div>
             <img src="<?= $sliderImage[2]['url'] ?>" alt="<?= $sliderImage[2]['alt'] ?>" class="images_slider">
-            <!-- <i class="fa-solid fa-quote-left"></i> -->
+            
         </div>
 
         <div class="suivant">

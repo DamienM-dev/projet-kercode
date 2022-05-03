@@ -8,13 +8,13 @@ ob_start();
 ?>
 
 <section id="confirmationDelete">
-    <h1>Panneau administration</h1>
+    <h1>Confirmation de suppression</h1>
 
     
     
     <div>
         <h2>êtes vous sur de vouloir supprimer ?</h2>
-        <button><a href="indexAdmin.php?action=deleteProduit&id=<?=htmlspecialchars($id);?>">Supprimer</a></button>
+        <button><a  href="indexAdmin.php?action=deleteProduit&id=<?=htmlspecialchars($id);?>">Supprimer</a></button>
         <button><a href="indexAdmin.php?action=retourDashboard">dashboard</a></button>
         
     </div>

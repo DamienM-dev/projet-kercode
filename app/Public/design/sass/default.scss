@@ -143,9 +143,7 @@ h2 {
 }
 
 // ================PANIER================
-#block_panier {
-  
-}
+
 #nombre {
 
     color: red;
@@ -514,6 +512,7 @@ section#block_produitsView {
 
         width: 100%;
         margin: 10px;
+        margin-top: 50px;
 
         h1 {
             font-size: 1.4rem;
@@ -552,6 +551,10 @@ section#block_produitsView {
                     width: 40%;
                     margin: auto;
                     margin-top: 20px;
+
+                    &:hover {
+                        background-color: $couleurTertiaire;
+                    }
             }
         }
     }
@@ -991,10 +994,7 @@ footer {
         }
     }
 
-    // =============PAGE ACCUEIL: BLOCK PARALLAX=============
     
-   
-
     // =============PAGE ACCUEIL: BLOCK POURQUOI=============
     
     #block_pourquoi {
@@ -1184,34 +1184,27 @@ footer {
         }    
     }
     
-// =========TRES GRAND ECRAN=========
-
-    @media screen and (min-width:1224px) {
-
-         // =============PAGE ACCUEIL: BLOCK PARALLAX=============
-    
   
-}
-    
-    
-    
     //=======DASHBOARD ADMINISTRATEUR=======
 
+    span#name {
+        color:rgba(234, 0, 0, 0.95);
+    }
 
-    //=======PAGE formulaire CONNEXION DASHBOARD ADMINISTRATEUR=======
+    //=======PAGE formulaire CONNEXION et CREATION DASHBOARD ADMINISTRATEUR=======
 
-section#container_connexion_administrateur, section#container_connexion_client {
+section#container_connexion_administrateur, section#container_connexion_client, #container_creation_administrateur {
 
     h1{
         margin : {
-            top:25px;
+            top:50px;
             bottom: 10px;
         }
         color: $couleurSecondaire;
         font-size: 1.2rem;
     }
 
-    #form_connexion_administrateur, #form_connexion_client {
+    #form_connexion_administrateur, #form_connexion_client, #form_creation_admin {
         text-align: center;
 
         label {
@@ -1410,22 +1403,41 @@ section#container_connexion_administrateur, section#container_connexion_client {
             }
         }
 
-        label, SELECT {
+        label, select {
             display: block;
+            margin: auto;
             margin-bottom: 5px;
             text-transform: uppercase;
             font-weight: bold;
         
-
         }
+        
         #ajouter_form_inside {
             text-align: center;
         }
 
-        input {
+        input, select {
             height: 30px;
             width: 200px;
             margin-bottom: 10px;
+        }
+
+        button {
+                
+            background-color: rgb(24, 96, 124);
+            width: 120px;
+            margin: 15px auto;
+            display: block;
+            padding: 10px;
+            
+            &:hover {
+                background-color:rgba(24, 96, 124, 0.411);
+            }
+            
+            a {
+                color: white;
+                text-transform: uppercase;
+            }
         }
     }
     
@@ -1433,7 +1445,7 @@ section#container_connexion_administrateur, section#container_connexion_client {
     //=======DASHBOARD ADMINISTRATEUR: MODIFICATION PRODUIT=======
 
 #modifier_produit_dashboard {
-
+    margin-top: 50px;
     form {
         text-align: center;
     }
@@ -1472,6 +1484,33 @@ section#container_connexion_administrateur, section#container_connexion_client {
         }
     }
 }
+
+// =============DASHBOARD ADMINISTRATEUR: confirmation delete=============
+
+
+section#confirmationDelete, section#container_confirmation {
+
+    margin-top: 50px;
+
+    button {
+                
+        background-color: rgb(24, 96, 124);
+        width: 120px;
+        margin: 15px auto;
+        display: block;
+        padding: 10px;
+        
+        &:hover {
+            background-color:rgba(24, 96, 124, 0.411);
+        }
+        
+        a {
+            color: white;
+            text-transform: uppercase;
+        }
+    }
+}
+
     
     // =============DASHBOARD ADMINISTRATEUR: GRAND ECRAN=============
     

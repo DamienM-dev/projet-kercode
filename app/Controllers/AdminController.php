@@ -15,7 +15,7 @@ class AdminController
     }
 
     public function pageCreationAdmin(){
-        require 'app/Views/admin/createAdmin.php';
+        require './app/Views/admin/createAdmin.php';
     }
     
     //connecte l'admin a son dashboard
@@ -25,6 +25,8 @@ class AdminController
         $connexionAdmin = $adminManager->recupInfo($mail);
 
         $result = $connexionAdmin->fetch();
+
+        if(!empty($result)){
 
         if ($result['mdp'] === $mdp) {
             echo "les informations ne sont pas correct";
@@ -36,7 +38,6 @@ class AdminController
         $_SESSION['mdp'] = $result['mdp'];
         $_SESSION['id'] = $result['id'];
         $_SESSION['firstname'] = $result['firstname'];
-        
         
         
         if ($isPasswordCorrect && filter_var($result['mail'], FILTER_VALIDATE_EMAIL)) {
@@ -56,8 +57,10 @@ class AdminController
 
         } else {
             require 'app/Views/front/erreurPass.php';
+            }
+        } else {
+            require 'app/Views/front/incorrecteView.php';;
         }
-            
     }
 
     public function deconnexionAdmin() 
@@ -102,7 +105,10 @@ class AdminController
         $adminManager = new \Projet\Models\front\ProduitModel();
         $ajouterProduit = $adminManager->ajouterProduitBdd($name, $description, $price, $categories,  $alt, $img);
     
-        
+        $produitModel = new \Projet\Models\Admin\AdminModel();
+        $categories= $produitModel->selectCategory();
+
+
         require 'app/Views/admin/ajouterProduitView.php';
     }
 

@@ -8,5 +8,9 @@
     </a>
 </p>
 
--Pour réduire les risques de problémes lors de la lecture de mon DUMP, je conseil de l'ouvrir avec HeidiSQL.<br>
+-Mon site est hebergé a l'adresse suivante: https://daily-fresh.ovh/index.php
+-Pour le moment admin en prod non fonctionnel 
+-pour accéder au panel Admin : index.php?page=pageConnexionAdmin
+
+-Pour réduire les risques de problémes lors de la lecture de mon DUMP, je conseil de l'ouvrir avec HeidiSQL.
 -Certaines de mes dépendances requiére la présence de PHP 8.
