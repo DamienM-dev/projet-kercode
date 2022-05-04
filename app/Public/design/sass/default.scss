@@ -149,6 +149,30 @@ h2 {
     color: red;
 }
 
+// ================PANIERVIEW================
+
+section#block_panier {
+    text-align: center;
+    margin-top: 50px;
+
+    #image_panier {
+        margin: auto;
+    }
+
+    button {
+        background-color: $couleurSecondaire;
+        color: $couleurPrincipal;
+        display: block;
+        width: 100px;
+        margin: 25px auto;
+        font-size: 1.2rem;
+
+        &:hover{
+            background-color: $couleurTertiaire;
+        }
+    }
+}
+
 //=============PAGE ACCUEIL: BLOCK IMAGE PARALLAX =============
 
 section#block_image_parallax {
@@ -647,10 +671,26 @@ section#block_produitsView {
     }
 
 }
-// =========GESTION ERREUR FORM=========
+// =========GESTION FORM=========
 
+section#block_identifiant_incorectes {
 
+    height: 500px;
+    margin-top: 50px;
 
+    a{ 
+        @extend .button_style;
+        background-color: $couleurSecondaire;
+        color: $couleurPrincipal;
+        display: block;
+        width: 150px;
+        margin: 25px auto;
+
+        &:hover{
+            background-color: $couleurTertiaire;
+        }
+    }
+}
 
 
 // =============FORMULAIRES=============
@@ -1075,8 +1115,6 @@ footer {
         
         #block_inside_image_apropos {
             
-          
-            
             h1 {
                 font-size: 1.7rem;
             }
@@ -1091,7 +1129,8 @@ footer {
         .block_agriculteur {
             
             width: 31%;
-            height: 500px;
+            height: 600px;
+            max-height: 600px;
             text-align: justify;
             
             &:nth-child(1) {
@@ -1104,6 +1143,7 @@ footer {
             
             .agriculteur_information {
                 text-align: center;
+                
             }
             img.photo_agriculteur {
                 
@@ -1180,7 +1220,7 @@ footer {
                 width: 100%;
                 font-size: 1.7rem;
                 margin-bottom: 20px;
-            }   
+            } 
         }    
     }
     

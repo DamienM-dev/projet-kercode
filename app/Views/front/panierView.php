@@ -13,7 +13,6 @@ ob_start();
     <h2 id="titre_panier">Merci pour vos achats !</h2>
 </div>
 <div id="panier_fiche">
-    <div id="inject_JS">
         <div id="panier_produit">
             <div id="block_image">
                 <lottie-player src="app/Public/design/images/product.json" autoplay loop id="image_panier"></lottie-player>
@@ -33,10 +32,8 @@ ob_start();
                     <p>prix total</p>
                 </div>
             </div>
-        </div>
-    </div>
     <div id="block_recap">
-        <h2>racap</h2>
+        <h2>recap du panier</h2>
         <div>
             <p id="nbrProduit">0 produits</p>
             <p id="prixTotal">prix produits</p>
@@ -44,7 +41,6 @@ ob_start();
         <button>Valider</button>
     </div>
 </div>
-
 
 </section>
 
