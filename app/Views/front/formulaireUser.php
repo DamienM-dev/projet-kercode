@@ -35,7 +35,7 @@ ob_start();
 
             <div>
                 <label for="codePostal"> Code postal<span>*</span> :</label>
-                <input type="number" name="codePostal" id="codePostal" class="invalid" placeholder="Exemple : 75000" required>
+                <input type="number" min="00001" max="9999" name="codePostal" id="codePostal" class="invalid" placeholder="Exemple : 75000" required>
             </div>
         </div>
 
