@@ -15,26 +15,26 @@
 <p>-Mon site est hebergé a l'adresse suivante: https://daily-fresh.ovh/index.php</p>
 
 <p>-pour accéder au formulaire en localhost de connexion Admin : index.php?page=pageConnexionAdmin</p>
-<p>-mail: admin@admin.fr</p>
-<p>-mdp: admin</p>
+<p><strong>-mail: admin@admin.fr</strong></p>
+<p><strong>-mdp: admin</strong></p>
 
 <p>Pour mon projet il faut installer :</p>
 
 <h3>composer</h3>
 
-<p>pour l'installer via composer il faut faire un "composer install".</p>
+<p>pour l'installer via composer il faut faire un <strong>"composer install"</strong>.</p>
 
 <h3>dotenv</h3>
 
-<p>pour l'installer via composer il faut faire un "composer require vlucas/phpdotenv".</p>
+<p>pour l'installer via composer il faut faire un <strong>"composer require vlucas/phpdotenv".</strong></p>
 
 <h3>Whoops</h3>
 
 <p>Pour ma gestion des erreurs j'ai utilisé Whoops.</p>
-<p>Pour l'installer via composer "composer require filp/whoops".</p>
+<p>Pour l'installer via composer <strong>"composer require filp/whoops"</strong>.</p>
 
 
-<p>-Certaines de mes dépendances requiére la présence de PHP 8.</p>
+<p>-Certaines de mes dépendances requiére la présence de <strong>PHP 8</strong>.</p>
 
 <h2>Résumé</h2>
 
@@ -46,7 +46,7 @@
 
 <p>-Mon CRUD se situe au niveau de l'administration ou il y a possibilité de gérer les produits présents sur la page "produit".</p>
 
-<h2>Mes difficultés<h2>
+<h2>Mes difficultés</h2>
 
 <p>-J'ai eu du mal à bien définir sur quel projet je voulais partir, ce qui ma provoqué une grande perte de temps.</p>
 <p>-Le JS reste encore trés tendre dans mon esprits</p>
