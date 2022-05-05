@@ -35,7 +35,7 @@ ob_start();
         </div>
 
         <div class="center_formulaire">
-            <label for="raison">Pourquoi souhaiez-vous nous contacter ?</label>
+            <label for="raison">Pourquoi souhaitez-vous nous contacter ?</label>
             <select name="raison" id="raison">
                 <option value="reclamation">Réclamation</option>
                 <option value="candidature">candidature</option>
