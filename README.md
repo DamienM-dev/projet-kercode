@@ -14,7 +14,9 @@
 
 <p>-Mon site est hebergé a l'adresse suivante: https://daily-fresh.ovh/index.php</p>
 
-<p>-pour accéder au formulaire en localhost de connexion Admin : index.php?page=pageConnexionAdmin</p>
+
+
+<p>-Pour faciliter les choses et éviter de passer par l'URL, j'ai laissé un bouton de connexion admin dans le header</p>
 <p><strong>-mail: admin@admin.fr</strong></p>
 <p><strong>-mdp: admin</strong></p>
 
@@ -35,6 +37,8 @@
 
 
 <p>-Certaines de mes dépendances requiére la présence de <strong>PHP 8</strong>.</p>
+
+<p>Ma bdd devra être nommé "producteur" sinon le nom sera à changer dans mon "Model/Manager"<p>
 
 <h2>Résumé</h2>
 
