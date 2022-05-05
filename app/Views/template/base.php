@@ -71,7 +71,6 @@
     
     
     <footer>
-
         <div id="logo_reseau_sociaux">
             <a href="#" title="Twitter"><i class="fa-brands fa-twitter logo_footer fa-xl"></i></a>
         <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f logo_footer fa-xl"></i></a>
@@ -81,7 +80,6 @@
     
     <div id="block_copyright">
         <p><a href="index.php?page=mentionsLegalesView" title="Mention légale">Mentions légales</a></p>
-        <p><a href="index.php?page=donneesPersoView" title="Données perso">Données personelles</a></p>
         <p>© Daily Fresh</p>
     </div>
     
