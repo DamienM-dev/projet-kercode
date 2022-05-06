@@ -39,6 +39,8 @@
 <p>-Certaines de mes dépendances requiére la présence de <strong>PHP 8</strong>.</p>
 
 <p>Ma bdd devra être nommé "producteur" sinon le nom sera à changer dans mon "Model/Manager"<p>
+    
+ <p>Installer Draw.io integration sur VSC afin de lire les UML</p>
 
 <h2>Résumé</h2>
 
