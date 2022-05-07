@@ -1,4 +1,3 @@
-[![Maintainability](https://api.codeclimate.com/v1/badges/c09ad463a1e424e64812/maintainability)](https://codeclimate.com/github/DamienM-dev/Projet-final/maintainability)
 
 <a href="https://codeclimate.com/github/DamienM-dev/projet-kercode/maintainability"><img src="https://api.codeclimate.com/v1/badges/2d71439566ade35f0eb1/maintainability" /></a>
 
