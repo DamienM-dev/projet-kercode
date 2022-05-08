@@ -72,6 +72,7 @@
 <p>-Cleaner le SCSS pour les répétitons</p>
 <p>-Faire des fonctions qui gére la présence en double des emails</p>
 <p>-Faire une pagination dans la page produit</p>
+<p>Renommer certaines de mes vues pour avoir le même format de nom</p>
 
 <h2>Contact</h2>
 
