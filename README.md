@@ -17,7 +17,7 @@
 
 
 
-<p>-Pour faciliter les choses et éviter de passer par l'URL, j'ai laissé un bouton de connexion admin dans le header</p>
+<p>-Pour faciliter les choses et éviter de passer par l'URL, j'ai laissé un bouton de connexion admin dans le header, ce que je ne ferrais pas sur un vrai site</p>
 <p><strong>-mail: admin@admin.fr</strong></p>
 <p><strong>-mdp: admin</strong></p>
 
