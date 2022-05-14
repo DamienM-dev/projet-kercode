@@ -24,7 +24,6 @@
     <div id="connexion">
         <a href="index.php?page=login" title="INSCRIPTION" >inscription</a>
         <a href="index.php?page=pageConnexionUser" title="Mon compte">Mon compte</a>
-        <a href="index.php?page=pageConnexionAdmin" title="Connexion Admin">admin</a>
     </div>
 
     <nav class="navbar">
